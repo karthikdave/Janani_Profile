@@ -9,11 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
-/* BODY */
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #f5f7f6;
+    background: #f0f2f5;
     color: #222;
     scroll-behavior: smooth;
 }
@@ -94,20 +93,23 @@ h1 {
 }
 
 .stat-box {
-    background: white;
+    background: rgba(255,255,255,0.9);
     padding: 12px 18px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-align: center;
 }
 
-/* SECTIONS */
+/* SECTIONS (GLASS + ANIMATION) */
 section {
     padding: 30px;
     margin: 20px;
-    background: white;
-    border-radius: 12px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    backdrop-filter: blur(6px);
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 0.6s ease;
 }
 
@@ -121,75 +123,49 @@ h2 {
     padding-left: 10px;
 }
 
-/* TIMELINE */
+/* EXPERIENCE TIMELINE */
 .timeline {
     position: relative;
-    margin: 20px 0;
+    margin-top: 20px;
     padding-left: 30px;
-    border-left: 3px solid #94c11f;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 4px;
+    height: 100%;
+    background: #94c11f33;
+    border-radius: 2px;
 }
 
 .timeline-item {
-    margin-bottom: 30px;
     position: relative;
+    margin-bottom: 30px;
     padding-left: 20px;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.6s ease;
-}
-
-.timeline-item.show {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -10px;
-    top: 5px;
-    width: 18px;
-    height: 18px;
+    left: -1px;
+    top: 0;
+    width: 12px;
+    height: 12px;
     background: #94c11f;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px #94c11f;
 }
 
-.timeline-date {
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.timeline-content h3 {
-    margin: 0 0 5px 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05em;
-}
-
-.timeline-content ul {
+.timeline-item h3 {
     margin: 0;
-    padding-left: 18px;
+    font-size: 18px;
 }
 
-.timeline-content li {
-    margin-bottom: 6px;
-    font-size: 0.95em;
-    line-height: 1.4;
-}
-
-/* EXPERIENCE CARDS */
-.exp {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background: #fafafa;
-    transition: 0.3s;
-}
-
-.exp:hover {
-    transform: translateY(-5px);
+.timeline-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
 }
 
 /* SKILLS */
@@ -207,11 +183,9 @@ h2 {
         flex-direction: column;
         text-align: center;
     }
-    .timeline {
-        padding-left: 20px;
-    }
-    .timeline-item::before {
-        left: -8px;
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 </style>
@@ -237,79 +211,78 @@ h2 {
 <p class="subtitle">HR Leader | Strategic People Partner</p>
 <p>Chennai | beingjanani@gmail.com</p>
 
-<div class="stats">
-<div class="stat-box"><h3>13+</h3><p>Years</p></div>
-<div class="stat-box"><h3>300+</h3><p>Hires</p></div>
-<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
+<div class="stats" data-stats>
+<div class="stat-box" data-target="13"><h3>0</h3><p>Years</p></div>
+<div class="stat-box" data-target="300"><h3>0</h3><p>Hires</p></div>
+<div class="stat-box" data-target="3"><h3>0</h3><p>Organizations</p></div>
 </div>
 </div>
 </header>
 
-<!-- SUMMARY with TIMELINE -->
 <section id="summary">
-<h2>Professional Journey</h2>
-
-<div class="timeline">
-  <!-- Nokia -->
-  <div class="timeline-item">
-    <div class="timeline-date">Aug 2012 – Feb 2020</div>
-    <div class="timeline-content">
-      <h3>Senior Executive - HR | Nokia</h3>
-      <ul>
-        <li>Managed employee lifecycle, relations, and retention strategies</li>
-        <li>Executed town halls, R&R programs, and workshops</li>
-        <li>Delivered e-learning & learning initiatives</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Salcomp -->
-  <div class="timeline-item">
-    <div class="timeline-date">Mar 2020 – Dec 2025</div>
-    <div class="timeline-content">
-      <h3>Deputy Manager - HRBP | Salcomp</h3>
-      <ul>
-        <li>End-to-end recruitment for global R&D</li>
-        <li>Performance management & employee engagement</li>
-        <li>Cost optimization & HRMS data tracking</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Ola Electric -->
-  <div class="timeline-item">
-    <div class="timeline-date">Jan 2026 – Present</div>
-    <div class="timeline-content">
-      <h3>Manager - Human Resources | Ola Electric</h3>
-      <ul>
-        <li>Compensation & benefits strategy</li>
-        <li>Retention and incentive planning</li>
-        <li>HR policies & compliance frameworks</li>
-        <li>Monitor performance and productivity</li>
-        <li>Manpower planning & change management initiatives</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<h2>Executive Summary</h2>
+<p>HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>300+ hires delivered</li>
-<li>Workforce strategy alignment</li>
-<li>Retention improvement</li>
+<li>Led hiring of 300+ employees</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Improved retention and engagement</li>
+<li>Designed HR policies and compliance frameworks</li>
+<li>Enabled performance-driven culture</li>
 </ul>
 </section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
-<p>Ola Electric | Salcomp | Nokia</p>
+<div class="timeline">
+<!-- Latest on top -->
+<div class="timeline-item">
+<h3>HR Manager | Ola Electric</h3>
+<p>Jan 2022 – Present</p>
+<ul>
+<li>Compensation & benefits strategy</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
+<li>Performance and productivity tracking</li>
+<li>Manpower planning with leadership</li>
+<li>Change management initiatives</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>HR Business Partner | Salcomp</h3>
+<p>Jun 2018 – Dec 2021</p>
+<ul>
+<li>Workforce planning</li>
+<li>Hiring & onboarding</li>
+<li>Employee engagement</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>HR Executive | Nokia</h3>
+<p>Jan 2014 – May 2018</p>
+<ul>
+<li>Employee lifecycle management</li>
+<li>HR operations support</li>
+</ul>
+</div>
+</div>
 </section>
 
 <section id="skills">
 <h2>Core Expertise</h2>
-<p>HRBP | Talent | Workforce Planning | Compensation & Benefits | Performance Management</p>
+<div class="skills">
+<span>HR Business Partnering</span>
+<span>Talent Acquisition</span>
+<span>Workforce Planning</span>
+<span>Compensation & Benefits</span>
+<span>Performance Management</span>
+<span>HR Compliance</span>
+</div>
 </section>
 
 <section id="education">
@@ -318,10 +291,10 @@ h2 {
 </section>
 
 <script>
-// NAV highlight
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
+/* CLICK highlight */
 links.forEach(link => {
     link.addEventListener("click", function () {
         links.forEach(l => l.classList.remove("active"));
@@ -329,21 +302,27 @@ links.forEach(link => {
     });
 });
 
+/* SCROLL highlight */
 window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
         const top = section.offsetTop - 120;
-        if (window.scrollY >= top) current = section.id;
+        if (window.scrollY >= top) {
+            current = section.id;
+        }
     });
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) current = "education";
-
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        current = "education";
+    }
     links.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
     });
 });
 
-// SECTIONS ANIMATION
+/* ANIMATION */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -353,15 +332,31 @@ const observer = new IntersectionObserver(entries => {
 });
 sections.forEach(sec => observer.observe(sec));
 
-// TIMELINE ANIMATION
-const timelineItems = document.querySelectorAll('.timeline-item');
-const timelineObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-}, { threshold: 0.2 });
+/* STATS COUNT-UP WITH + SYMBOL */
+const statsSection = document.querySelector('[data-stats]');
+const statNumbers = document.querySelectorAll('.stat-box h3');
+let statsAnimated = false;
 
-timelineItems.forEach(item => timelineObserver.observe(item));
+const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting && !statsAnimated){
+            statNumbers.forEach(box => {
+                const target = parseInt(box.parentElement.getAttribute('data-target'));
+                let count = 0;
+                const step = Math.ceil(target / 100);
+                const interval = setInterval(() => {
+                    count += step;
+                    if(count >= target){
+                        box.textContent = target + "+";
+                        clearInterval(interval);
+                    } else box.textContent = count + "+";
+                }, 20);
+            });
+            statsAnimated = true;
+        }
+    });
+}, {threshold: 0.5});
+statsObserver.observe(statsSection);
 </script>
 
 </body>
