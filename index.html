@@ -38,27 +38,9 @@ nav a {
     padding-bottom: 5px;
 }
 
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: #94c11f;
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
 nav a.active {
     color: #94c11f;
-}
-
-nav a.active::after {
-    width: 100%;
+    border-bottom: 2px solid #94c11f;
 }
 
 /* HERO */
@@ -127,6 +109,7 @@ h2 {
     padding-left: 10px;
 }
 
+/* EXPERIENCE */
 .exp {
     margin-top: 20px;
     padding: 20px;
@@ -134,6 +117,7 @@ h2 {
     background: #fafafa;
 }
 
+/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e8f5d0;
@@ -184,32 +168,92 @@ h2 {
 </div>
 </header>
 
-<section id="summary"><h2>Executive Summary</h2></section>
-<section id="achievements"><h2>Key Achievements</h2></section>
-<section id="experience"><h2>Professional Experience</h2></section>
-<section id="skills"><h2>Core Expertise</h2></section>
-<section id="education"><h2>Education</h2></section>
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>
+Strategic HR Leader with 13+ years of experience driving talent, performance, and workforce transformation across manufacturing and technology environments. Known for aligning people strategy with business outcomes.
+</p>
+</section>
+
+<section id="achievements">
+<h2>Key Achievements</h2>
+<ul>
+<li>Successfully delivered 300+ hires across functions</li>
+<li>Partnered with leadership on workforce strategy</li>
+<li>Improved retention and engagement programs</li>
+<li>Strengthened HR governance and compliance</li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+
+<div class="exp">
+<h3>HR Manager – Ola Electric</h3>
+<ul>
+<li>Led compensation, benefits and retention strategies</li>
+<li>Managed incentive and performance frameworks</li>
+<li>Developed HR policies and ensured compliance</li>
+<li>Partnered with leaders for manpower planning</li>
+<li>Enabled change management initiatives</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>HR Business Partner – Salcomp</h3>
+<ul>
+<li>Handled workforce planning and hiring</li>
+<li>Led employee engagement initiatives</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>HR Executive – Nokia</h3>
+<ul>
+<li>Managed employee lifecycle processes</li>
+<li>Supported HR operations and reporting</li>
+</ul>
+</div>
+
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<div class="skills">
+<span>HR Business Partnering</span>
+<span>Talent Acquisition</span>
+<span>Workforce Planning</span>
+<span>Compensation & Benefits</span>
+<span>Performance Management</span>
+<span>HR Compliance</span>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p>MSW | BSW</p>
+</section>
 
 <script>
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
-/* CLICK = instant highlight */
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-    });
-});
-
-/* SCROLL SPY (reliable) */
 window.addEventListener("scroll", () => {
-    let index = sections.length;
+    let current = "";
 
-    while(--index && window.scrollY + 150 < sections[index].offsetTop) {}
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
 
-    links.forEach(link => link.classList.remove("active"));
-    links[index].classList.add("active");
+    links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
 });
 </script>
 
