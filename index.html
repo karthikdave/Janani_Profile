@@ -11,16 +11,18 @@
         .container { max-width: 900px; margin: 20px auto; background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
         header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
         h1 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; }
-        .contact-info { margin-top: 10px; font-size: 0.9em; }
-        .contact-info span { margin: 0 10px; }
+        .contact-info { margin-top: 15px; font-size: 1em; }
+        .btn-container { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-secondary { background: var(--primary); color: white; }
+        .btn:hover { opacity: 0.8; }
         h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.2em; margin-top: 30px; }
         .job { margin-bottom: 25px; }
         .job-title { font-weight: bold; color: var(--primary); display: flex; justify-content: space-between; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
         .skill-item { background: #eef2f3; padding: 8px 12px; border-radius: 4px; font-size: 0.85em; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 5px; }
-        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .job-title { flex-direction: column; } }
+        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .job-title { flex-direction: column; } .btn-container { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -31,59 +33,63 @@
         <p><strong>Human Resource Professional</strong></p>
         <div class="contact-info">
             <span><i class="fas fa-envelope"></i> beingjanani@gmail.com</span>
-            <span><i class="fas fa-phone"></i> +91 9790956509</span>
             <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
+        </div>
+        
+        <div class="btn-container">
+            <a href="Janani_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View Resume</a>
+            <a href="Janani_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download PDF</a>
         </div>
     </header>
 
     <section>
         <h2>Professional Summary</h2>
-        <p>Proactive Human Resource Professional offering 13+ years of extensive experience with a passion to lead, inspire, and develop others. Strategic thinker with a proven track record of building relationships and executing HR processes at all organizational levels.</p>
+        <p>Proactive and Enthusiastic Human Resource Professional offering 13+ years of extensive experience with a passion to lead, inspire, and develop others. [cite: 9] Strategic thinker with a proven track record of successful HR process execution and building relationships at all levels. [cite: 10, 11]</p>
     </section>
 
     <section>
-        <h2>Professional Experience</h2>
-        
+        <h2>Experience Highlights</h2>
         <div class="job">
             <div class="job-title">
-                <span>Salcomp Technologies India Pvt Ltd | Deputy Manager</span>
-                <span>Mar 2020 – Present</span>
+                <span>Salcomp Technologies India | Deputy Manager</span>
+                <span>2020 – Present</span>
             </div>
             <ul>
-                <li>Manage end-to-end recruitment for Global Research & Development (R&D) and niche skill candidates.</li>
-                <li>Act as HRBP, facilitating project operations and guiding HR policy amendments.</li>
-                <li>Lead employee engagement initiatives and cost optimization for business units.</li>
+                <li>Managing end-to-end recruitment for Global R&D and niche skills. [cite: 46, 47]</li>
+                <li>Conducting employee satisfaction surveys and supporting internal/external audits. [cite: 56]</li>
             </ul>
         </div>
-
         <div class="job">
             <div class="job-title">
                 <span>Nokia India Pvt Ltd | Senior Executive</span>
-                <span>Aug 2012 – Feb 2020</span>
+                <span>2012 – 2020</span>
             </div>
             <ul>
-                <li>Served as SPOC for employee relations, resolving issues like attrition and workplace satisfaction.</li>
-                <li>Designed and delivered e-learning courses and organized corporate town halls and R&R programs.</li>
+                <li>SPOC for employee relationship management issues and objective investigations. [cite: 68, 69]</li>
+                <li>Designed and delivered e-learning courses and workshops. [cite: 72]</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Recruitment Life Cycle</div>
-            <div class="skill-item">Employee Engagement</div>
-            <div class="skill-item">HRIS & Performance Management</div>
-            <div class="skill-item">Learning & Development</div>
-            <div class="skill-item">Grievance Handling</div>
-            <div class="skill-item">Strategic HR Planning</div>
-        </div>
+        <h2>Special Initiatives & Accolades</h2>
+        <ul>
+            <li>Introduced the <strong>Buddy System</strong> in the workplace. [cite: 103]</li>
+            <li>Initiated Rapport build programs and knowledge sharing sessions. [cite: 102]</li>
+            <li>Awarded <strong>"Best Employee Relation"</strong> in the Nokia bridge program. [cite: 106]</li>
+        </ul>
     </section>
 
     <section>
-        <h2>Education</h2>
-        <p><strong>PGDHRM</strong> | Alagappa University (2011)</p>
-        <p><strong>Master of Social Work (MSW)</strong> | Cauvery College (2008)</p>
+        <h2>Key Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Talent Acquisition</div>
+            <div class="skill-item">Employee Engagement</div>
+            <div class="skill-item">Grievance Handling</div>
+            <div class="skill-item">HR Policies & Practices</div>
+            <div class="skill-item">Learning & Development</div>
+            <div class="skill-item">HRIS (HRMS) Management</div>
+        </div>
     </section>
 </div>
 
