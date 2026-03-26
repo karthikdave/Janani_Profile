@@ -14,6 +14,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #f5f7f6;
     color: #222;
+    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -33,6 +34,33 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #222;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* ✨ UNDERLINE HOVER */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #94c11f;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 🔥 ACTIVE LINK */
+nav a.active {
+    color: #94c11f;
+}
+
+nav a.active::after {
+    width: 100%;
 }
 
 /* HERO */
@@ -43,7 +71,7 @@ header {
     padding: 40px;
 }
 
-/* 🔥 PHOTO WITH HOVER EFFECT */
+/* PHOTO */
 .photo-frame {
     width: 150px;
     height: 150px;
@@ -55,7 +83,6 @@ header {
     transition: all 0.35s ease;
 }
 
-/* ✨ HOVER MAGIC */
 .photo-frame:hover {
     transform: translateY(-6px) scale(1.04);
     box-shadow: 0 12px 28px rgba(0,0,0,0.18);
@@ -107,6 +134,7 @@ section {
     margin: 20px;
     background: white;
     border-radius: 10px;
+    scroll-margin-top: 80px;
 }
 
 h2 {
@@ -128,6 +156,7 @@ h2 {
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
+/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e8f5d0;
@@ -253,6 +282,30 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h2>Education</h2>
 <p>MSW | BSW</p>
 </section>
+
+<!-- 🔥 SCROLL ACTIVE SCRIPT -->
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href").includes(current)) {
+            a.classList.add("active");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
