@@ -14,7 +14,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to bottom, #f5f7f6, #eef2ec);
     color: #222;
-    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -34,30 +33,33 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #222;
-    padding-bottom: 5px;
 }
 
 nav a.active {
-    color: #94c11f;
-    border-bottom: 2px solid #94c11f;
+    color: #bfa046;
+    border-bottom: 2px solid #bfa046;
 }
 
-/* HERO */
+/* HERO GLASS */
 header {
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 40px;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* PHOTO */
 .photo-frame {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 16px;
     overflow: hidden;
-    border: 4px solid #94c11f;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 3px solid #bfa046;
 }
 
 .photo-frame img {
@@ -74,8 +76,36 @@ h1 {
 }
 
 .subtitle {
-    color: #94c11f;
+    color: #bfa046;
     font-weight: 600;
+}
+
+/* CTA BUTTONS */
+.cta {
+    margin-top: 15px;
+}
+
+.cta a {
+    text-decoration: none;
+    padding: 10px 18px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.view-btn {
+    background: #bfa046;
+    color: white;
+}
+
+.download-btn {
+    border: 2px solid #bfa046;
+    color: #bfa046;
+}
+
+.cta a:hover {
+    opacity: 0.85;
 }
 
 /* STATS */
@@ -87,10 +117,8 @@ h1 {
 
 .stat-box {
     background: white;
-    padding: 14px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    text-align: center;
+    padding: 12px 18px;
+    border-radius: 10px;
 }
 
 /* SECTIONS */
@@ -99,57 +127,16 @@ section {
     margin: 20px;
     background: white;
     border-radius: 14px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* TIMELINE */
 .timeline {
-    position: relative;
-    margin-top: 20px;
+    border-left: 2px solid #bfa046;
     padding-left: 20px;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 8px;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #94c11f;
 }
 
 .exp {
-    position: relative;
-    margin-bottom: 25px;
-    padding-left: 20px;
-}
-
-.exp::before {
-    content: "";
-    position: absolute;
-    left: -3px;
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    background: #94c11f;
-    border-radius: 50%;
-}
-
-/* SKILLS */
-.skills span {
-    display: inline-block;
-    background: #e8f5d0;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 /* MOBILE */
@@ -166,7 +153,6 @@ section.show {
 
 <nav>
 <a href="#summary">Summary</a>
-<a href="#achievements">Achievements</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Expertise</a>
 <a href="#education">Education</a>
@@ -182,115 +168,43 @@ section.show {
 <p class="subtitle">HR Leader | Strategic People Partner</p>
 <p>Chennai | beingjanani@gmail.com</p>
 
-<div class="stats">
-<div class="stat-box"><h3 class="counter" data-target="13">0</h3><p>Years</p></div>
-<div class="stat-box"><h3 class="counter" data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 class="counter" data-target="3">0</h3><p>Organizations</p></div>
+<div class="cta">
+<a href="janani_resume.pdf" target="_blank" class="view-btn">View Resume</a>
+<a href="janani_resume.pdf" download class="download-btn">Download Resume</a>
 </div>
+
+<div class="stats">
+<div class="stat-box"><h3>13+</h3><p>Years</p></div>
+<div class="stat-box"><h3>300+</h3><p>Hires</p></div>
+<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
+</div>
+
 </div>
 </header>
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness.</p>
-</section>
-
-<section id="achievements">
-<h2>Key Achievements</h2>
-<ul>
-<li>Delivered 300+ hires across functions</li>
-<li>Aligned workforce strategy with leadership goals</li>
-<li>Improved retention and engagement</li>
-</ul>
+<p>HR Leader driving workforce strategy, talent acquisition, and business alignment.</p>
 </section>
 
 <section id="experience">
-<h2>Professional Experience</h2>
-
+<h2>Experience</h2>
 <div class="timeline">
-
-<div class="exp">
-<h3>HR Manager</h3>
-<p>Ola Electric</p>
+<div class="exp"><b>Ola Electric</b> – HR Manager</div>
+<div class="exp"><b>Salcomp</b> – HRBP</div>
+<div class="exp"><b>Nokia</b> – HR Executive</div>
 </div>
-
-<div class="exp">
-<h3>HR Business Partner</h3>
-<p>Salcomp</p>
-</div>
-
-<div class="exp">
-<h3>HR Executive</h3>
-<p>Nokia</p>
-</div>
-
-</div>
-
 </section>
 
 <section id="skills">
-<h2>Core Expertise</h2>
-<div class="skills">
-<span>HRBP</span>
-<span>Talent Acquisition</span>
-<span>Workforce Planning</span>
-<span>Compensation</span>
-</div>
+<h2>Expertise</h2>
+<p>HRBP | Talent | Workforce Planning | Compensation</p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
 <p>MSW | BSW</p>
 </section>
-
-<script>
-const links = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("section");
-
-/* NAV SCROLL */
-window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        if (window.scrollY >= top) current = section.id;
-    });
-
-    links.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
-});
-
-/* ANIMATION */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-});
-sections.forEach(sec => observer.observe(sec));
-
-/* COUNTER */
-const counters = document.querySelectorAll(".counter");
-const speed = 100;
-
-counters.forEach(counter => {
-    const update = () => {
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
-        const inc = target / speed;
-
-        if(count < target){
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(update, 20);
-        } else {
-            counter.innerText = target + "+";
-        }
-    };
-    update();
-});
-</script>
 
 </body>
 </html>
