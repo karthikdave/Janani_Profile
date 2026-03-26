@@ -40,18 +40,31 @@ nav a {
 header {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
     padding: 40px;
 }
 
-header img {
-    width: 150px;
-    height: 150px;
+/* 🔥 PERFECT PHOTO FRAME */
+.photo-frame {
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
-    object-fit: cover;
+    background: #e8f5d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 4px solid #94c11f;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* TEXT */
 h1 {
     font-family: 'Montserrat';
     margin: 0;
@@ -98,6 +111,12 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     background: #fafafa;
+    transition: 0.3s;
+}
+
+.exp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 .exp h3 {
@@ -149,7 +168,11 @@ ul {
 </nav>
 
 <header>
-<img src="janani_profile.jpg">
+
+<div class="photo-frame">
+    <img src="janani_profile.jpg">
+</div>
+
 <div>
 <h1>Janani Balasubramanian</h1>
 <p class="subtitle">HR Leader | Strategic People Partner</p>
@@ -178,18 +201,18 @@ ul {
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments. Proven ability to scale teams, strengthen retention, and align HR initiatives with business goals. Recognized for partnering with leadership to build high-performing, people-centric organizations.
+HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments. Proven ability to scale teams, strengthen retention, and align HR initiatives with business goals.
 </p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Led hiring of 300+ employees across multiple business functions</li>
-<li>Partnered with leadership on workforce planning for rapid organizational scale</li>
-<li>Strengthened employee retention through structured engagement initiatives</li>
-<li>Designed and implemented HR policies and compliance frameworks</li>
-<li>Enabled performance-driven culture through goal setting and evaluation systems</li>
+<li>Led hiring of 300+ employees across multiple functions</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Strengthened retention through engagement initiatives</li>
+<li>Designed HR policies and compliance frameworks</li>
+<li>Enabled performance-driven culture</li>
 </ul>
 </section>
 
@@ -200,13 +223,13 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Manager</h3>
 <p>Ola Electric</p>
 <ul>
-<li>Designed and managed competitive compensation and benefits frameworks</li>
-<li>Led joining bonus, retention, and incentive strategy implementation</li>
-<li>Developed and enforced HR policies ensuring organizational compliance</li>
-<li>Monitored workforce performance and productivity metrics</li>
-<li>Enabled managers through structured goal setting and performance reviews</li>
-<li>Planned manpower requirements aligned with business growth</li>
-<li>Drove organizational change management initiatives</li>
+<li>Designed compensation and benefits frameworks</li>
+<li>Managed retention and incentive strategies</li>
+<li>Developed HR policies and compliance</li>
+<li>Monitored workforce productivity</li>
+<li>Supported performance management</li>
+<li>Planned manpower aligned to business needs</li>
+<li>Drove change management initiatives</li>
 </ul>
 </div>
 
@@ -214,9 +237,9 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Business Partner</h3>
 <p>Salcomp</p>
 <ul>
-<li>Collaborated with leadership on workforce and talent strategy</li>
-<li>Led large-scale hiring and onboarding programs</li>
-<li>Improved engagement and retention across teams</li>
+<li>Partnered with leadership on workforce strategy</li>
+<li>Led hiring and onboarding initiatives</li>
+<li>Improved engagement and retention</li>
 </ul>
 </div>
 
@@ -224,8 +247,8 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Executive</h3>
 <p>Nokia</p>
 <ul>
-<li>Managed end-to-end employee lifecycle processes</li>
-<li>Supported HR operations, compliance, and reporting</li>
+<li>Managed employee lifecycle processes</li>
+<li>Supported HR operations and compliance</li>
 </ul>
 </div>
 
