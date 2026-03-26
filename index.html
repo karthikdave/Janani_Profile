@@ -35,6 +35,7 @@ nav a {
     font-weight: 600;
     color: #222;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
 nav a.active {
@@ -67,18 +68,15 @@ header {
     object-position: center top;
 }
 
-/* SECTIONS */
-section {
-    padding: 40px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
-    scroll-margin-top: 100px; /* 🔥 FIX */
+/* TEXT */
+h1 {
+    font-family: 'Montserrat';
+    margin: 0;
 }
 
-h2 {
-    border-left: 4px solid #94c11f;
-    padding-left: 10px;
+.subtitle {
+    color: #94c11f;
+    font-weight: 600;
 }
 
 /* STATS */
@@ -92,16 +90,20 @@ h2 {
     background: white;
     padding: 10px 18px;
     border-radius: 8px;
-    text-align: center;
 }
 
-/* SKILLS */
-.skills span {
-    display: inline-block;
-    background: #e8f5d0;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 6px;
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    min-height: 300px; /* ensures proper scroll */
+}
+
+h2 {
+    border-left: 4px solid #94c11f;
+    padding-left: 10px;
 }
 
 /* MOBILE */
@@ -131,49 +133,52 @@ h2 {
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<p style="color:#94c11f;font-weight:600;">HR Leader | Strategic People Partner</p>
+<p class="subtitle">HR Leader | Strategic People Partner</p>
 
 <div class="stats">
-<div class="stat-box"><h3>13+</h3><p>Years</p></div>
-<div class="stat-box"><h3>300+</h3><p>Hires</p></div>
-<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
+<div class="stat-box"><strong>13+</strong><br>Years</div>
+<div class="stat-box"><strong>300+</strong><br>Hires</div>
+<div class="stat-box"><strong>3+</strong><br>Organizations</div>
 </div>
 </div>
 </header>
 
-<section id="summary"><h2>Executive Summary</h2></section>
-<section id="achievements"><h2>Key Achievements</h2></section>
-<section id="experience"><h2>Professional Experience</h2></section>
-<section id="skills"><h2>Core Expertise</h2></section>
-<section id="education"><h2>Education</h2></section>
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>Strategic HR Leader with 13+ years of experience...</p>
+</section>
+
+<section id="achievements">
+<h2>Key Achievements</h2>
+<ul>
+<li>300+ hires delivered</li>
+<li>Workforce strategy alignment</li>
+<li>Retention improvement</li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<p>Ola Electric | Salcomp | Nokia</p>
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<p>HRBP | Talent | Workforce Planning | Performance</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p>MSW | BSW</p>
+</section>
 
 <script>
 const links = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-
-    /* 🔥 FIX: Bottom detection */
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
-        links.forEach(link => link.classList.remove("active"));
-        links[links.length - 1].classList.add("active");
-        return;
-    }
-
-    let current = "";
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    links.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
+links.forEach(link => {
+    link.addEventListener("click", function () {
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
     });
 });
 </script>
