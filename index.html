@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Janani Balasubramanian | HR Leader</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
@@ -101,6 +100,27 @@ h1 {
     text-align: center;
 }
 
+/* RESUME BUTTONS */
+.resume-buttons a {
+    background:#94c11f;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    margin-right:10px;
+    transition: 0.3s;
+}
+.resume-buttons a:hover {
+    background:#7da814;
+}
+.resume-buttons a.download {
+    background:#222;
+}
+.resume-buttons a.download:hover {
+    background:#111;
+}
+
 /* SECTIONS */
 section {
     padding: 30px;
@@ -122,49 +142,25 @@ h2 {
     padding-left: 10px;
 }
 
-/* EXPERIENCE */
+/* EXPERIENCE TIMELINE */
 .timeline {
-    position: relative;
+    border-left: 3px solid #94c11f;
     margin-left: 20px;
-    padding-left: 20px;
+    padding-left: 15px;
 }
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #94c11f;
-}
-
-.timeline-item {
-    margin-bottom: 25px;
+.timeline .exp {
     position: relative;
-    padding-left: 20px;
+    margin-bottom: 25px;
 }
-
-.timeline-item::before {
+.timeline .exp::before {
     content: '';
     position: absolute;
-    left: -10px;
+    left: -9px;
     top: 5px;
-    width: 12px;
-    height: 12px;
-    background: #94c11f;
-    border-radius: 50%;
-}
-
-.exp-content {
-    background: #fafafa;
-    padding: 15px 20px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.exp-content:hover {
-    transform: translateY(-5px);
+    width: 16px;
+    height: 16px;
+    background:#94c11f;
+    border-radius:50%;
 }
 
 /* SKILLS */
@@ -202,7 +198,7 @@ h2 {
 
 <header>
 <div class="photo-frame">
-<img src="janani_profile.jpg" alt="Janani Profile">
+<img src="janani_profile.jpg">
 </div>
 
 <div>
@@ -215,6 +211,12 @@ h2 {
 <div class="stat-box" data-target="300"><h3>0</h3><p>Hires</p></div>
 <div class="stat-box" data-target="3"><h3>0</h3><p>Organizations</p></div>
 </div>
+
+<div class="resume-buttons" style="margin-top:15px;">
+<a href="Janani_Resume.pdf" target="_blank">View Resume</a>
+<a href="Janani_Resume.pdf" download class="download">Download Resume</a>
+</div>
+
 </div>
 </header>
 
@@ -237,43 +239,38 @@ h2 {
 <section id="experience">
 <h2>Professional Experience</h2>
 <div class="timeline">
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>HR Manager</h3>
-      <p>Ola Electric | 2020 - Present</p>
-      <ul>
-        <li>Compensation & benefits strategy</li>
-        <li>Retention and incentive planning</li>
-        <li>HR policies and compliance</li>
-        <li>Performance and productivity tracking</li>
-        <li>Manpower planning with leadership</li>
-        <li>Change management initiatives</li>
-      </ul>
-    </div>
-  </div>
+<!-- Latest on top -->
+<div class="exp">
+<h3>HR Manager | Ola Electric</h3>
+<p>2021 – Present</p>
+<ul>
+<li>Compensation & benefits strategy</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
+<li>Performance and productivity tracking</li>
+<li>Manpower planning with leadership</li>
+<li>Change management initiatives</li>
+</ul>
+</div>
 
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>HR Business Partner</h3>
-      <p>Salcomp | 2016 - 2020</p>
-      <ul>
-        <li>Workforce planning</li>
-        <li>Hiring & onboarding</li>
-        <li>Employee engagement</li>
-      </ul>
-    </div>
-  </div>
+<div class="exp">
+<h3>HR Business Partner | Salcomp</h3>
+<p>2017 – 2021</p>
+<ul>
+<li>Workforce planning</li>
+<li>Hiring & onboarding</li>
+<li>Employee engagement</li>
+</ul>
+</div>
 
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>HR Executive</h3>
-      <p>Nokia | 2013 - 2016</p>
-      <ul>
-        <li>Employee lifecycle management</li>
-        <li>HR operations support</li>
-      </ul>
-    </div>
-  </div>
+<div class="exp">
+<h3>HR Executive | Nokia</h3>
+<p>2013 – 2017</p>
+<ul>
+<li>Employee lifecycle management</li>
+<li>HR operations support</li>
+</ul>
+</div>
 </div>
 </section>
 
@@ -291,26 +288,8 @@ h2 {
 
 <section id="education">
 <h2>Education</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>PhD HRM</h3>
-      <p>ABC University | 2022 - 2025</p>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>MSW</h3>
-      <p>XYZ University | 2011 - 2013</p>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="exp-content">
-      <h3>BSW</h3>
-      <p>LMN University | 2008 - 2011</p>
-    </div>
-  </div>
-</div>
+<p>MSW | BSW | PHDHRM</p>
+<p>PhD in Human Resource Management with timeline of completion: 2019 – 2022</p>
 </section>
 
 <script>
