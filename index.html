@@ -110,6 +110,12 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     text-align: center;
     min-width: 80px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 /* SECTIONS */
@@ -146,7 +152,7 @@ h2 {
 
 .exp:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* SKILLS */
@@ -157,6 +163,12 @@ h2 {
     margin: 5px;
     border-radius: 6px;
     font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills span:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 /* BUTTONS */
@@ -237,9 +249,9 @@ h2 {
 <p>Chennai | beingjanani@gmail.com</p>
 
 <div class="stats">
-<div class="stat-box"><h3>13+</h3><p>Years</p></div>
-<div class="stat-box"><h3>800+</h3><p>Hires</p></div>
-<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
+<div class="stat-box" data-target="13"><h3>0</h3><p>Years</p></div>
+<div class="stat-box" data-target="800"><h3>0</h3><p>Hires</p></div>
+<div class="stat-box" data-target="3"><h3>0</h3><p>Organizations</p></div>
 </div>
 
 <div class="btn-container">
@@ -367,6 +379,34 @@ const observer = new IntersectionObserver(entries => {
 }, {threshold:0.1});
 
 sections.forEach(sec => observer.observe(sec));
+
+/* STATS COUNT-UP */
+const statBoxes = document.querySelectorAll('.stat-box h3');
+let statsAnimated = false;
+
+function animateStats() {
+    if(statsAnimated) return;
+    const statsSection = document.querySelector('#summary');
+    const sectionTop = statsSection.offsetTop - window.innerHeight + 100;
+    if(window.scrollY > sectionTop){
+        statBoxes.forEach(box => {
+            let target = parseInt(box.parentElement.getAttribute('data-target'));
+            let count = 0;
+            let step = Math.ceil(target/100);
+            let interval = setInterval(() => {
+                count += step;
+                if(count >= target) {
+                    box.textContent = target;
+                    clearInterval(interval);
+                } else box.textContent = count;
+            }, 20);
+        });
+        statsAnimated = true;
+    }
+}
+
+window.addEventListener('scroll', animateStats);
+window.addEventListener('load', animateStats);
 </script>
 
 </body>
