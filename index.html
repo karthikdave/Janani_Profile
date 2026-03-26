@@ -14,6 +14,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to bottom, #f5f7f6, #eef2ec);
     color: #222;
+    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -33,6 +34,7 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #222;
+    padding-bottom: 5px;
 }
 
 nav a.active {
@@ -40,7 +42,7 @@ nav a.active {
     border-bottom: 2px solid #bfa046;
 }
 
-/* HERO GLASS */
+/* HERO */
 header {
     display: flex;
     align-items: center;
@@ -51,6 +53,20 @@ header {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HERO ANIMATION */
+header {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* PHOTO */
@@ -80,7 +96,7 @@ h1 {
     font-weight: 600;
 }
 
-/* CTA BUTTONS */
+/* CTA */
 .cta {
     margin-top: 15px;
 }
@@ -91,7 +107,6 @@ h1 {
     margin-right: 10px;
     border-radius: 8px;
     font-weight: 600;
-    transition: 0.3s;
 }
 
 .view-btn {
@@ -102,10 +117,6 @@ h1 {
 .download-btn {
     border: 2px solid #bfa046;
     color: #bfa046;
-}
-
-.cta a:hover {
-    opacity: 0.85;
 }
 
 /* STATS */
@@ -127,6 +138,14 @@ section {
     margin: 20px;
     background: white;
     border-radius: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* TIMELINE */
@@ -174,9 +193,9 @@ section {
 </div>
 
 <div class="stats">
-<div class="stat-box"><h3>13+</h3><p>Years</p></div>
-<div class="stat-box"><h3>300+</h3><p>Hires</p></div>
-<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
+<div class="stat-box"><h3 class="counter" data-target="13">0</h3><p>Years</p></div>
+<div class="stat-box"><h3 class="counter" data-target="300">0</h3><p>Hires</p></div>
+<div class="stat-box"><h3 class="counter" data-target="3">0</h3><p>Organizations</p></div>
 </div>
 
 </div>
@@ -205,6 +224,61 @@ section {
 <h2>Education</h2>
 <p>MSW | BSW</p>
 </section>
+
+<script>
+const links = document.querySelectorAll("nav a");
+const sections = document.querySelectorAll("section");
+
+/* SCROLL NAV FIX */
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+            current = section.id;
+        }
+    });
+
+    links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
+/* SECTION ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach(sec => observer.observe(sec));
+
+/* COUNTER */
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+
+    const update = () => {
+        count += Math.ceil(target / 50);
+        if (count < target) {
+            counter.innerText = count;
+            setTimeout(update, 30);
+        } else {
+            counter.innerText = target + "+";
+        }
+    };
+
+    update();
+});
+</script>
 
 </body>
 </html>
