@@ -6,53 +6,219 @@
     <title>Janani Balasubramanian | HR Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #1a1a1a; --accent: #94c11f; --text: #333; --light: #f9f9f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; background: var(--light); }
-        .container { max-width: 900px; margin: 20px auto; background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
-        header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
-        h1 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; }
-        .contact-info { margin-top: 15px; font-size: 1em; }
-        .btn-container { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9em; }
+        :root {
+            --primary: #1a1a1a;
+            --accent: #94c11f;
+            --text: #333;
+            --light: #f9f9f9;
+            --section-bg: #f8f9f5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 2px solid var(--accent);
+            z-index: 100;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 0.95em;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-container {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
         .btn-primary { background: var(--accent); color: white; }
         .btn-secondary { background: var(--primary); color: white; }
-        .btn:hover { opacity: 0.8; transform: translateY(-1px); }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.1em; margin-top: 30px; letter-spacing: 1px; }
-        .job { margin-bottom: 30px; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--section-bg);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .job { margin-bottom: 25px; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+        }
+
         .company-name { font-weight: bold; color: var(--primary); font-size: 1.15em; }
         .duration { color: #666; font-size: 0.85em; font-weight: 600; }
         .role-title { color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; font-size: 1em; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-        .skill-item { background: #f8faf5; border: 1px solid #eef2e8; padding: 8px 12px; border-radius: 4px; font-size: 0.85em; text-align: center; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: white;
+            border: 1px solid #eef2e8;
+            padding: 10px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
-        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .job-header { flex-direction: column; } .btn-container { flex-direction: column; } }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 10px; }
+            .job-header { flex-direction: column; }
+            .btn-container { flex-direction: column; }
+            header { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
 
+<!-- Sticky Navigation -->
+<nav>
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Expertise</a>
+    <a href="#education">Education</a>
+</nav>
+
 <div class="container">
     <header>
-        <h1>Janani Balasubramanian</h1>
-        <p><strong>Human Resource Manager</strong></p>
-        <div class="contact-info">
-            <span><i class="fas fa-envelope"></i> beingjanani@gmail.com</span>
-            <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
-        </div>
-        
-        <div class="btn-container">
-            <a href="Janani_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View Full Resume</a>
-            <a href="Janani_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download PDF</a>
+        <img src="janani_photo.jpg" alt="Janani Balasubramanian Photo">
+        <div>
+            <h1>Janani Balasubramanian</h1>
+            <p>Human Resource Manager</p>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> beingjanani@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/janani" target="_blank">LinkedIn</a></span>
+            </div>
+
+            <div class="btn-container">
+                <a href="Janani_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View Full Resume</a>
+                <a href="Janani_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download PDF</a>
+            </div>
         </div>
     </header>
 
-    <section>
+    <!-- Professional Summary -->
+    <section id="summary">
         <h2>Professional Summary</h2>
-        <p>Strategic and Versatile Human Resource Manager [cite: 3, 40] with 13+ years of experience [cite: 9] specializing in driving organizational development, talent acquisition, and business partnership within high-growth technology and manufacturing sectors[cite: 33, 47]. Proven ability to lead high-performing teams, influence change at all levels, and maintain excellence in fast-paced environments[cite: 37, 39, 40].</p>
+        <p>Strategic HR Manager with 13+ years of experience driving talent acquisition, employee engagement, and organizational development in high-growth tech and manufacturing sectors. Skilled in leading high-performing teams, influencing change, and executing impactful HR initiatives in fast-paced environments.</p>
     </section>
 
-    <section>
+    <!-- Professional Experience -->
+    <section id="experience">
         <h2>Professional Experience</h2>
 
         <div class="job">
@@ -62,10 +228,10 @@
             </div>
             <span class="role-title">Manager - Human Resources</span>
             <ul>
-                <li>Spearheading HR business partnering for technology and manufacturing verticals to drive organizational scalability.</li>
-                <li>Developing high-impact talent acquisition strategies to secure niche engineering and R&D talent in the EV sector.</li>
-                <li>Implementing robust performance management systems and career development frameworks for a diverse workforce.</li>
-                <li>Leading cultural integration and employee engagement initiatives to build a high-morale, multi-cultural environment.</li>
+                <li>Lead HR business partnering for technology and manufacturing verticals to scale organization effectively.</li>
+                <li>Develop high-impact talent acquisition strategies for niche engineering and R&D roles in EV sector.</li>
+                <li>Implement performance management systems and career development frameworks for diverse workforce.</li>
+                <li>Drive cultural integration and employee engagement initiatives to enhance morale.</li>
             </ul>
         </div>
 
@@ -76,10 +242,10 @@
             </div>
             <span class="role-title">Deputy Manager - HRBP</span>
             <ul>
-                <li>Managed end-to-end recruitment lifecycle for Global R&D, focusing on niche skills in PD, EE, and FA[cite: 46, 47, 48].</li>
-                <li>Partnered with BU Heads on Performance Management Systems and served as a focal point for employee engagement initiatives[cite: 53, 56].</li>
-                <li>Drove cost optimization within business units and supported internal/external audits[cite: 55, 56].</li>
-                <li>Created additional inputs for HRMS templates to streamline data tracking[cite: 104].</li>
+                <li>Managed end-to-end recruitment lifecycle for Global R&D with focus on niche skills in PD, EE, FA.</li>
+                <li>Partnered with BU Heads on Performance Management Systems and employee engagement initiatives.</li>
+                <li>Drove cost optimization and supported internal/external audits.</li>
+                <li>Streamlined HRMS templates to improve data tracking and reporting.</li>
             </ul>
         </div>
 
@@ -90,32 +256,34 @@
             </div>
             <span class="role-title">Senior Executive - HR</span>
             <ul>
-                <li>Functioned as the SPOC for employee relationship management, including absenteeism, attrition, and retention[cite: 68].</li>
-                <li>Executed quarterly town halls, R&R programs, and annual success meets[cite: 70].</li>
-                <li>Designed and delivered e-learning courses and workshops to facilitate learning opportunities[cite: 71, 72].</li>
-                <li>Awarded "Best Employee Relation" within the Nokia bridge program[cite: 106].</li>
+                <li>Served as SPOC for employee relations, absenteeism, attrition, and retention.</li>
+                <li>Executed town halls, recognition programs, and annual success meets.</li>
+                <li>Designed and delivered e-learning courses and workshops to facilitate learning opportunities.</li>
+                <li>Recognized with "Best Employee Relation" award under Nokia Bridge Program.</li>
             </ul>
         </div>
     </section>
 
-    <section>
+    <!-- Key Expertise -->
+    <section id="skills">
         <h2>Key Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-item">HR Business Partnering [cite: 44]</div>
-            <div class="skill-item">Talent Acquisition (R&D/Global) [cite: 47]</div>
-            <div class="skill-item">Employee Relations [cite: 106]</div>
-            <div class="skill-item">Learning & Development [cite: 72]</div>
-            <div class="skill-item">HRMS & Policy Design [cite: 51, 62]</div>
-            <div class="skill-item">Performance Management [cite: 56]</div>
+            <div class="skill-item">HR Business Partnering</div>
+            <div class="skill-item">Talent Acquisition (R&D/Global)</div>
+            <div class="skill-item">Employee Relations</div>
+            <div class="skill-item">Learning & Development</div>
+            <div class="skill-item">HRMS & Policy Design</div>
+            <div class="skill-item">Performance Management</div>
         </div>
     </section>
 
-    <section>
+    <!-- Education -->
+    <section id="education">
         <h2>Education</h2>
         <ul>
-            <li><strong>PGDHRM</strong> | Alagappa University, Karaikudi (2011) [cite: 16, 17]</li>
-            <li><strong>Master of Social Work (MSW)</strong> | Cauvery College, Trichy (2008) [cite: 18, 19]</li>
-            <li><strong>Bachelor of Social Work (BSW)</strong> | Cauvery College, Trichy (2006) [cite: 20, 21]</li>
+            <li><strong>PGDHRM</strong> | Alagappa University, Karaikudi (2011)</li>
+            <li><strong>Master of Social Work (MSW)</strong> | Cauvery College, Trichy (2008)</li>
+            <li><strong>Bachelor of Social Work (BSW)</strong> | Cauvery College, Trichy (2006)</li>
         </ul>
     </section>
 </div>
