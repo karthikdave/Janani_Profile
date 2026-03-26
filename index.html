@@ -36,7 +36,6 @@ nav a {
     font-weight: 600;
     color: #222;
     padding-bottom: 5px;
-    transition: 0.3s;
 }
 
 nav a.active {
@@ -60,18 +59,14 @@ header {
     overflow: hidden;
     border: 4px solid #94c11f;
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-    transition: 0.4s;
 }
 
-.photo-frame:hover {
-    transform: translateY(-6px) scale(1.05);
-}
-
+/* IMAGE FIX (NO CUT) */
 .photo-frame img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    background: #fff;
 }
 
 /* TEXT */
@@ -101,8 +96,9 @@ h1 {
 
 /* SECTIONS */
 section {
-    padding: 30px;
-    margin: 20px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 1000px;
     background: white;
     border-radius: 12px;
     opacity: 0;
@@ -126,11 +122,6 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     background: #fafafa;
-    transition: 0.3s;
-}
-
-.exp:hover {
-    transform: translateY(-5px);
 }
 
 /* SKILLS */
@@ -182,26 +173,65 @@ h2 {
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>HR Leader with 13+ years of experience...</p>
+<p>
+Strategic HR Leader with 13+ years of experience driving workforce transformation, talent strategy, and organizational effectiveness across manufacturing and technology environments.
+</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>300+ hires delivered</li>
-<li>Workforce strategy alignment</li>
-<li>Retention improvement</li>
+<li>Successfully delivered 300+ strategic hires</li>
+<li>Strengthened workforce planning with leadership</li>
+<li>Improved retention and engagement initiatives</li>
+<li>Enabled performance-driven HR culture</li>
 </ul>
 </section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
-<p>Ola Electric | Salcomp | Nokia</p>
+
+<div class="exp">
+<h3>Ola Electric</h3>
+<ul>
+<li>Compensation & benefits strategy</li>
+<li>Retention and incentives planning</li>
+<li>HR policy & compliance governance</li>
+<li>Performance and productivity tracking</li>
+<li>Manpower planning with business leaders</li>
+<li>Change management initiatives</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>Salcomp</h3>
+<ul>
+<li>Workforce planning and hiring</li>
+<li>Employee engagement programs</li>
+<li>HR business partnering</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>Nokia</h3>
+<ul>
+<li>Employee lifecycle management</li>
+<li>HR operations support</li>
+</ul>
+</div>
+
 </section>
 
 <section id="skills">
 <h2>Core Expertise</h2>
-<p>HRBP | Talent | Workforce Planning</p>
+<div class="skills">
+<span>HR Business Partnering</span>
+<span>Talent Acquisition</span>
+<span>Workforce Planning</span>
+<span>Compensation & Benefits</span>
+<span>Performance Management</span>
+<span>HR Compliance</span>
+</div>
 </section>
 
 <section id="education">
@@ -213,15 +243,6 @@ h2 {
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
-/* CLICK highlight */
-links.forEach(link => {
-    link.addEventListener("click", function () {
-        links.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-    });
-});
-
-/* SCROLL highlight (FIXED PERFECTLY) */
 window.addEventListener("scroll", () => {
     let current = sections[0].id;
 
@@ -240,7 +261,6 @@ window.addEventListener("scroll", () => {
     });
 });
 
-/* ANIMATION */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
