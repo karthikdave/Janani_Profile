@@ -3,29 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Janani Balasubramanian | HR Leader</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #f0f2f5;
+    background: #f5f7f6;
     color: #222;
     scroll-behavior: smooth;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 15px;
     z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav a {
@@ -47,6 +50,7 @@ header {
     align-items: center;
     gap: 30px;
     padding: 40px;
+    backdrop-filter: blur(6px);
 }
 
 /* PHOTO */
@@ -62,7 +66,6 @@ header {
 
 .photo-frame:hover {
     transform: translateY(-6px) scale(1.05);
-    border-color: #7da814;
 }
 
 .photo-frame img {
@@ -72,7 +75,7 @@ header {
     object-position: center top;
 }
 
-/* HEADER TEXT */
+/* TEXT */
 h1 {
     font-family: 'Montserrat';
     margin: 0;
@@ -91,7 +94,7 @@ h1 {
 }
 
 .stat-box {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.9);
     padding: 12px 18px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
@@ -102,12 +105,11 @@ h1 {
 section {
     padding: 30px;
     margin: 20px;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.95);
     border-radius: 12px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
-    backdrop-filter: blur(5px);
 }
 
 section.show {
@@ -124,14 +126,13 @@ h2 {
 .exp {
     margin-top: 20px;
     padding: 20px;
-    border-radius: 12px;
-    background: rgba(248,250,245,0.9);
+    border-radius: 10px;
+    background: #fafafa;
     transition: 0.3s;
 }
 
 .exp:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 /* SKILLS */
@@ -149,7 +150,6 @@ h2 {
         flex-direction: column;
         text-align: center;
     }
-
     .stats {
         justify-content: center;
         flex-wrap: wrap;
@@ -178,7 +178,7 @@ h2 {
 <p class="subtitle">HR Leader | Strategic People Partner</p>
 <p>Chennai | beingjanani@gmail.com</p>
 
-<div class="stats" data-targets="13,300,3">
+<div class="stats" data-stats>
 <div class="stat-box" data-target="13"><h3>0</h3><p>Years</p></div>
 <div class="stat-box" data-target="300"><h3>0</h3><p>Hires</p></div>
 <div class="stat-box" data-target="3"><h3>0</h3><p>Organizations</p></div>
@@ -188,15 +188,15 @@ h2 {
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across technology and manufacturing sectors.</p>
+<p>HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
 <li>Led hiring of 300+ employees</li>
-<li>Aligned workforce strategy with business goals</li>
-<li>Implemented retention & engagement initiatives</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Improved retention and engagement</li>
 <li>Designed HR policies and compliance frameworks</li>
 <li>Enabled performance-driven culture</li>
 </ul>
@@ -210,9 +210,9 @@ h2 {
 <p>Ola Electric</p>
 <ul>
 <li>Compensation & benefits strategy</li>
-<li>Retention & incentive planning</li>
-<li>HR policies & compliance</li>
-<li>Performance & productivity tracking</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
+<li>Performance and productivity tracking</li>
 <li>Manpower planning with leadership</li>
 <li>Change management initiatives</li>
 </ul>
@@ -236,6 +236,7 @@ h2 {
 <li>HR operations support</li>
 </ul>
 </div>
+
 </section>
 
 <section id="skills">
@@ -256,10 +257,10 @@ h2 {
 </section>
 
 <script>
-/* NAV highlight on scroll */
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
+/* CLICK highlight */
 links.forEach(link => {
     link.addEventListener("click", function () {
         links.forEach(l => l.classList.remove("active"));
@@ -267,6 +268,7 @@ links.forEach(link => {
     });
 });
 
+/* SCROLL highlight */
 window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
@@ -275,26 +277,32 @@ window.addEventListener("scroll", () => {
             current = section.id;
         }
     });
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) current = "education";
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        current = "education";
+    }
 
     links.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
     });
 });
 
-/* SECTION ANIMATION */
+/* ANIMATION */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             entry.target.classList.add("show");
         }
     });
 });
+
 sections.forEach(sec => observer.observe(sec));
 
-/* STATS COUNT-UP */
-const statsSection = document.querySelector('.stats');
+/* STATS COUNT-UP WITH + SYMBOL */
+const statsSection = document.querySelector('[data-stats]');
 const statNumbers = document.querySelectorAll('.stat-box h3');
 let statsAnimated = false;
 
@@ -308,7 +316,7 @@ const statsObserver = new IntersectionObserver(entries => {
                 const interval = setInterval(() => {
                     count += step;
                     if(count >= target){
-                        box.textContent = target;
+                        box.textContent = target + "+";
                         clearInterval(interval);
                     } else box.textContent = count;
                 }, 20);
