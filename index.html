@@ -53,10 +53,7 @@ header {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
 
-/* HERO ANIMATION */
-header {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 0.8s ease forwards;
@@ -130,6 +127,7 @@ h1 {
     background: white;
     padding: 12px 18px;
     border-radius: 10px;
+    text-align: center;
 }
 
 /* SECTIONS */
@@ -138,6 +136,7 @@ section {
     margin: 20px;
     background: white;
     border-radius: 14px;
+
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
@@ -229,16 +228,23 @@ section.show {
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
-/* SCROLL NAV FIX */
+/* NAV SCROLL — FINAL FIX */
 window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        if (window.scrollY >= top) {
+        const top = section.offsetTop - 150;
+        const height = section.offsetHeight;
+
+        if (window.scrollY >= top && window.scrollY < top + height) {
             current = section.id;
         }
     });
+
+    /* LAST SECTION FIX */
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        current = "education";
+    }
 
     links.forEach(link => {
         link.classList.remove("active");
@@ -256,7 +262,6 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 });
-
 sections.forEach(sec => observer.observe(sec));
 
 /* COUNTER */
