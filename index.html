@@ -14,7 +14,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #f5f7f6;
     color: #222;
-    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -44,19 +43,23 @@ header {
     padding: 40px;
 }
 
-/* 🔥 PERFECT PHOTO (NO CUT EVER) */
+/* 🔥 PERFECT CIRCLE WITHOUT CROP */
 .photo-frame {
     width: 200px;
-    border-radius: 16px;
+    height: 200px;
+    border-radius: 50%;
+    background: #e8f5d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #94c11f;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    background: white;
 }
 
 .photo-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
 }
 
 /* TEXT */
@@ -92,7 +95,6 @@ section {
     margin: 20px;
     background: white;
     border-radius: 10px;
-    scroll-margin-top: 80px;
 }
 
 h2 {
@@ -106,28 +108,8 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     background: #fafafa;
-    transition: 0.3s;
 }
 
-.exp:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.exp h3 {
-    margin: 0;
-}
-
-.exp p {
-    margin: 5px 0;
-    color: gray;
-}
-
-ul {
-    margin-top: 10px;
-}
-
-/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e8f5d0;
@@ -174,20 +156,9 @@ ul {
 <p>Chennai | beingjanani@gmail.com</p>
 
 <div class="stats">
-<div class="stat-box">
-<h3>13+</h3>
-<p>Years</p>
-</div>
-
-<div class="stat-box">
-<h3>300+</h3>
-<p>Hires</p>
-</div>
-
-<div class="stat-box">
-<h3>3+</h3>
-<p>Organizations</p>
-</div>
+<div class="stat-box"><h3>13+</h3><p>Years</p></div>
+<div class="stat-box"><h3>300+</h3><p>Hires</p></div>
+<div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
 </div>
 
 </div>
@@ -196,16 +167,16 @@ ul {
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.
+HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness.
 </p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Led hiring of 300+ employees across multiple functions</li>
+<li>Led hiring of 300+ employees</li>
 <li>Partnered with leadership on workforce planning</li>
-<li>Strengthened retention through engagement initiatives</li>
+<li>Improved retention and engagement</li>
 <li>Designed HR policies and compliance frameworks</li>
 <li>Enabled performance-driven culture</li>
 </ul>
@@ -218,13 +189,12 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Manager</h3>
 <p>Ola Electric</p>
 <ul>
-<li>Designed compensation and benefits frameworks</li>
-<li>Managed retention and incentive strategies</li>
-<li>Developed HR policies and compliance</li>
-<li>Monitored workforce productivity</li>
-<li>Supported performance management</li>
-<li>Planned manpower aligned to business needs</li>
-<li>Drove change management initiatives</li>
+<li>Compensation & benefits strategy</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
+<li>Performance and productivity tracking</li>
+<li>Manpower planning with leadership</li>
+<li>Change management initiatives</li>
 </ul>
 </div>
 
@@ -232,9 +202,9 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Business Partner</h3>
 <p>Salcomp</p>
 <ul>
-<li>Partnered with leadership on workforce strategy</li>
-<li>Led hiring and onboarding initiatives</li>
-<li>Improved engagement and retention</li>
+<li>Workforce planning</li>
+<li>Hiring & onboarding</li>
+<li>Employee engagement</li>
 </ul>
 </div>
 
@@ -242,8 +212,8 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h3>HR Executive</h3>
 <p>Nokia</p>
 <ul>
-<li>Managed employee lifecycle processes</li>
-<li>Supported HR operations and compliance</li>
+<li>Employee lifecycle management</li>
+<li>HR operations support</li>
 </ul>
 </div>
 
@@ -253,19 +223,17 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <h2>Core Expertise</h2>
 <div class="skills">
 <span>HR Business Partnering</span>
-<span>Workforce Planning</span>
 <span>Talent Acquisition</span>
+<span>Workforce Planning</span>
 <span>Compensation & Benefits</span>
 <span>Performance Management</span>
-<span>Employee Engagement</span>
-<span>HR Policy & Compliance</span>
+<span>HR Compliance</span>
 </div>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<p>Master of Social Work (MSW)</p>
-<p>Bachelor of Social Work (BSW)</p>
+<p>MSW | BSW</p>
 </section>
 
 </body>
