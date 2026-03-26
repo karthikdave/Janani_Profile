@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janani Balasubramanian | HR Professional</title>
+    <title>Janani Balasubramanian | HR Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #2c3e50; --accent: #3498db; --text: #333; --light: #f4f7f6; }
+        :root { --primary: #1a1a1a; --accent: #94c11f; --text: #333; --light: #f9f9f9; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; background: var(--light); }
         .container { max-width: 900px; margin: 20px auto; background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
         header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
         h1 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; }
         .contact-info { margin-top: 15px; font-size: 1em; }
         .btn-container { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9em; }
         .btn-primary { background: var(--accent); color: white; }
         .btn-secondary { background: var(--primary); color: white; }
-        .btn:hover { opacity: 0.8; }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.2em; margin-top: 30px; }
-        .job { margin-bottom: 25px; }
-        .job-title { font-weight: bold; color: var(--primary); display: flex; justify-content: space-between; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .skill-item { background: #eef2f3; padding: 8px 12px; border-radius: 4px; font-size: 0.85em; }
-        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .job-title { flex-direction: column; } .btn-container { flex-direction: column; } }
+        .btn:hover { opacity: 0.8; transform: translateY(-1px); }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.1em; margin-top: 30px; letter-spacing: 1px; }
+        .job { margin-bottom: 30px; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .company-name { font-weight: bold; color: var(--primary); font-size: 1.15em; }
+        .duration { color: #666; font-size: 0.85em; font-weight: 600; }
+        .role-title { color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; font-size: 1em; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+        .skill-item { background: #f8faf5; border: 1px solid #eef2e8; padding: 8px 12px; border-radius: 4px; font-size: 0.85em; text-align: center; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .job-header { flex-direction: column; } .btn-container { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -30,68 +35,54 @@
 <div class="container">
     <header>
         <h1>Janani Balasubramanian</h1>
-        <p><strong>Human Resource Professional</strong></p>
+        <p><strong>Human Resource Manager</strong></p>
         <div class="contact-info">
             <span><i class="fas fa-envelope"></i> beingjanani@gmail.com</span>
             <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
         </div>
         
         <div class="btn-container">
-            <a href="Janani_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View Resume</a>
+            <a href="Janani_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View Full Resume</a>
             <a href="Janani_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download PDF</a>
         </div>
     </header>
 
     <section>
         <h2>Professional Summary</h2>
-        <p>Proactive and Enthusiastic Human Resource Professional offering 13+ years of extensive experience with a passion to lead, inspire, and develop others. [cite: 9] Strategic thinker with a proven track record of successful HR process execution and building relationships at all levels. [cite: 10, 11]</p>
+        <p>Strategic and Versatile Human Resource Manager with 13+ years of experience specializing in driving organizational development, talent acquisition, and business partnership within high-growth technology and manufacturing sectors. Proven ability to lead high-performing teams, influence change at all levels, and maintain excellence in fast-paced environments.</p>
     </section>
 
     <section>
-        <h2>Experience Highlights</h2>
+        <h2>Professional Experience</h2>
+
         <div class="job">
-            <div class="job-title">
-                <span>Salcomp Technologies India | Deputy Manager</span>
-                <span>2020 – Present</span>
+            <div class="job-header">
+                <span class="company-name">Ola Electric Technologies Pvt Ltd</span>
+                <span class="duration">Jan 2026 – Present</span>
             </div>
+            <span class="role-title">Manager - Human Resources</span>
             <ul>
-                <li>Managing end-to-end recruitment for Global R&D and niche skills. [cite: 46, 47]</li>
-                <li>Conducting employee satisfaction surveys and supporting internal/external audits. [cite: 56]</li>
+                <li>Spearheading HR business partnering for technology and manufacturing verticals to drive organizational scalability.</li>
+                <li>Developing high-impact talent acquisition strategies to secure niche engineering and R&D talent in the EV sector.</li>
+                <li>Implementing robust performance management systems and career development frameworks for a diverse workforce.</li>
+                <li>Leading cultural integration and employee engagement initiatives to build a high-morale, multi-cultural environment.</li>
             </ul>
         </div>
+
         <div class="job">
-            <div class="job-title">
-                <span>Nokia India Pvt Ltd | Senior Executive</span>
-                <span>2012 – 2020</span>
+            <div class="job-header">
+                <span class="company-name">Salcomp Technologies India Pvt Ltd</span>
+                <span class="duration">Mar 2020 – Dec 2025</span>
             </div>
+            <span class="role-title">Deputy Manager - HRBP</span>
             <ul>
-                <li>SPOC for employee relationship management issues and objective investigations. [cite: 68, 69]</li>
-                <li>Designed and delivered e-learning courses and workshops. [cite: 72]</li>
+                <li>Managed end-to-end recruitment lifecycle for Global R&D, focusing on niche skills in PD, EE, and FA.</li>
+                <li>Partnered with BU Heads on Performance Management Systems and served as a focal point for employee engagement initiatives.</li>
+                <li>Drove cost optimization within business units and supported internal/external audits.</li>
+                <li>Created additional inputs for HRMS templates to streamline data tracking.</li>
             </ul>
         </div>
-    </section>
 
-    <section>
-        <h2>Special Initiatives & Accolades</h2>
-        <ul>
-            <li>Introduced the <strong>Buddy System</strong> in the workplace. [cite: 103]</li>
-            <li>Initiated Rapport build programs and knowledge sharing sessions. [cite: 102]</li>
-            <li>Awarded <strong>"Best Employee Relation"</strong> in the Nokia bridge program. [cite: 106]</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Key Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Talent Acquisition</div>
-            <div class="skill-item">Employee Engagement</div>
-            <div class="skill-item">Grievance Handling</div>
-            <div class="skill-item">HR Policies & Practices</div>
-            <div class="skill-item">Learning & Development</div>
-            <div class="skill-item">HRIS (HRMS) Management</div>
-        </div>
-    </section>
-</div>
-
-</body>
-</html>
+        <div class="job">
+            <div class="job-header">
+                <span class="
