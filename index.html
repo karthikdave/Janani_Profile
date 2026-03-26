@@ -7,9 +7,7 @@
 <title>Janani Balasubramanian | HR Leader</title>
 
 <link rel="icon" href="janani_profile.jpg">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
@@ -31,7 +29,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s;
 }
 
 /* NAV */
@@ -44,7 +41,6 @@ nav {
     justify-content: center;
     gap: 25px;
     padding: 12px;
-    z-index: 100;
 }
 
 nav a {
@@ -68,7 +64,6 @@ header {
     padding: 30px;
     border-radius: 12px;
     background: var(--card);
-    backdrop-filter: blur(12px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
@@ -81,7 +76,6 @@ header img {
     border: 4px solid var(--accent);
 }
 
-/* TEXT */
 .hero-text h1 {
     font-family: 'Montserrat';
     margin: 0;
@@ -127,6 +121,11 @@ section {
     background: var(--card);
 }
 
+h2 {
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
 /* TIMELINE */
 .timeline {
     border-left: 3px solid var(--accent);
@@ -162,9 +161,7 @@ section {
     background: white;
 }
 
-body.dark .skill {
-    background: #333;
-}
+body.dark .skill { background: #333; }
 
 /* TESTIMONIAL */
 .testimonial {
@@ -174,32 +171,9 @@ body.dark .skill {
     border-radius: 10px;
 }
 
-body.dark .testimonial {
-    background: #333;
-}
+body.dark .testimonial { background: #333; }
 
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    width:80%;
-    height:80%;
-    background:white;
-    margin:5% auto;
-}
-
-.close {
-    float:right;
-    cursor:pointer;
-}
-
-/* FLOAT BUTTON */
+/* FLOAT */
 .float {
     position: fixed;
     bottom: 20px;
@@ -242,9 +216,10 @@ body.dark .testimonial {
 <div class="stats">
 <div class="stat"><h2 id="exp">0</h2><p>Years</p></div>
 <div class="stat"><h2 id="hires">0</h2><p>Hires</p></div>
+<div class="stat"><h2>3+</h2><p>Organizations</p></div>
 </div>
 
-<button class="btn btn-primary" onclick="openModal()">View Resume</button>
+<a href="Janani_Resume.pdf" class="btn btn-primary">View Resume</a>
 <a href="Janani_Resume.pdf" download class="btn btn-primary">Download</a>
 
 </div>
@@ -253,8 +228,18 @@ body.dark .testimonial {
 <section id="summary">
 <h2>Summary</h2>
 <p>
-Strategic HR Leader with 13+ years of experience driving talent strategy, workforce planning, and employee engagement across global organizations. Proven ability to partner with business leaders to scale teams, improve productivity, and deliver measurable business impact.
+HR Leader with 13+ years of experience partnering with business leaders to build, scale, and transform teams. Known for driving high-volume hiring, strengthening employee engagement, and implementing people strategies that directly impact business growth.
 </p>
+</section>
+
+<section>
+<h2>What I Bring</h2>
+<ul>
+<li>Strong HR Business Partnering mindset</li>
+<li>Expertise in workforce planning (RTR) and scaling teams</li>
+<li>Data-driven performance and productivity focus</li>
+<li>Passion for culture, engagement, and people development</li>
+</ul>
 </section>
 
 <section id="experience">
@@ -264,26 +249,25 @@ Strategic HR Leader with 13+ years of experience driving talent strategy, workfo
 <div class="job">
 <strong>Ola Electric</strong>
 <ul>
-<li>Designed and implemented competitive compensation and benefits programs including joining bonuses and retention incentives</li>
-<li>Developed and governed HR policies ensuring compliance</li>
-<li>Monitored employee performance and productivity</li>
-<li>Partnered with leaders for goal setting and evaluations</li>
-<li>Led workforce planning (RTR) with business heads</li>
-<li>Supported change management initiatives</li>
+<li>Designed and implemented compensation & benefits programs including retention incentives</li>
+<li>Improved workforce productivity through structured performance tracking</li>
+<li>Partnered with leadership on goal setting and evaluations</li>
+<li>Led workforce planning (RTR) with department heads</li>
+<li>Supported organization-wide change management initiatives</li>
 </ul>
 </div>
 
 <div class="job">
 <strong>Salcomp</strong>
 <ul>
-<li>Handled global hiring and HRBP strategy</li>
+<li>Led global hiring and HRBP initiatives supporting business growth</li>
 </ul>
 </div>
 
 <div class="job">
 <strong>Nokia</strong>
 <ul>
-<li>Managed employee relations and engagement</li>
+<li>Managed employee relations and engagement programs across teams</li>
 </ul>
 </div>
 
@@ -293,10 +277,11 @@ Strategic HR Leader with 13+ years of experience driving talent strategy, workfo
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
-<div class="skill">HRBP</div>
-<div class="skill">Talent Acquisition</div>
+<div class="skill">HR Business Partnering</div>
+<div class="skill">Workforce Planning</div>
+<div class="skill">Compensation & Benefits</div>
+<div class="skill">Change Management</div>
 <div class="skill">Employee Relations</div>
-<div class="skill">Performance Management</div>
 </div>
 </section>
 
@@ -310,27 +295,21 @@ Strategic HR Leader with 13+ years of experience driving talent strategy, workfo
 
 <section>
 <h2>Testimonials</h2>
-<div class="testimonial">Exceptional HR leader with strong business impact.</div>
-<div class="testimonial">Trusted partner for leadership and hiring strategy.</div>
-<div class="testimonial">Delivered results at scale with quality.</div>
+<div class="testimonial">
+"Janani played a key role in scaling hiring during critical growth phases."<br><strong>– Senior Leader</strong>
+</div>
+<div class="testimonial">
+"Strong HR partner with deep business understanding."<br><strong>– Business Head</strong>
+</div>
 </section>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">✖</span>
-<iframe src="Janani_Resume.pdf" width="100%" height="100%"></iframe>
-</div>
-</div>
-
-<!-- FLOAT -->
-<div class="float" onclick="window.open('https://wa.me/919790956509')">
+<div class="float" onclick="window.open('https://wa.me/91XXXXXXXXXX')">
 <i class="fab fa-whatsapp"></i>
 </div>
 
 <script>
 function toggleDark(){
-    document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
 }
 
 /* typing */
@@ -350,8 +329,8 @@ type();
 let exp=0, hires=0;
 let c=setInterval(()=>{
 if(exp<13){exp++;document.getElementById("exp").innerText=exp+"+";}
-if(hires<800){hires+=40;document.getElementById("hires").innerText=hires+"+";}
-if(exp>=13 && hires>=800) clearInterval(c);
+if(hires<300){hires+=10;document.getElementById("hires").innerText=hires+"+";}
+if(exp>=13 && hires>=300) clearInterval(c);
 },50);
 
 /* testimonials */
@@ -362,16 +341,8 @@ ts.forEach(el=>el.style.display="none");
 ts[t].style.display="block";
 t=(t+1)%ts.length;
 }
-setInterval(showT,3000);
+setInterval(showT,4000);
 showT();
-
-/* modal */
-function openModal(){
-document.getElementById("modal").style.display="block";
-}
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
 </script>
 
 </body>
