@@ -21,7 +21,7 @@ body {
 nav {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
@@ -53,17 +53,6 @@ header {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* PHOTO */
@@ -82,22 +71,7 @@ header {
     object-position: center top;
 }
 
-/* TEXT */
-h1 {
-    font-family: 'Montserrat';
-    margin: 0;
-}
-
-.subtitle {
-    color: #bfa046;
-    font-weight: 600;
-}
-
 /* CTA */
-.cta {
-    margin-top: 15px;
-}
-
 .cta a {
     text-decoration: none;
     padding: 10px 18px;
@@ -116,45 +90,12 @@ h1 {
     color: #bfa046;
 }
 
-/* STATS */
-.stats {
-    display: flex;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.stat-box {
-    background: white;
-    padding: 12px 18px;
-    border-radius: 10px;
-    text-align: center;
-}
-
 /* SECTIONS */
 section {
     padding: 30px;
     margin: 20px;
     background: white;
     border-radius: 14px;
-
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* TIMELINE */
-.timeline {
-    border-left: 2px solid #bfa046;
-    padding-left: 20px;
-}
-
-.exp {
-    margin-bottom: 20px;
 }
 
 /* MOBILE */
@@ -183,40 +124,29 @@ section.show {
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<p class="subtitle">HR Leader | Strategic People Partner</p>
-<p>Chennai | beingjanani@gmail.com</p>
+<p>HR Leader | Strategic People Partner</p>
 
 <div class="cta">
-<a href="Janani_resume.pdf" target="_blank" class="view-btn">View Resume</a>
-<a href="Janani_resume.pdf" download class="download-btn">Download Resume</a>
-</div>
-
-<div class="stats">
-<div class="stat-box"><h3 class="counter" data-target="13">0</h3><p>Years</p></div>
-<div class="stat-box"><h3 class="counter" data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 class="counter" data-target="3">0</h3><p>Organizations</p></div>
+<a href="janani_resume.pdf" target="_blank" class="view-btn">View Resume</a>
+<a href="janani_resume.pdf" download class="download-btn">Download Resume</a>
 </div>
 
 </div>
 </header>
 
 <section id="summary">
-<h2>Executive Summary</h2>
-<p>HR Leader driving workforce strategy, talent acquisition, and business alignment.</p>
+<h2>Summary</h2>
+<p>HR Leader...</p>
 </section>
 
 <section id="experience">
 <h2>Experience</h2>
-<div class="timeline">
-<div class="exp"><b>Ola Electric</b> – HR Manager</div>
-<div class="exp"><b>Salcomp</b> – HRBP</div>
-<div class="exp"><b>Nokia</b> – HR Executive</div>
-</div>
+<p>Ola | Salcomp | Nokia</p>
 </section>
 
 <section id="skills">
 <h2>Expertise</h2>
-<p>HRBP | Talent | Workforce Planning | Compensation</p>
+<p>HRBP | Talent | Workforce</p>
 </section>
 
 <section id="education">
@@ -228,60 +158,14 @@ section.show {
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
-/* NAV SCROLL — FINAL FIX */
+/* BULLETPROOF NAV FIX */
 window.addEventListener("scroll", () => {
-    let current = "";
+    let index = sections.length;
 
-    sections.forEach(section => {
-        const top = section.offsetTop - 150;
-        const height = section.offsetHeight;
+    while(--index && window.scrollY + 120 < sections[index].offsetTop) {}
 
-        if (window.scrollY >= top && window.scrollY < top + height) {
-            current = section.id;
-        }
-    });
-
-    /* LAST SECTION FIX */
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
-        current = "education";
-    }
-
-    links.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
-});
-
-/* SECTION ANIMATION */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
-sections.forEach(sec => observer.observe(sec));
-
-/* COUNTER */
-const counters = document.querySelectorAll(".counter");
-
-counters.forEach(counter => {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
-
-    const update = () => {
-        count += Math.ceil(target / 50);
-        if (count < target) {
-            counter.innerText = count;
-            setTimeout(update, 30);
-        } else {
-            counter.innerText = target + "+";
-        }
-    };
-
-    update();
+    links.forEach(link => link.classList.remove("active"));
+    links[index].classList.add("active");
 });
 </script>
 
