@@ -132,6 +132,7 @@ section {
     margin: 20px;
     background: white;
     border-radius: 10px;
+    scroll-margin-top: 90px;
 }
 
 h2 {
@@ -205,34 +206,98 @@ h2 {
 </div>
 </header>
 
-<section id="summary"><h2>Executive Summary</h2><p>HR Leader with 13+ years...</p></section>
-<section id="achievements"><h2>Key Achievements</h2><ul><li>Led hiring of 300+ employees</li></ul></section>
-<section id="experience"><h2>Professional Experience</h2></section>
-<section id="skills"><h2>Core Expertise</h2></section>
-<section id="education"><h2>Education</h2></section>
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>
+HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.
+</p>
+</section>
 
-<!-- 🔥 FIXED SCRIPT -->
+<section id="achievements">
+<h2>Key Achievements</h2>
+<ul>
+<li>Led hiring of 300+ employees</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Improved retention and engagement</li>
+<li>Designed HR policies and compliance frameworks</li>
+<li>Enabled performance-driven culture</li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+
+<div class="exp">
+<h3>HR Manager</h3>
+<p>Ola Electric</p>
+<ul>
+<li>Compensation & benefits strategy</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
+<li>Performance and productivity tracking</li>
+<li>Manpower planning with leadership</li>
+<li>Change management initiatives</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>HR Business Partner</h3>
+<p>Salcomp</p>
+<ul>
+<li>Workforce planning</li>
+<li>Hiring & onboarding</li>
+<li>Employee engagement</li>
+</ul>
+</div>
+
+<div class="exp">
+<h3>HR Executive</h3>
+<p>Nokia</p>
+<ul>
+<li>Employee lifecycle management</li>
+<li>HR operations support</li>
+</ul>
+</div>
+
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<div class="skills">
+<span>HR Business Partnering</span>
+<span>Talent Acquisition</span>
+<span>Workforce Planning</span>
+<span>Compensation & Benefits</span>
+<span>Performance Management</span>
+<span>HR Compliance</span>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p>MSW | BSW</p>
+</section>
+
 <script>
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === "#" + entry.target.id) {
-                    link.classList.add("active");
-                }
-            });
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
         }
     });
-}, {
-    threshold: 0.6
-});
 
-sections.forEach(section => {
-    observer.observe(section);
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
 });
 </script>
 
