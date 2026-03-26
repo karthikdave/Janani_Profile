@@ -14,13 +14,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #f5f7f6;
     color: #222;
+    scroll-behavior: smooth;
 }
 
 /* NAV */
 nav {
     position: sticky;
     top: 0;
-    background: white;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -34,6 +36,7 @@ nav a {
     font-weight: 600;
     color: #222;
     padding-bottom: 5px;
+    transition: 0.3s;
 }
 
 nav a.active {
@@ -57,14 +60,11 @@ header {
     overflow: hidden;
     border: 4px solid #94c11f;
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-    flex-shrink: 0;
-    transition: all 0.35s ease;
+    transition: 0.4s;
 }
 
 .photo-frame:hover {
-    transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-    border-color: #7da814;
+    transform: translateY(-6px) scale(1.05);
 }
 
 .photo-frame img {
@@ -72,11 +72,6 @@ header {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.35s ease;
-}
-
-.photo-frame:hover img {
-    transform: scale(1.05);
 }
 
 /* TEXT */
@@ -88,7 +83,6 @@ h1 {
 .subtitle {
     color: #94c11f;
     font-weight: 600;
-    margin-top: 5px;
 }
 
 /* STATS */
@@ -100,10 +94,9 @@ h1 {
 
 .stat-box {
     background: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* SECTIONS */
@@ -111,7 +104,15 @@ section {
     padding: 30px;
     margin: 20px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h2 {
@@ -130,16 +131,15 @@ h2 {
 
 .exp:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
+/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e8f5d0;
     padding: 8px 12px;
     margin: 5px;
     border-radius: 6px;
-    font-size: 14px;
 }
 
 /* MOBILE */
@@ -147,11 +147,6 @@ h2 {
     header {
         flex-direction: column;
         text-align: center;
-    }
-
-    .stats {
-        justify-content: center;
-        flex-wrap: wrap;
     }
 }
 </style>
@@ -168,9 +163,8 @@ h2 {
 </nav>
 
 <header>
-
 <div class="photo-frame">
-    <img src="janani_profile.jpg">
+<img src="janani_profile.jpg">
 </div>
 
 <div>
@@ -183,75 +177,31 @@ h2 {
 <div class="stat-box"><h3>300+</h3><p>Hires</p></div>
 <div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
 </div>
-
 </div>
 </header>
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>
-HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.
-</p>
+<p>HR Leader with 13+ years of experience...</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Led hiring of 300+ employees</li>
-<li>Partnered with leadership on workforce planning</li>
-<li>Improved retention and engagement</li>
-<li>Designed HR policies and compliance frameworks</li>
-<li>Enabled performance-driven culture</li>
+<li>300+ hires delivered</li>
+<li>Workforce strategy alignment</li>
+<li>Retention improvement</li>
 </ul>
 </section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
-
-<div class="exp">
-<h3>HR Manager</h3>
-<p>Ola Electric</p>
-<ul>
-<li>Compensation & benefits strategy</li>
-<li>Retention and incentive planning</li>
-<li>HR policies and compliance</li>
-<li>Performance and productivity tracking</li>
-<li>Manpower planning with leadership</li>
-<li>Change management initiatives</li>
-</ul>
-</div>
-
-<div class="exp">
-<h3>HR Business Partner</h3>
-<p>Salcomp</p>
-<ul>
-<li>Workforce planning</li>
-<li>Hiring & onboarding</li>
-<li>Employee engagement</li>
-</ul>
-</div>
-
-<div class="exp">
-<h3>HR Executive</h3>
-<p>Nokia</p>
-<ul>
-<li>Employee lifecycle management</li>
-<li>HR operations support</li>
-</ul>
-</div>
-
+<p>Ola Electric | Salcomp | Nokia</p>
 </section>
 
 <section id="skills">
 <h2>Core Expertise</h2>
-<div class="skills">
-<span>HR Business Partnering</span>
-<span>Talent Acquisition</span>
-<span>Workforce Planning</span>
-<span>Compensation & Benefits</span>
-<span>Performance Management</span>
-<span>HR Compliance</span>
-</div>
+<p>HRBP | Talent | Workforce Planning</p>
 </section>
 
 <section id="education">
@@ -259,16 +209,50 @@ HR Leader with 13+ years of experience driving workforce strategy, talent acquis
 <p>MSW | BSW</p>
 </section>
 
-<!-- ✅ ONLY THIS ADDED -->
 <script>
 const links = document.querySelectorAll("nav a");
+const sections = document.querySelectorAll("section");
 
+/* CLICK highlight */
 links.forEach(link => {
     link.addEventListener("click", function () {
         links.forEach(l => l.classList.remove("active"));
         this.classList.add("active");
     });
 });
+
+/* SCROLL highlight (SAFE) */
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+            current = section.id;
+        }
+    });
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        current = "education";
+    }
+
+    links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
+/* ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach(sec => observer.observe(sec));
 </script>
 
 </body>
