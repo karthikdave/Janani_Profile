@@ -36,6 +36,7 @@ nav a {
     font-weight: 600;
     color: #222;
     padding-bottom: 5px;
+    transition: 0.3s;
 }
 
 nav a.active {
@@ -59,14 +60,18 @@ header {
     overflow: hidden;
     border: 4px solid #94c11f;
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    transition: 0.4s;
 }
 
-/* IMAGE FIX (NO CUT) */
+.photo-frame:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
 .photo-frame img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    background: #fff;
+    object-fit: cover;
+    object-position: center top;
 }
 
 /* TEXT */
@@ -94,11 +99,26 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
+/* RESUME BUTTON */
+#resumeBtn {
+    margin-top: 15px;
+    padding:10px 18px;
+    border:none;
+    background:#94c11f;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition: 0.3s;
+}
+#resumeBtn:hover {
+    background:#7da814;
+}
+
 /* SECTIONS */
 section {
-    padding: 40px;
-    margin: 30px auto;
-    max-width: 1000px;
+    padding: 30px;
+    margin: 20px;
     background: white;
     border-radius: 12px;
     opacity: 0;
@@ -122,6 +142,11 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     background: #fafafa;
+    transition: 0.3s;
+}
+
+.exp:hover {
+    transform: translateY(-5px);
 }
 
 /* SKILLS */
@@ -146,7 +171,7 @@ h2 {
 <body>
 
 <nav>
-<a href="#summary" class="active">Summary</a>
+<a href="#summary">Summary</a>
 <a href="#achievements">Achievements</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Expertise</a>
@@ -168,23 +193,25 @@ h2 {
 <div class="stat-box"><h3>300+</h3><p>Hires</p></div>
 <div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
 </div>
+
+<button id="resumeBtn">View Resume</button>
+
 </div>
 </header>
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>
-Strategic HR Leader with 13+ years of experience driving workforce transformation, talent strategy, and organizational effectiveness across manufacturing and technology environments.
-</p>
+<p>HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Successfully delivered 300+ strategic hires</li>
-<li>Strengthened workforce planning with leadership</li>
-<li>Improved retention and engagement initiatives</li>
-<li>Enabled performance-driven HR culture</li>
+<li>Led hiring of 300+ employees</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Improved retention and engagement</li>
+<li>Designed HR policies and compliance frameworks</li>
+<li>Enabled performance-driven culture</li>
 </ul>
 </section>
 
@@ -192,28 +219,31 @@ Strategic HR Leader with 13+ years of experience driving workforce transformatio
 <h2>Professional Experience</h2>
 
 <div class="exp">
-<h3>Ola Electric</h3>
+<h3>HR Manager</h3>
+<p>Ola Electric</p>
 <ul>
 <li>Compensation & benefits strategy</li>
-<li>Retention and incentives planning</li>
-<li>HR policy & compliance governance</li>
+<li>Retention and incentive planning</li>
+<li>HR policies and compliance</li>
 <li>Performance and productivity tracking</li>
-<li>Manpower planning with business leaders</li>
+<li>Manpower planning with leadership</li>
 <li>Change management initiatives</li>
 </ul>
 </div>
 
 <div class="exp">
-<h3>Salcomp</h3>
+<h3>HR Business Partner</h3>
+<p>Salcomp</p>
 <ul>
-<li>Workforce planning and hiring</li>
-<li>Employee engagement programs</li>
-<li>HR business partnering</li>
+<li>Workforce planning</li>
+<li>Hiring & onboarding</li>
+<li>Employee engagement</li>
 </ul>
 </div>
 
 <div class="exp">
-<h3>Nokia</h3>
+<h3>HR Executive</h3>
+<p>Nokia</p>
 <ul>
 <li>Employee lifecycle management</li>
 <li>HR operations support</li>
@@ -236,22 +266,74 @@ Strategic HR Leader with 13+ years of experience driving workforce transformatio
 
 <section id="education">
 <h2>Education</h2>
-<p>MSW | BSW</p>
+<p>PGDHRM | MSW | BSW</p>
 </section>
+
+<!-- RESUME MODAL -->
+<div id="resumeModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+z-index:2000;
+justify-content:center;
+align-items:center;
+">
+
+<div style="
+width:80%;
+height:80%;
+background:white;
+border-radius:10px;
+overflow:hidden;
+position:relative;
+">
+
+<button onclick="closeResume()" style="
+position:absolute;
+top:10px;
+right:15px;
+border:none;
+background:red;
+color:white;
+padding:6px 10px;
+cursor:pointer;
+border-radius:5px;
+">X</button>
+
+<iframe src="resume.pdf" style="width:100%; height:100%; border:none;"></iframe>
+
+</div>
+</div>
 
 <script>
 const links = document.querySelectorAll("nav a");
 const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-    let current = sections[0].id;
+/* CLICK highlight */
+links.forEach(link => {
+    link.addEventListener("click", function () {
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
 
+/* SCROLL highlight (SAFE) */
+window.addEventListener("scroll", () => {
+    let current = "";
     sections.forEach(section => {
-        const top = section.offsetTop - 140;
+        const top = section.offsetTop - 120;
         if (window.scrollY >= top) {
             current = section.id;
         }
     });
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        current = "education";
+    }
 
     links.forEach(link => {
         link.classList.remove("active");
@@ -261,6 +343,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
+/* ANIMATION */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -270,6 +353,15 @@ const observer = new IntersectionObserver(entries => {
 });
 
 sections.forEach(sec => observer.observe(sec));
+
+/* RESUME MODAL */
+document.getElementById("resumeBtn").addEventListener("click", function(){
+    document.getElementById("resumeModal").style.display="flex";
+});
+
+function closeResume(){
+    document.getElementById("resumeModal").style.display="none";
+}
 </script>
 
 </body>
