@@ -38,7 +38,6 @@ nav a {
     padding-bottom: 5px;
 }
 
-/* ✨ UNDERLINE HOVER */
 nav a::after {
     content: "";
     position: absolute;
@@ -54,7 +53,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* 🔥 ACTIVE LINK */
 nav a.active {
     color: #94c11f;
 }
@@ -134,7 +132,6 @@ section {
     margin: 20px;
     background: white;
     border-radius: 10px;
-    scroll-margin-top: 80px;
 }
 
 h2 {
@@ -156,7 +153,6 @@ h2 {
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e8f5d0;
@@ -192,7 +188,6 @@ h2 {
 </nav>
 
 <header>
-
 <div class="photo-frame">
     <img src="janani_profile.jpg">
 </div>
@@ -207,103 +202,37 @@ h2 {
 <div class="stat-box"><h3>300+</h3><p>Hires</p></div>
 <div class="stat-box"><h3>3+</h3><p>Organizations</p></div>
 </div>
-
 </div>
 </header>
 
-<section id="summary">
-<h2>Executive Summary</h2>
-<p>
-HR Leader with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology environments.
-</p>
-</section>
+<section id="summary"><h2>Executive Summary</h2><p>HR Leader with 13+ years...</p></section>
+<section id="achievements"><h2>Key Achievements</h2><ul><li>Led hiring of 300+ employees</li></ul></section>
+<section id="experience"><h2>Professional Experience</h2></section>
+<section id="skills"><h2>Core Expertise</h2></section>
+<section id="education"><h2>Education</h2></section>
 
-<section id="achievements">
-<h2>Key Achievements</h2>
-<ul>
-<li>Led hiring of 300+ employees</li>
-<li>Partnered with leadership on workforce planning</li>
-<li>Improved retention and engagement</li>
-<li>Designed HR policies and compliance frameworks</li>
-<li>Enabled performance-driven culture</li>
-</ul>
-</section>
-
-<section id="experience">
-<h2>Professional Experience</h2>
-
-<div class="exp">
-<h3>HR Manager</h3>
-<p>Ola Electric</p>
-<ul>
-<li>Compensation & benefits strategy</li>
-<li>Retention and incentive planning</li>
-<li>HR policies and compliance</li>
-<li>Performance and productivity tracking</li>
-<li>Manpower planning with leadership</li>
-<li>Change management initiatives</li>
-</ul>
-</div>
-
-<div class="exp">
-<h3>HR Business Partner</h3>
-<p>Salcomp</p>
-<ul>
-<li>Workforce planning</li>
-<li>Hiring & onboarding</li>
-<li>Employee engagement</li>
-</ul>
-</div>
-
-<div class="exp">
-<h3>HR Executive</h3>
-<p>Nokia</p>
-<ul>
-<li>Employee lifecycle management</li>
-<li>HR operations support</li>
-</ul>
-</div>
-
-</section>
-
-<section id="skills">
-<h2>Core Expertise</h2>
-<div class="skills">
-<span>HR Business Partnering</span>
-<span>Talent Acquisition</span>
-<span>Workforce Planning</span>
-<span>Compensation & Benefits</span>
-<span>Performance Management</span>
-<span>HR Compliance</span>
-</div>
-</section>
-
-<section id="education">
-<h2>Education</h2>
-<p>MSW | BSW</p>
-</section>
-
-<!-- 🔥 SCROLL ACTIVE SCRIPT -->
+<!-- 🔥 FIXED SCRIPT -->
 <script>
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                    link.classList.add("active");
+                }
+            });
         }
     });
+}, {
+    threshold: 0.6
+});
 
-    navLinks.forEach(a => {
-        a.classList.remove("active");
-        if (a.getAttribute("href").includes(current)) {
-            a.classList.add("active");
-        }
-    });
+sections.forEach(section => {
+    observer.observe(section);
 });
 </script>
 
