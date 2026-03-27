@@ -76,11 +76,9 @@ h1 {
     font-family: 'Montserrat';
 }
 
-/* 🔥 NEW POWER TITLE */
 .hero-title {
     font-size: 22px;
     font-weight: 700;
-    color: #222;
     margin-top: 5px;
 }
 
@@ -90,7 +88,6 @@ h1 {
     max-width: 500px;
 }
 
-/* TAGS */
 .tags {
     margin: 12px 0;
 }
@@ -103,15 +100,8 @@ h1 {
     border-radius: 20px;
     font-size: 12px;
     margin: 5px 5px 0 0;
-    transition: 0.3s;
 }
 
-.tag:hover {
-    background: #94c11f;
-    color: white;
-}
-
-/* STATS */
 .stats {
     display: flex;
     gap: 20px;
@@ -126,7 +116,6 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* SECTIONS */
 section {
     background: white;
     margin: 20px;
@@ -147,20 +136,13 @@ h2 {
     padding-left: 10px;
 }
 
-/* 🔥 SIGNATURE BLOCK */
 .signature {
     background: #f9fbf2;
     border-left: 4px solid #94c11f;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 10px;
 }
 
-.signature li {
-    margin-bottom: 8px;
-}
-
-/* TIMELINE */
 .timeline {
     position: relative;
     padding-left: 30px;
@@ -176,9 +158,9 @@ h2 {
 }
 
 .timeline-item {
-    position: relative;
     margin-bottom: 30px;
     padding-left: 20px;
+    position: relative;
 }
 
 .timeline-item::before {
@@ -192,7 +174,6 @@ h2 {
     border-radius: 50%;
 }
 
-/* BUTTON */
 .resume-btn {
     display: inline-block;
     margin-top: 15px;
@@ -201,14 +182,8 @@ h2 {
     color: white;
     border-radius: 8px;
     text-decoration: none;
-    transition: 0.3s;
 }
 
-.resume-btn:hover {
-    background: #7ea514;
-}
-
-/* MOBILE */
 @media(max-width:600px){
     header {
         flex-direction: column;
@@ -236,21 +211,19 @@ h2 {
 <div>
 <h1>Janani Balasubramanian</h1>
 
-<!-- 🔥 NEW HERO -->
 <div class="hero-title">
 Driving People Strategy That Enables Business Growth
 </div>
 
 <p class="hero-sub">
-HR Manager with 13+ years of experience partnering with business leaders to build high-performing teams, improve retention, and drive measurable outcomes.
+HR Manager with 13+ years of experience partnering with business leaders to build high-performing teams and drive organizational outcomes.
 </p>
 
 <div class="tags">
-<span class="tag">HR Business Partnering</span>
+<span class="tag">HRBP</span>
 <span class="tag">Talent Strategy</span>
 <span class="tag">Workforce Planning</span>
-<span class="tag">Employee Experience</span>
-<span class="tag">HR Compliance</span>
+<span class="tag">Employee Engagement</span>
 </div>
 
 <p>Chennai | beingjanani@gmail.com</p>
@@ -261,27 +234,26 @@ HR Manager with 13+ years of experience partnering with business leaders to buil
 <div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
 
-<a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
+<a class="resume-btn" href="Janani_Balasubramanian_Resume.pdf" target="_blank">Download Resume</a>
 </div>
 </header>
 
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-HR professional with strong experience in aligning people strategy with business goals, enabling performance, and building sustainable HR practices across organizations.
+HR professional experienced in aligning people strategy with business goals, enabling performance, and building sustainable HR practices.
 </p>
 </section>
 
-<!-- 🔥 GAME CHANGER -->
 <section id="impact">
 <h2>How I Create Impact</h2>
 <div class="signature">
 <ul>
-<li>✔ Align people strategy with business goals</li>
-<li>✔ Build scalable hiring and workforce plans</li>
-<li>✔ Improve employee engagement and retention</li>
-<li>✔ Enable managers to perform and lead effectively</li>
-<li>✔ Drive practical and business-focused HR solutions</li>
+<li>Align people strategy with business goals</li>
+<li>Build scalable hiring and workforce plans</li>
+<li>Improve engagement and retention</li>
+<li>Enable managers to perform effectively</li>
+<li>Drive practical HR solutions</li>
 </ul>
 </div>
 </section>
@@ -290,16 +262,18 @@ HR professional with strong experience in aligning people strategy with business
 <h2>Professional Experience</h2>
 <div class="timeline">
 
+<!-- ✅ FIXED OLA SECTION -->
 <div class="timeline-item">
 <h3>HR Manager | Ola Electric</h3>
 <p>Jan 2026 – Present</p>
 <ul>
-<li>Compensation & benefits, retention strategy</li>
-<li>HR policy & compliance</li>
-<li>Performance & productivity tracking</li>
-<li>Manager support & goal setting</li>
-<li>Manpower planning</li>
-<li>Change management</li>
+<li>Ensure competitive compensation and benefits</li>
+<li>Handle joining bonus, retention process incentives</li>
+<li>Develop and update HR policies</li>
+<li>Monitor employee performance and productivity</li>
+<li>Support managers in goal setting and evaluations</li>
+<li>Plan manpower requirements based on RTR with department heads</li>
+<li>Support change management initiatives</li>
 </ul>
 </div>
 
@@ -349,56 +323,48 @@ HR professional with strong experience in aligning people strategy with business
 </section>
 
 <script>
-
-/* SECTION ANIMATION */
 const sections = document.querySelectorAll("section");
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
 });
 sections.forEach(sec => observer.observe(sec));
 
-/* NAV */
 const navLinks = document.querySelectorAll("nav a");
-
 window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        if(window.scrollY >= top){
-            current = section.id;
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("active");
-        }
-    });
+let current = "";
+sections.forEach(section => {
+const top = section.offsetTop - 120;
+if(window.scrollY >= top){
+current = section.id;
+}
+});
+navLinks.forEach(link => {
+link.classList.remove("active");
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
+});
 });
 
-/* STATS */
 window.onload = () => {
-    document.querySelectorAll("[data-target]").forEach(el => {
-        let target = +el.getAttribute("data-target");
-        let count = 0;
-
-        let interval = setInterval(() => {
-            count += Math.ceil(target / 40);
-            if(count >= target){
-                el.innerText = target + "+";
-                clearInterval(interval);
-            } else {
-                el.innerText = count;
-            }
-        }, 30);
-    });
+document.querySelectorAll("[data-target]").forEach(el => {
+let target = +el.getAttribute("data-target");
+let count = 0;
+let interval = setInterval(() => {
+count += Math.ceil(target / 40);
+if(count >= target){
+el.innerText = target + "+";
+clearInterval(interval);
+} else {
+el.innerText = count;
+}
+}, 30);
+});
 };
-
 </script>
 
 </body>
