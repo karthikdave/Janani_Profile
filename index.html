@@ -21,21 +21,19 @@ body {
 nav {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.85);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 15px;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 nav a {
     text-decoration: none;
     font-weight: 600;
     color: #222;
-    padding-bottom: 5px;
     position: relative;
 }
 
@@ -46,11 +44,11 @@ nav a.active {
 nav a.active::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -4px;
     width: 100%;
     height: 2px;
     background: #94c11f;
+    bottom: -4px;
+    left: 0;
 }
 
 /* HERO */
@@ -65,27 +63,15 @@ header {
 .photo-frame {
     width: 150px;
     height: 150px;
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     border: 4px solid #94c11f;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* TEXT */
-h1 {
-    font-family: 'Montserrat';
-    margin: 0;
-}
-
-.subtitle {
-    color: #94c11f;
-    font-weight: 600;
 }
 
 /* STATS */
@@ -96,21 +82,20 @@ h1 {
 }
 
 .stat-box {
-    background: #fff;
-    padding: 14px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* SECTIONS */
 section {
     padding: 30px;
     margin: 20px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    background: white;
+    border-radius: 14px;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: all 0.6s ease;
 }
 
@@ -134,12 +119,13 @@ h2 {
     content: '';
     position: absolute;
     left: 15px;
-    width: 4px;
+    width: 3px;
     height: 100%;
     background: #94c11f33;
 }
 
 .timeline-item {
+    position: relative;
     margin-bottom: 30px;
     padding-left: 20px;
 }
@@ -147,7 +133,8 @@ h2 {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 9px;
+    left: -1px;
+    top: 5px;
     width: 12px;
     height: 12px;
     background: #94c11f;
@@ -158,21 +145,20 @@ h2 {
 .skills span {
     display: inline-block;
     background: #e8f5d0;
-    padding: 8px 14px;
-    margin: 6px;
-    border-radius: 20px;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 6px;
 }
 
-/* RESUME BUTTON */
+/* BUTTON */
 .resume-btn {
     display: inline-block;
-    padding: 12px 22px;
+    padding: 10px 20px;
     margin-top: 15px;
     background: #94c11f;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
 }
 
 /* MOBILE */
@@ -202,7 +188,7 @@ h2 {
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<p class="subtitle">HR Leader | Strategic People Partner</p>
+<p style="color:#94c11f;font-weight:600;">HR Leader | Strategic People Partner</p>
 <p>Chennai | beingjanani@gmail.com</p>
 
 <div class="stats" data-stats>
@@ -217,16 +203,15 @@ h2 {
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>Proactive HR Professional with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness. Strategic partner to leadership with strong focus on performance, engagement, and business outcomes.</p>
+<p>Proactive HR Professional with 13+ years of experience driving workforce strategy and business-aligned HR outcomes.</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Led hiring of 300+ employees</li>
-<li>Improved employee retention and engagement</li>
-<li>Partnered with leadership on workforce planning</li>
-<li>Designed HR policies and compliance frameworks</li>
+<li>300+ hires delivered</li>
+<li>Improved retention & engagement</li>
+<li>Leadership workforce planning partner</li>
 </ul>
 </section>
 
@@ -235,44 +220,18 @@ h2 {
 <div class="timeline">
 
 <div class="timeline-item">
-<h3>HR Manager | Ola Electric Pvt Ltd</h3>
+<h3>HR Manager | Ola Electric</h3>
 <p>Jan 2026 – Present</p>
-<ul>
-<li>Ensure competitive compensation & benefits; handle joining bonus & retention incentives</li>
-<li>Develop & update HR policies & compliance</li>
-<li>Monitor employee performance and productivity</li>
-<li>Support managers in goal setting and evaluations</li>
-<li>Plan manpower requirements with department heads</li>
-<li>Support change management initiatives</li>
-</ul>
 </div>
 
 <div class="timeline-item">
-<h3>Deputy Manager | Salcomp Technologies</h3>
-<p>Mar 2020 – Dec 2025</p>
-<ul>
-<li>End-to-end recruitment lifecycle</li>
-<li>Global hiring for R&D roles</li>
-<li>Employee engagement & retention</li>
-</ul>
+<h3>Deputy Manager | Salcomp</h3>
+<p>2020 – 2025</p>
 </div>
 
 <div class="timeline-item">
 <h3>Senior Executive | Nokia</h3>
-<p>Aug 2012 – Feb 2020</p>
-<ul>
-<li>Employee relations & HR operations</li>
-<li>Training, engagement & CSR initiatives</li>
-</ul>
-</div>
-
-<div class="timeline-item">
-<h3>HR Admin | Arrant HR Solutions</h3>
-<p>Jul 2008 – Mar 2011</p>
-<ul>
-<li>Recruitment & onboarding</li>
-<li>Payroll & HR support</li>
-</ul>
+<p>2012 – 2020</p>
 </div>
 
 </div>
@@ -281,31 +240,88 @@ h2 {
 <section id="skills">
 <h2>Core Expertise</h2>
 <div class="skills">
-<span>HR Business Partnering</span>
+<span>HRBP</span>
 <span>Talent Acquisition</span>
-<span>Compensation & Benefits</span>
-<span>Performance Management</span>
-<span>Employee Engagement</span>
+<span>Performance</span>
 </div>
 </section>
 
 <section id="education">
 <h2>Education</h2>
 <ul>
-<li>PGDHRM | 2011 | Alagappa University</li>
-<li>MSW | 2008 | Cauvery College</li>
-<li>BSW | 2006 | Cauvery College</li>
+<li>PGDHRM</li>
+<li>MSW</li>
+<li>BSW</li>
 </ul>
 </section>
 
 <script>
+
+/* SECTION ANIMATION */
 const sections = document.querySelectorAll("section");
+
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+sections.forEach(sec => observer.observe(sec));
+
+
+/* NAV ACTIVE FIX */
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+            current = section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
     });
 });
-sections.forEach(sec => observer.observe(sec));
+
+
+/* STATS FIX */
+const stats = document.querySelectorAll(".stat-box h3");
+let triggered = false;
+
+window.addEventListener("scroll", () => {
+    const statsSection = document.querySelector("[data-stats]");
+    const top = statsSection.getBoundingClientRect().top;
+
+    if (top < window.innerHeight && !triggered) {
+        stats.forEach(stat => {
+            const target = stat.parentElement.getAttribute("data-target");
+            let count = 0;
+
+            const interval = setInterval(() => {
+                count++;
+
+                if (count >= target) {
+                    stat.textContent = target + "+";
+                    clearInterval(interval);
+                } else {
+                    stat.textContent = count + "+";
+                }
+            }, 20);
+        });
+
+        triggered = true;
+    }
+});
+
 </script>
 
 </body>
