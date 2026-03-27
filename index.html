@@ -100,7 +100,7 @@ h1 {
     text-align: center;
 }
 
-/* SECTIONS */
+/* SECTIONS (GLASS + ANIMATION) */
 section {
     padding: 30px;
     margin: 20px;
@@ -123,7 +123,7 @@ h2 {
     padding-left: 10px;
 }
 
-/* TIMELINE */
+/* EXPERIENCE TIMELINE */
 .timeline {
     position: relative;
     margin-top: 20px;
@@ -203,7 +203,7 @@ h2 {
 
 <header>
 <div class="photo-frame">
-<img src="janani_profile.jpg" alt="Janani Profile">
+<img src="janani_profile.jpg">
 </div>
 
 <div>
@@ -221,66 +221,56 @@ h2 {
 
 <section id="summary">
 <h2>Executive Summary</h2>
-<p>Proactive and enthusiastic Human Resource professional with 13+ years of experience. Specialized in talent acquisition, HR strategy, workforce planning, and employee engagement across manufacturing and technology sectors.</p>
+<p>Proactive HR Professional with 13+ years of experience driving workforce strategy, talent acquisition, and organizational effectiveness across manufacturing and technology sectors. Strategic thinker with a proven track record of HR process execution, people development, and building high-performing teams.</p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Led hiring of 300+ employees</li>
-<li>Partnered with leadership on workforce planning</li>
+<li>Managed end-to-end recruitment for 300+ hires</li>
 <li>Improved retention and engagement</li>
-<li>Designed HR policies and compliance frameworks</li>
-<li>Enabled performance-driven culture</li>
+<li>Implemented HR policies and compliance frameworks</li>
+<li>Partnered with leadership on workforce planning</li>
+<li>Enhanced performance-driven culture</li>
 </ul>
 </section>
 
 <section id="experience">
-<h2>Professional Journey</h2>
+<h2>Professional Experience</h2>
 <div class="timeline">
-<!-- Latest first -->
+
 <div class="timeline-item">
-<h3>Manager | Ola Electric Pvt Ltd</h3>
+<h3>Manager – HR | OLA Electric Pvt Ltd</h3>
 <p>Jan 2026 – Present</p>
 <ul>
-<li>Strategic HR leadership and workforce planning</li>
-<li>Talent acquisition and retention strategies</li>
-<li>HR policy development and compliance</li>
-<li>Employee engagement and performance management</li>
+<li>Lead HR strategy and workforce planning</li>
+<li>Talent acquisition and onboarding</li>
+<li>Employee engagement and retention initiatives</li>
+<li>Policy development and compliance</li>
+<li>Performance and productivity tracking</li>
 </ul>
 </div>
 
 <div class="timeline-item">
-<h3>Deputy Manager | Salcomp Technologies India Pvt Ltd</h3>
-<p>Jun 2024 – Dec 2025</p>
+<h3>Deputy Manager – HRBP | Salcomp Technologies India Pvt Ltd</h3>
+<p>Mar 2020 – Dec 2025</p>
 <ul>
-<li>Talent Acquisition – Manage end to end recruitment life cycle</li>
-<li>Global recruitment for R&D roles</li>
-<li>Project operations support & HR policy improvements</li>
-<li>Employee engagement & retention initiatives</li>
-<li>Performance management coordination</li>
-<li>Internal & external audit support</li>
+<li>End-to-end recruitment and talent acquisition</li>
+<li>Managed global hiring for niche R&D roles</li>
+<li>Employee engagement and retention programs</li>
+<li>Performance management and process improvements</li>
+<li>Coordination with BU heads on HR policies</li>
 </ul>
 </div>
 
 <div class="timeline-item">
-<h3>Assistant Manager | Salcomp Technologies India Pvt Ltd</h3>
-<p>Mar 2020 – May 2024</p>
-<ul>
-<li>Workforce planning and hiring</li>
-<li>Employee onboarding & engagement</li>
-<li>HR policy implementation</li>
-<li>Learning & development initiatives</li>
-</ul>
-</div>
-
-<div class="timeline-item">
-<h3>Senior Executive | Nokia India Pvt Ltd</h3>
+<h3>Senior Executive – HR | Nokia India Pvt Ltd</h3>
 <p>Aug 2012 – Feb 2020</p>
 <ul>
-<li>Employee relations & HR operations</li>
-<li>Training, L&D, and engagement programs</li>
-<li>Performance reviews & HR analytics</li>
+<li>Employee lifecycle management</li>
+<li>HR operations and support</li>
+<li>Employee relations and engagement</li>
+<li>Training and development initiatives</li>
 </ul>
 </div>
 
@@ -288,11 +278,12 @@ h2 {
 <h3>HR Admin | Arrant HR Solutions</h3>
 <p>Jul 2008 – Mar 2011</p>
 <ul>
-<li>Recruitment, onboarding, and HR admin support</li>
-<li>Employee database management</li>
-<li>Payroll support & exit interviews</li>
+<li>Recruitment and onboarding</li>
+<li>Payroll support and administrative tasks</li>
+<li>HR policy execution</li>
 </ul>
 </div>
+
 </div>
 </section>
 
@@ -305,19 +296,25 @@ h2 {
 <span>Compensation & Benefits</span>
 <span>Performance Management</span>
 <span>HR Compliance</span>
-<span>Employee Engagement</span>
-<span>Learning & Development</span>
-<span>Grievance Handling</span>
 </div>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<ul>
-<li>PGDHRM | Alagappa University, Karaikudi | 2011</li>
-<li>MSW | Cauvery College, Trichy | 2008</li>
-<li>BSW | Cauvery College, Trichy | 2006</li>
-</ul>
+<div class="timeline">
+<div class="timeline-item">
+<h3>PGDHRM</h3>
+<p>Alagappa University | 2011</p>
+</div>
+<div class="timeline-item">
+<h3>MSW</h3>
+<p>Cauvery College, Trichy | 2008</p>
+</div>
+<div class="timeline-item">
+<h3>BSW</h3>
+<p>Cauvery College, Trichy | 2006</p>
+</div>
+</div>
 </section>
 
 <script>
@@ -337,27 +334,20 @@ window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
         const top = section.offsetTop - 120;
-        if (window.scrollY >= top) {
-            current = section.id;
-        }
+        if (window.scrollY >= top) current = section.id;
     });
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-        current = "education";
-    }
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) current = "education";
+
     links.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
+        if (link.getAttribute("href") === "#" + current) link.classList.add("active");
     });
 });
 
 /* ANIMATION */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
     });
 });
 sections.forEach(sec => observer.observe(sec));
