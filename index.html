@@ -13,14 +13,13 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #f5f7fa;
-    color: #222;
 }
 
 /* NAV */
 nav {
     position: sticky;
     top: 0;
-    background: #fff;
+    background: white;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -33,6 +32,21 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #333;
+    position: relative;
+}
+
+nav a.active {
+    color: #94c11f;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #94c11f;
+    bottom: -5px;
+    left: 0;
 }
 
 /* HERO */
@@ -42,6 +56,7 @@ header {
     padding: 40px;
 }
 
+/* FIXED IMAGE */
 .photo-frame {
     width: 150px;
     height: 150px;
@@ -54,12 +69,13 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top; /* FIX */
 }
 
 /* TEXT */
 h1 {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
 }
 
 .subtitle {
@@ -75,22 +91,22 @@ h1 {
 }
 
 .stat-box {
-    background: #fff;
+    background: white;
     padding: 12px 18px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-    background: #fff;
+    background: white;
     margin: 20px;
     padding: 30px;
     border-radius: 12px;
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.6s ease;
+    transition: 0.6s;
 }
 
 section.show {
@@ -135,22 +151,13 @@ h2 {
     border-radius: 50%;
 }
 
-/* SKILLS */
-.skills span {
-    display: inline-block;
-    background: #e8f5d0;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 6px;
-}
-
 /* BUTTON */
 .resume-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
     background: #94c11f;
-    color: #fff;
+    color: white;
     border-radius: 8px;
     text-decoration: none;
 }
@@ -177,7 +184,7 @@ h2 {
 
 <header>
 <div class="photo-frame">
-<img src="janani_profile.jpg" alt="Profile">
+<img src="janani_profile.jpg">
 </div>
 
 <div>
@@ -198,35 +205,33 @@ h2 {
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-Results-driven HR Leader with 13+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Proven ability to partner with leadership, drive employee engagement, and deliver measurable business outcomes across dynamic environments.
+Results-driven HR Leader with 13+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership, improving engagement, and delivering measurable business outcomes.
 </p>
 </section>
 
 <section id="achievements">
 <h2>Key Achievements</h2>
 <ul>
-<li>Successfully delivered 300+ hires across multiple functions</li>
-<li>Improved employee retention and engagement strategies</li>
-<li>Partnered with leadership on workforce planning</li>
-<li>Established HR policies and compliance frameworks</li>
+<li>300+ hires delivered</li>
+<li>Improved retention & engagement</li>
+<li>Strategic workforce planning partner</li>
 </ul>
 </section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
-
 <div class="timeline">
 
 <div class="timeline-item">
 <h3>HR Manager | Ola Electric</h3>
 <p>Jan 2026 – Present</p>
 <ul>
-<li>Manage compensation, benefits, and retention strategies</li>
-<li>Develop HR policies and ensure compliance</li>
-<li>Monitor employee performance and productivity</li>
-<li>Support managers in goal setting and evaluations</li>
-<li>Plan manpower requirements with leadership</li>
-<li>Drive change management initiatives</li>
+<li>Compensation & benefits, retention strategy</li>
+<li>HR policy & compliance</li>
+<li>Performance & productivity tracking</li>
+<li>Manager support & goal setting</li>
+<li>Manpower planning</li>
+<li>Change management</li>
 </ul>
 </div>
 
@@ -234,9 +239,9 @@ Results-driven HR Leader with 13+ years of experience in workforce strategy, tal
 <h3>Deputy Manager | Salcomp</h3>
 <p>Mar 2020 – Dec 2025</p>
 <ul>
-<li>Handled end-to-end recruitment lifecycle</li>
-<li>Managed global hiring requirements</li>
-<li>Led employee engagement initiatives</li>
+<li>End-to-end recruitment lifecycle</li>
+<li>Global hiring</li>
+<li>Employee engagement</li>
 </ul>
 </div>
 
@@ -244,17 +249,17 @@ Results-driven HR Leader with 13+ years of experience in workforce strategy, tal
 <h3>Senior Executive | Nokia</h3>
 <p>Aug 2012 – Feb 2020</p>
 <ul>
-<li>Managed HR operations and employee relations</li>
-<li>Supported training and development initiatives</li>
+<li>HR operations & employee relations</li>
+<li>Training & engagement</li>
 </ul>
 </div>
 
 <div class="timeline-item">
-<h3>HR Admin | Arrant HR Solutions</h3>
+<h3>HR Admin | Arrant HR</h3>
 <p>Jul 2008 – Mar 2011</p>
 <ul>
-<li>Handled recruitment and onboarding processes</li>
-<li>Supported payroll and HR operations</li>
+<li>Recruitment & onboarding</li>
+<li>Payroll support</li>
 </ul>
 </div>
 
@@ -263,42 +268,67 @@ Results-driven HR Leader with 13+ years of experience in workforce strategy, tal
 
 <section id="skills">
 <h2>Core Expertise</h2>
-<div class="skills">
-<span>HR Business Partnering</span>
-<span>Talent Acquisition</span>
-<span>Compensation & Benefits</span>
-<span>Performance Management</span>
-<span>Employee Engagement</span>
-</div>
+<p>HRBP • Talent Acquisition • Compensation • Performance • Engagement</p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<ul>
-<li>PGDHRM – Alagappa University</li>
-<li>MSW – Cauvery College</li>
-<li>BSW – Cauvery College</li>
-</ul>
+<div class="timeline">
+<div class="timeline-item">
+<h3>PhD HRM (Pursuing)</h3>
+<p>Ongoing</p>
+</div>
+<div class="timeline-item">
+<h3>PGDHRM</h3>
+<p>Alagappa University</p>
+</div>
+<div class="timeline-item">
+<h3>MSW</h3>
+<p>Cauvery College</p>
+</div>
+<div class="timeline-item">
+<h3>BSW</h3>
+<p>Cauvery College</p>
+</div>
+</div>
 </section>
 
 <script>
 
 /* SECTION ANIMATION */
 const sections = document.querySelectorAll("section");
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
             entry.target.classList.add("show");
         }
     });
-}, { threshold: 0.15 });
-
+});
 sections.forEach(sec => observer.observe(sec));
 
+/* NAV HIGHLIGHT FIX */
+const navLinks = document.querySelectorAll("nav a");
 
-/* STATS ANIMATION ON LOAD */
-window.addEventListener("load", () => {
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if(window.scrollY >= top){
+            current = section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+    });
+});
+
+/* STATS ON LOAD */
+window.onload = () => {
     document.querySelectorAll("[data-target]").forEach(el => {
         let target = +el.getAttribute("data-target");
         let count = 0;
@@ -313,7 +343,7 @@ window.addEventListener("load", () => {
             }
         }, 30);
     });
-});
+};
 
 </script>
 
