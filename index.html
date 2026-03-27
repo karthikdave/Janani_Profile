@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Janani Balasubramanian | HR Leader</title>
+<title>Janani Balasubramanian | HR Manager</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -56,7 +56,6 @@ header {
     padding: 40px;
 }
 
-/* IMAGE FIX */
 .photo-frame {
     width: 150px;
     height: 150px;
@@ -72,7 +71,6 @@ header {
     object-position: center top;
 }
 
-/* TEXT */
 h1 {
     margin: 0;
     font-family: 'Montserrat';
@@ -81,6 +79,28 @@ h1 {
 .subtitle {
     color: #94c11f;
     font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* TAG CHIPS */
+.tags {
+    margin: 10px 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #eef6d5;
+    color: #5c7c12;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 5px 5px 0 0;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: #94c11f;
+    color: white;
 }
 
 /* STATS */
@@ -160,6 +180,11 @@ h2 {
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: #7ea514;
 }
 
 /* MOBILE */
@@ -176,7 +201,8 @@ h2 {
 
 <nav>
 <a href="#summary">Summary</a>
-<a href="#achievements">Achievements</a>
+<a href="#apart">Differentiator</a>
+<a href="#achievements">Impact</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Expertise</a>
 <a href="#education">Education</a>
@@ -189,7 +215,18 @@ h2 {
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<p class="subtitle">HR Leader | Strategic People Partner</p>
+
+<p class="subtitle">HR Manager | Business HR • Talent Strategy • Employee Experience</p>
+
+<!-- TAGS (WOW FACTOR) -->
+<div class="tags">
+<span class="tag">HR Business Partnering</span>
+<span class="tag">Talent Acquisition</span>
+<span class="tag">Workforce Planning</span>
+<span class="tag">Employee Engagement</span>
+<span class="tag">HR Compliance</span>
+</div>
+
 <p>Chennai | beingjanani@gmail.com</p>
 
 <div class="stats">
@@ -198,23 +235,34 @@ h2 {
 <div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
 
-<a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
+<a class="resume-btn" href="Janani_Balasubramanian_Resume.pdf" target="_blank">Download Resume</a>
 </div>
 </header>
 
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-Results-driven HR Leader with 13+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership, improving engagement, and delivering measurable business outcomes.
+Results-driven HR Manager with 13+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership, improving engagement, and delivering measurable business outcomes.
 </p>
 </section>
 
-<section id="achievements">
-<h2>Key Achievements</h2>
+<section id="apart">
+<h2>What Sets Me Apart</h2>
 <ul>
-<li>300+ hires delivered</li>
-<li>Improved retention & engagement</li>
-<li>Strategic workforce planning partner</li>
+<li>Blend of strategic HR thinking and strong execution</li>
+<li>Ability to align people goals with business outcomes</li>
+<li>Trusted partner for leadership decision-making</li>
+<li>Focused on scalable and sustainable HR practices</li>
+</ul>
+</section>
+
+<section id="achievements">
+<h2>Impact Delivered</h2>
+<ul>
+<li><b>300+ hires</b> delivered across functions</li>
+<li><b>Improved retention</b> through engagement strategies</li>
+<li><b>Partnered with leadership</b> on workforce planning</li>
+<li><b>Strengthened HR compliance</b> frameworks</li>
 </ul>
 </section>
 
@@ -302,12 +350,11 @@ const observer = new IntersectionObserver(entries => {
 });
 sections.forEach(sec => observer.observe(sec));
 
-/* NAV HIGHLIGHT */
+/* NAV */
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
     let current = "";
-
     sections.forEach(section => {
         const top = section.offsetTop - 120;
         if(window.scrollY >= top){
