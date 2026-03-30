@@ -1,371 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janani Balasubramanian | HR Manager</title>
 
-<title>Janani Balasubramanian | HR Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #f5f7fa;
-}
+    html {
+      scroll-behavior: auto;
+      -webkit-text-size-adjust: 100%;
+    }
 
-/* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    z-index: 1000;
-}
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
+      color: #222;
+      overflow-x: hidden;
+    }
 
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #333;
-    position: relative;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-nav a.active {
-    color: #94c11f;
-}
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
 
-nav a.active::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #94c11f;
-    bottom: -5px;
-    left: 0;
-}
+    nav::-webkit-scrollbar {
+      display: none;
+    }
 
-/* HERO */
-header {
-    display: flex;
-    gap: 30px;
-    padding: 40px;
-}
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      padding-bottom: 4px;
+      flex-shrink: 0;
+    }
 
-.photo-frame {
-    width: 150px;
-    height: 150px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 4px solid #94c11f;
-}
+    nav a.active {
+      color: #94c11f;
+      border-bottom: 2px solid #94c11f;
+    }
 
-.photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-}
+    section {
+      scroll-margin-top: 90px;
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 14px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
 
-h1 {
-    margin: 0;
-    font-family: 'Montserrat';
-}
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.hero-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-top: 5px;
-}
-
-.hero-sub {
-    color: #555;
-    margin-top: 5px;
-    max-width: 500px;
-}
-
-.tags {
-    margin: 12px 0;
-}
-
-.tag {
-    display: inline-block;
-    background: #eef6d5;
-    color: #5c7c12;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin: 5px 5px 0 0;
-}
-
-.stats {
-    display: flex;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.stat-box {
-    background: white;
-    padding: 12px 18px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-section {
-    background: white;
-    margin: 20px;
-    padding: 30px;
-    border-radius: 12px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    border-left: 4px solid #94c11f;
-    padding-left: 10px;
-}
-
-.signature {
-    background: #f9fbf2;
-    border-left: 4px solid #94c11f;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.timeline {
-    position: relative;
-    padding-left: 30px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    width: 3px;
-    height: 100%;
-    background: #94c11f44;
-}
-
-.timeline-item {
-    margin-bottom: 30px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    background: #94c11f;
-    border-radius: 50%;
-}
-
-.resume-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #94c11f;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-@media(max-width:600px){
+    /* HERO */
     header {
+      display: flex;
+      gap: 30px;
+      padding: 50px 40px 30px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 4px solid #94c11f;
+      flex-shrink: 0;
+      background: #fff;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      line-height: 1.2;
+      color: #1f2937;
+    }
+
+    .signature {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+      line-height: 1.4;
+      color: #111827;
+    }
+
+    .subhook {
+      margin-top: 8px;
+      color: #666;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .contact-line {
+      margin-top: 14px;
+      color: #444;
+      font-weight: 600;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    /* IMPACT BOX */
+    .impact-box {
+      margin-top: 18px;
+      background: #ffffff;
+      border-left: 4px solid #94c11f;
+      padding: 15px 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .impact-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .impact-box p {
+      margin: 6px 0;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .cta-block {
+      max-width: 1200px;
+      margin: 0 auto 10px;
+      padding: 0 40px 10px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #94c11f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      text-align: center;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .resume-btn.secondary {
+      background: #333;
+    }
+
+    /* IMPACT SECTION */
+    #impact {
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .impact-strip {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .impact-card {
+      flex: 1 1 220px;
+      background: #f9fafb;
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+      min-width: 0;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      border-left: 4px solid #94c11f;
+      padding-left: 10px;
+      margin-top: 0;
+      color: #1f2937;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #94c11f;
+    }
+
+    .exp-block {
+      margin-bottom: 30px;
+      padding: 18px 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+      background: #fff;
+    }
+
+    .exp-block:hover {
+      transform: translateY(-3px);
+    }
+
+    .exp-year {
+      font-size: 12px;
+      color: #888;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .exp-role {
+      font-weight: 700;
+      margin: 5px 0;
+      color: #374151;
+    }
+
+    .exp-block h3 {
+      margin: 8px 0 4px;
+      color: #111827;
+    }
+
+    .exp-block ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+
+    #education {
+      min-height: 250px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav {
+        justify-content: flex-start;
+        gap: 14px;
+        padding: 12px 12px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      header {
         flex-direction: column;
         text-align: center;
+        padding: 28px 18px 20px;
+        gap: 18px;
+      }
+
+      .photo-frame {
+        width: 130px;
+        height: 130px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .signature {
+        font-size: 18px;
+      }
+
+      .subhook {
+        font-size: 14px;
+      }
+
+      .contact-line {
+        font-size: 14px;
+      }
+
+      .impact-strip {
+        flex-direction: column;
+      }
+
+      .cta-block {
+        padding: 0 16px 8px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .resume-btn {
+        width: 100%;
+      }
+
+      section,
+      #impact {
+        margin: 14px;
+        padding: 20px;
+      }
+
+      .timeline {
+        margin-left: 8px;
+        padding-left: 14px;
+      }
+
+      .exp-block {
+        padding: 16px;
+      }
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<nav>
-<a href="#summary">Summary</a>
-<a href="#impact">Impact</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Expertise</a>
-<a href="#education">Education</a>
-</nav>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#impact">Impact</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </nav>
 
-<header>
-<div class="photo-frame">
-<img src="janani_profile.jpg">
-</div>
+  <header>
+    <div class="photo-frame">
+      <img src="janani_profile.jpg" alt="Janani Balasubramanian">
+    </div>
 
-<div>
-<h1>Janani Balasubramanian</h1>
+    <div>
+      <h1>Janani Balasubramanian</h1>
 
-<div class="hero-title">
-Driving People Strategy That Enables Business Growth
-</div>
+      <div class="signature">
+        HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
+      </div>
 
-<p class="hero-sub">
-HR Manager with 13+ years of experience partnering with business leaders to build high-performing teams and drive organizational outcomes.
-</p>
+      <div class="subhook">
+        15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+      </div>
 
-<div class="tags">
-<span class="tag">HRBP</span>
-<span class="tag">Talent Strategy</span>
-<span class="tag">Workforce Planning</span>
-<span class="tag">Employee Engagement</span>
-</div>
+      <div class="impact-box">
+        <p>✔ Leads hiring strategy & execution across business units</p>
+        <p>✔ Manages HRBP delivery supporting leadership & operations</p>
+        <p>✔ Enables workforce scale in high-growth manufacturing environments</p>
+      </div>
 
-<p>Chennai | beingjanani@gmail.com</p>
+      <div class="contact-line">
+        Chennai | beingjanani@gmail.com
+      </div>
+    </div>
+  </header>
 
-<div class="stats">
-<div class="stat-box"><h3 data-target="13">0</h3><p>Years</p></div>
-<div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
-</div>
+  <div class="cta-block">
+    <div class="cta-buttons">
+      <a class="resume-btn" href="mailto:beingjanani@gmail.com?subject=Request%20for%20Full%20Resume%20-%20Janani%20Balasubramanian">
+        Request Full Resume
+      </a>
 
-<a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
-</div>
-</header>
+      <a class="resume-btn secondary" href="mailto:beingjanani@gmail.com">
+        Email
+      </a>
+    </div>
+  </div>
 
-<section id="summary">
-<h2>Executive Summary</h2>
-<p>
-HR professional experienced in aligning people strategy with business goals, enabling performance, and building sustainable HR practices.
-</p>
-</section>
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>
+      HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
+    </p>
+  </section>
 
-<section id="impact">
-<h2>How I Create Impact</h2>
-<div class="signature">
-<ul>
-<li>Align people strategy with business goals</li>
-<li>Build scalable hiring and workforce plans</li>
-<li>Improve engagement and retention</li>
-<li>Enable managers to perform effectively</li>
-<li>Drive practical HR solutions</li>
-</ul>
-</div>
-</section>
+  <section id="impact">
+    <h2>Impact</h2>
 
-<section id="experience">
-<h2>Professional Experience</h2>
-<div class="timeline">
+    <div class="impact-strip">
+      <div class="impact-card">Business HR Partnering</div>
+      <div class="impact-card">Hiring Strategy & Execution</div>
+      <div class="impact-card">Employee Engagement</div>
+      <div class="impact-card">HR Operations Excellence</div>
+    </div>
+  </section>
 
-<!-- ✅ FIXED OLA SECTION -->
-<div class="timeline-item">
-<h3>HR Manager | Ola Electric</h3>
-<p>Jan 2026 – Present</p>
-<ul>
-<li>Ensure competitive compensation and benefits</li>
-<li>Handle joining bonus, retention process incentives</li>
-<li>Develop and update HR policies</li>
-<li>Monitor employee performance and productivity</li>
-<li>Support managers in goal setting and evaluations</li>
-<li>Plan manpower requirements based on RTR with department heads</li>
-<li>Support change management initiatives</li>
-</ul>
-</div>
+  <section id="experience">
+    <h2>Experience</h2>
 
-<div class="timeline-item">
-<h3>Deputy Manager | Salcomp</h3>
-<p>Mar 2020 – Dec 2025</p>
-<ul>
-<li>End-to-end recruitment lifecycle</li>
-<li>Global hiring</li>
-<li>Employee engagement</li>
-</ul>
-</div>
+    <div class="timeline">
 
-<div class="timeline-item">
-<h3>Senior Executive | Nokia</h3>
-<p>Aug 2012 – Feb 2020</p>
-<ul>
-<li>HR operations & employee relations</li>
-<li>Training & engagement</li>
-</ul>
-</div>
+      <div class="exp-block">
+        <div class="exp-year">Jan 2026 – Present</div>
+        <h3>Ola Electric</h3>
+        <div class="exp-role">Manager HR (HRBP)</div>
+        <ul>
+          <li>Partnering with leadership to align HR strategy with business growth</li>
+          <li>Driving hiring and workforce planning for key roles</li>
+          <li>Leading engagement and retention initiatives</li>
+        </ul>
+      </div>
 
-</div>
-</section>
+      <div class="exp-block">
+        <div class="exp-year">Mar 2020 – Dec 2025</div>
+        <h3>Salcomp</h3>
+        <div class="exp-role">Deputy Manager (HRBP)</div>
+        <ul>
+          <li>Collaborated with leadership on workforce and expansion planning</li>
+          <li>Led hiring delivery across multiple functions</li>
+          <li>Improved HR alignment with business needs</li>
+        </ul>
+      </div>
 
-<section id="skills">
-<h2>Core Expertise</h2>
-<p>HRBP • Talent Acquisition • Compensation • Performance • Engagement</p>
-</section>
+      <div class="exp-block">
+        <div class="exp-year">Aug 2012 – Feb 2020</div>
+        <h3>Nokia</h3>
+        <div class="exp-role">HR Senior Executive</div>
+        <ul>
+          <li>Handled employee engagement and HR operations</li>
+          <li>Supported performance management processes</li>
+          <li>Worked within global HR frameworks</li>
+        </ul>
+      </div>
 
-<section id="education">
-<h2>Education</h2>
-<div class="timeline">
-<div class="timeline-item">
-<h3>PGDHRM</h3>
-<p>Alagappa University</p>
-</div>
-<div class="timeline-item">
-<h3>MSW</h3>
-<p>Cauvery College</p>
-</div>
-<div class="timeline-item">
-<h3>BSW</h3>
-<p>Cauvery College</p>
-</div>
-</div>
-</section>
+      <div class="exp-block">
+        <div class="exp-year">Jul 2008 – Mar 2011</div>
+        <h3>Arrant HR</h3>
+        <div class="exp-role">HR Senior Executive</div>
+        <ul>
+          <li>Managed recruitment lifecycle and HR operations</li>
+          <li>Handled payroll and coordination activities</li>
+          <li>Supported HR process implementation</li>
+        </ul>
+      </div>
 
-<script>
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-sections.forEach(sec => observer.observe(sec));
+    </div>
+  </section>
 
-const navLinks = document.querySelectorAll("nav a");
-window.addEventListener("scroll", () => {
-let current = "";
-sections.forEach(section => {
-const top = section.offsetTop - 120;
-if(window.scrollY >= top){
-current = section.id;
-}
-});
-navLinks.forEach(link => {
-link.classList.remove("active");
-if(link.getAttribute("href") === "#" + current){
-link.classList.add("active");
-}
-});
-});
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>
+      HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+    </p>
+  </section>
 
-window.onload = () => {
-document.querySelectorAll("[data-target]").forEach(el => {
-let target = +el.getAttribute("data-target");
-let count = 0;
-let interval = setInterval(() => {
-count += Math.ceil(target / 40);
-if(count >= target){
-el.innerText = target + "+";
-clearInterval(interval);
-} else {
-el.innerText = count;
-}
-}, 30);
-});
-};
-</script>
+  <section id="education">
+    <h2>Education</h2>
+    <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
+    <p><b>MSW</b> – 2008 | Cauvery College</p>
+    <p><b>BSW</b> – 2006 | Cauvery College</p>
+  </section>
+
+  <script>
+    /* Prevent browser from restoring previous scroll position */
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    /* Smooth scroll ONLY for nav clicks */
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+
+    function revealVisibleSections() {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          sec.classList.add("visible");
+        }
+      });
+
+      const firstSection = document.getElementById("summary");
+      if (firstSection) {
+        firstSection.classList.add("visible");
+      }
+    }
+
+    function updateActiveNav() {
+      let current = "summary";
+
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = sec.id;
+        }
+      });
+
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        current = "education";
+      }
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    function updatePageState() {
+      revealVisibleSections();
+      updateActiveNav();
+    }
+
+    /* Top-load fix */
+    window.addEventListener("load", function () {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        updatePageState();
+      }, 50);
+    });
+
+    window.addEventListener("pageshow", function () {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        updatePageState();
+      }, 50);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updatePageState();
+    });
+
+    window.addEventListener("scroll", updatePageState);
+    window.addEventListener("resize", updatePageState);
+  </script>
 
 </body>
 </html>
