@@ -1,119 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Janani | HR Professional</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janani Balasubramanian | HR Manager</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
+      color: #222;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+
+    nav a.active {
+      color: #94c11f;
+      border-bottom: 2px solid #94c11f;
+    }
+
+    section {
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    /* HERO IMPROVED */
+    header {
+      display: flex;
+      gap: 40px;
+      padding: 60px 40px 30px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .photo-frame {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #94c11f;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      color: #1f2937;
+    }
+
+    .signature {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .subhook {
+      margin-top: 6px;
+      color: #666;
+      font-weight: 600;
+    }
+
+    .impact-box {
+      margin-top: 16px;
+      border-left: 4px solid #94c11f;
+      padding: 14px 16px;
+      background: #f9fafb;
+      border-radius: 10px;
+    }
+
+    .impact-box p {
+      margin: 6px 0;
+      font-weight: 600;
+    }
+
+    .contact-line {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .cta-block {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #94c11f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .resume-btn.secondary {
+      background: #333;
+    }
+
+    h2 {
+      border-left: 4px solid #94c11f;
+      padding-left: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .timeline {
+      border-left: 3px solid #94c11f;
+      padding-left: 20px;
+    }
+
+    .exp-block {
+      margin-bottom: 25px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-<!-- HERO -->
-<section class="bg-white py-16 px-6 shadow-sm">
-  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+<nav>
+  <a href="#summary">Summary</a>
+  <a href="#impact">Impact</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+</nav>
 
-    <!-- IMAGE -->
-    <div class="flex-shrink-0">
-      <img src="janani_profile.jpg"
-           class="w-40 h-40 rounded-full shadow-lg object-cover">
-    </div>
-
-    <!-- TEXT -->
-    <div class="text-center md:text-left">
-      <h1 class="text-4xl font-bold mb-3">Janani Balasubramanian</h1>
-
-      <p class="text-xl text-gray-600 mb-4">
-        HR Professional who builds people-first workplaces & drives meaningful talent outcomes
-      </p>
-
-      <p class="text-gray-500 mb-4 max-w-xl">
-        Passionate about hiring the right talent, creating engaging employee experiences, 
-        and supporting organizations in building strong, people-centric cultures.
-      </p>
-
-      <!-- IMPACT POINTS -->
-      <div class="space-y-2 text-gray-700">
-        <p>✔ Skilled in Talent Acquisition & Candidate Experience</p>
-        <p>✔ Strong focus on Employee Engagement & HR Operations</p>
-        <p>✔ Committed to building positive and inclusive workplaces</p>
-      </div>
-    </div>
-
+<header>
+  <div class="photo-frame">
+    <img src="janani_profile.jpg">
   </div>
-</section>
 
-<!-- ABOUT -->
-<section class="py-12 px-6 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-  <p class="text-gray-600 leading-relaxed">
-    I am an HR professional with a strong interest in talent acquisition, employee engagement, 
-    and HR operations. I believe HR is not just about processes — it’s about people, culture, 
-    and creating an environment where individuals can thrive and contribute meaningfully.
+  <div>
+    <h1>Janani Balasubramanian</h1>
+
+    <div class="signature">
+      HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
+    </div>
+
+    <div class="subhook">
+      15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+    </div>
+
+    <div class="impact-box">
+      <p>✔ Leads hiring strategy across business units</p>
+      <p>✔ Drives HRBP delivery for leadership teams</p>
+      <p>✔ Enables workforce scale in high-growth environments</p>
+    </div>
+
+    <div class="contact-line">
+      Chennai | beingjanani@gmail.com
+    </div>
+  </div>
+</header>
+
+<div class="cta-block">
+  <a class="resume-btn" href="#">Request Full Resume</a>
+  <a class="resume-btn secondary" href="#">Email</a>
+</div>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <p>
+    HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
   </p>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="bg-white py-12 px-6">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-6">Experience</h2>
+<section id="impact">
+  <h2>Impact</h2>
+  <p>Business HR Partnering • Hiring Strategy • Engagement • HR Ops</p>
+</section>
 
-    <div class="mb-6">
-      <h3 class="text-xl font-medium">HR Role – [Company Name]</h3>
-      <p class="text-gray-500 text-sm mb-2">Duration</p>
-      <ul class="list-disc ml-6 text-gray-600">
-        <li>Managed end-to-end recruitment process across multiple roles</li>
-        <li>Improved hiring efficiency by streamlining candidate screening</li>
-        <li>Coordinated onboarding to ensure smooth employee experience</li>
-        <li>Collaborated with stakeholders to understand hiring needs</li>
-      </ul>
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+
+    <div class="exp-block">
+      <b>Ola Electric</b><br>
+      Manager HR (HRBP)
     </div>
 
-    <div>
-      <h3 class="text-xl font-medium">HR Intern – [Company Name]</h3>
-      <p class="text-gray-500 text-sm mb-2">Duration</p>
-      <ul class="list-disc ml-6 text-gray-600">
-        <li>Supported recruitment and HR operations</li>
-        <li>Maintained employee records and documentation</li>
-        <li>Assisted in engagement initiatives and internal communication</li>
-      </ul>
+    <div class="exp-block">
+      <b>Salcomp</b><br>
+      Deputy Manager HR
+    </div>
+
+    <div class="exp-block">
+      <b>Nokia</b><br>
+      HR Senior Executive
     </div>
 
   </div>
 </section>
 
-<!-- SKILLS -->
-<section class="py-12 px-6 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-  <div class="flex flex-wrap gap-3">
-    <span class="bg-gray-200 px-3 py-1 rounded-full">Talent Acquisition</span>
-    <span class="bg-gray-200 px-3 py-1 rounded-full">Employee Engagement</span>
-    <span class="bg-gray-200 px-3 py-1 rounded-full">HR Operations</span>
-    <span class="bg-gray-200 px-3 py-1 rounded-full">Communication</span>
-    <span class="bg-gray-200 px-3 py-1 rounded-full">Stakeholder Management</span>
-  </div>
+<section id="skills">
+  <h2>Skills</h2>
+  <p>HRBP • Hiring • Workforce Planning • Engagement</p>
 </section>
 
-<!-- SIGNATURE SECTION -->
-<section class="bg-gray-900 text-white py-12 px-6 text-center">
-  <h2 class="text-2xl font-semibold mb-4">What Makes Me Different</h2>
-  <p class="max-w-2xl mx-auto text-gray-300">
-    I don’t just fill positions — I focus on finding the right people who align with 
-    the organization’s culture and long-term vision. I believe HR plays a critical role 
-    in shaping not just teams, but the overall success of a company.
-  </p>
+<section id="education">
+  <h2>Education</h2>
+  <p>MSW, BSW</p>
 </section>
-
-<!-- CONTACT -->
-<section class="py-12 px-6 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Let’s Connect</h2>
-  <p class="text-gray-600 mb-4">Open to HR opportunities and meaningful collaborations</p>
-  <p class="text-gray-800 font-medium">janani@email.com</p>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center text-gray-400 py-6 text-sm">
-  © 2026 Janani Balasubramanian
-</footer>
 
 </body>
 </html>
