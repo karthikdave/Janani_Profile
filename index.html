@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Janani Balasubramanian | HR Manager</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;}
+
 body{
 margin:0;
 font-family:'Open Sans',sans-serif;
@@ -43,8 +43,8 @@ border-bottom:2px solid #94c11f;
 header{
 display:flex;
 gap:30px;
-padding:50px 40px;
-align-items:center;
+padding:50px 40px 20px;
+align-items:flex-start;
 max-width:1100px;
 margin:auto;
 }
@@ -60,25 +60,26 @@ border:4px solid #94c11f;
 width:100%;
 height:100%;
 object-fit:cover;
-object-position:center top;
+object-position:50% 20%;
 }
 
 h1{
 margin:0;
-font-size:34px;
 font-family:'Montserrat';
+font-size:34px;
 }
+
 .signature{
 font-size:20px;
 font-weight:700;
 margin-top:10px;
 }
+
 .subhook{
 margin-top:8px;
 color:#666;
 }
 
-/* IMPACT */
 .impact-box{
 margin-top:18px;
 padding:15px;
@@ -86,13 +87,16 @@ border-left:4px solid #94c11f;
 background:#fff;
 box-shadow:0 6px 14px rgba(0,0,0,0.06);
 }
-.impact-box p{margin:6px 0;font-weight:600;}
+.impact-box p{
+margin:6px 0;
+font-weight:600;
+}
 
 /* CTA */
 .cta{
-padding:0 40px 20px;
 max-width:1100px;
 margin:auto;
+padding:0 40px 20px;
 }
 .cta a{
 padding:12px 18px;
@@ -104,14 +108,25 @@ margin-right:10px;
 display:inline-block;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
-max-width:1100px;
-margin:30px auto;
+scroll-margin-top:90px;
 background:#fff;
-padding:35px;
-border-radius:12px;
-box-shadow:0 6px 14px rgba(0,0,0,0.05);
+margin:30px auto;
+padding:40px 45px;
+border-radius:14px;
+max-width:1100px;
+
+opacity:0;
+transform:translateY(30px);
+transition:all 0.6s ease;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
@@ -119,19 +134,34 @@ border-left:4px solid #94c11f;
 padding-left:10px;
 }
 
+/* IMPACT */
+#impact{
+max-width:1100px;
+margin:30px auto;
+padding:40px 45px;
+}
+
 /* TIMELINE */
 .timeline{
+margin-left:20px;
+padding-left:25px;
 border-left:3px solid #94c11f;
-padding-left:20px;
-margin-left:10px;
 }
-.exp{
+
+.exp-block{
 margin-bottom:25px;
+padding:15px;
+background:#fff;
+border-radius:10px;
+box-shadow:0 6px 14px rgba(0,0,0,0.05);
 }
+
 .exp-year{
 font-size:12px;
 color:#777;
+font-weight:700;
 }
+
 .exp-role{
 font-weight:700;
 margin:5px 0;
@@ -139,7 +169,10 @@ margin:5px 0;
 
 /* MOBILE */
 @media(max-width:700px){
-header{flex-direction:column;text-align:center;}
+header{
+flex-direction:column;
+text-align:center;
+}
 }
 </style>
 </head>
@@ -156,18 +189,24 @@ header{flex-direction:column;text-align:center;}
 
 <header>
 <div class="photo-frame">
-<img src="janani_profile.jpg">
+<img src="janani_profile.jpg" alt="Janani">
 </div>
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<div class="signature">HRBP Leader driving hiring strategy & workforce scale</div>
-<div class="subhook">15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia</div>
+
+<div class="signature">
+HRBP Leader driving hiring strategy, workforce scale & business alignment
+</div>
+
+<div class="subhook">
+15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+</div>
 
 <div class="impact-box">
-<p>✔ Hiring Strategy Leadership</p>
-<p>✔ HRBP for Business Growth</p>
-<p>✔ Workforce Scaling Expertise</p>
+<p>✔ Leads hiring strategy across business units</p>
+<p>✔ Drives HRBP delivery aligned to growth</p>
+<p>✔ Enables workforce scaling in manufacturing</p>
 </div>
 </div>
 </header>
@@ -179,12 +218,14 @@ header{flex-direction:column;text-align:center;}
 
 <section id="summary">
 <h2>Summary</h2>
-<p>HR leader with 15+ years driving hiring, HR strategy and workforce alignment.</p>
+<p>
+HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and engagement.
+</p>
 </section>
 
 <section id="impact">
 <h2>Impact</h2>
-<p>Business HR • Hiring • Engagement • Operations</p>
+<p>Business HR Partnering • Hiring Strategy • Engagement • HR Operations</p>
 </section>
 
 <section id="experience">
@@ -192,18 +233,18 @@ header{flex-direction:column;text-align:center;}
 
 <div class="timeline">
 
-<div class="exp">
-<div class="exp-year">2026 – Present</div>
-<div class="exp-role">Manager HR – Ola Electric</div>
+<div class="exp-block">
+<div class="exp-year">Jan 2026 – Present</div>
+<div class="exp-role">Manager HR (HRBP) – Ola Electric</div>
 </div>
 
-<div class="exp">
-<div class="exp-year">2020 – 2025</div>
+<div class="exp-block">
+<div class="exp-year">Mar 2020 – Dec 2025</div>
 <div class="exp-role">Deputy Manager – Salcomp</div>
 </div>
 
-<div class="exp">
-<div class="exp-year">2012 – 2020</div>
+<div class="exp-block">
+<div class="exp-year">Aug 2012 – Feb 2020</div>
 <div class="exp-role">HR Senior Executive – Nokia</div>
 </div>
 
@@ -212,23 +253,37 @@ header{flex-direction:column;text-align:center;}
 
 <section id="skills">
 <h2>Skills</h2>
-<p>HRBP • Hiring • Workforce Planning</p>
+<p>
+HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations
+</p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<p>PGDHRM – Alagappa University</p>
+<p><b>PGDHRM</b> – Alagappa University</p>
+<p><b>MSW</b> – Cauvery College</p>
 </section>
 
 <script>
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll("nav a");
 
-window.addEventListener("scroll",()=>{
+function reveal(){
+sections.forEach(sec=>{
+const rect=sec.getBoundingClientRect();
+if(rect.top<window.innerHeight-50){
+sec.classList.add("visible");
+}
+});
+}
+
+function activeNav(){
 let current="";
 sections.forEach(sec=>{
-const top=sec.offsetTop-120;
-if(scrollY>=top){current=sec.id;}
+const rect=sec.getBoundingClientRect();
+if(rect.top<=120 && rect.bottom>=120){
+current=sec.id;
+}
 });
 
 navLinks.forEach(link=>{
@@ -237,6 +292,16 @@ if(link.getAttribute("href")==="#"+current){
 link.classList.add("active");
 }
 });
+}
+
+window.addEventListener("scroll",()=>{
+reveal();
+activeNav();
+});
+
+window.addEventListener("load",()=>{
+reveal();
+activeNav();
 });
 </script>
 
