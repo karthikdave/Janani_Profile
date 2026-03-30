@@ -1,606 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Janani Balasubramanian | HR Manager</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: auto;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-    }
-
-    nav::-webkit-scrollbar {
-      display: none;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #333;
-      padding-bottom: 4px;
-      flex-shrink: 0;
-    }
-
-    nav a.active {
-      color: #94c11f;
-      border-bottom: 2px solid #94c11f;
-    }
-
-    section {
-      scroll-margin-top: 90px;
-      background: white;
-      margin: 20px;
-      padding: 30px;
-      border-radius: 14px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* HERO */
-    header {
-      display: flex;
-      gap: 30px;
-      padding: 50px 40px 30px;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .photo-frame {
-      width: 150px;
-      height: 150px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 4px solid #94c11f;
-      flex-shrink: 0;
-      background: #fff;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 34px;
-      line-height: 1.2;
-      color: #1f2937;
-    }
-
-    .signature {
-      font-size: 22px;
-      font-weight: 700;
-      margin-top: 10px;
-      line-height: 1.4;
-      color: #111827;
-    }
-
-    .subhook {
-      margin-top: 8px;
-      color: #666;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .contact-line {
-      margin-top: 14px;
-      color: #444;
-      font-weight: 600;
-      line-height: 1.6;
-      word-break: break-word;
-    }
-
-    /* IMPACT BOX */
-    .impact-box {
-      margin-top: 18px;
-      background: #ffffff;
-      border-left: 4px solid #94c11f;
-      padding: 15px 18px;
-      border-radius: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
-    }
-
-    .impact-box:hover {
-      transform: translateY(-3px);
-    }
-
-    .impact-box p {
-      margin: 6px 0;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    /* CTA */
-    .cta-block {
-      max-width: 1200px;
-      margin: 0 auto 10px;
-      padding: 0 40px 10px;
-    }
-
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      padding: 12px 18px;
-      background: #94c11f;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      text-align: center;
-    }
-
-    .resume-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
-    }
-
-    .resume-btn.secondary {
-      background: #333;
-    }
-
-    .cta-note {
-      margin-top: 10px;
-      color: #555;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    /* IMPACT SECTION */
-    #impact {
-      background: white;
-      margin: 20px;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
-    }
-
-    .impact-strip {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .impact-card {
-      flex: 1 1 220px;
-      background: #f9fafb;
-      padding: 16px;
-      border-radius: 10px;
-      font-weight: 600;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
-      min-width: 0;
-    }
-
-    .impact-card:hover {
-      transform: translateY(-3px);
-    }
-
-    h2 {
-      border-left: 4px solid #94c11f;
-      padding-left: 10px;
-      margin-top: 0;
-      color: #1f2937;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    p {
-      line-height: 1.7;
-    }
-
-    /* TIMELINE */
-    .timeline {
-      margin-left: 20px;
-      padding-left: 20px;
-      border-left: 3px solid #94c11f;
-    }
-
-    .exp-block {
-      margin-bottom: 30px;
-      padding: 18px 22px;
-      border-radius: 12px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
-      background: #fff;
-    }
-
-    .exp-block:hover {
-      transform: translateY(-3px);
-    }
-
-    .exp-year {
-      font-size: 12px;
-      color: #888;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-
-    .exp-role {
-      font-weight: 700;
-      margin: 5px 0;
-      color: #374151;
-    }
-
-    .exp-block h3 {
-      margin: 8px 0 4px;
-      color: #111827;
-    }
-
-    .exp-block ul {
-      margin-top: 10px;
-      padding-left: 18px;
-      line-height: 1.7;
-    }
-
-    #education {
-      min-height: 250px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 700px) {
-      nav {
-        justify-content: flex-start;
-        gap: 14px;
-        padding: 12px 12px;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
-      header {
-        flex-direction: column;
-        text-align: center;
-        padding: 28px 18px 20px;
-        gap: 18px;
-      }
-
-      .photo-frame {
-        width: 130px;
-        height: 130px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .signature {
-        font-size: 18px;
-      }
-
-      .subhook {
-        font-size: 14px;
-      }
-
-      .contact-line {
-        font-size: 14px;
-      }
-
-      .impact-strip {
-        flex-direction: column;
-      }
-
-      .cta-block {
-        padding: 0 16px 8px;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .resume-btn {
-        width: 100%;
-      }
-
-      .cta-note {
-        text-align: center;
-        font-size: 13px;
-      }
-
-      section,
-      #impact {
-        margin: 14px;
-        padding: 20px;
-      }
-
-      .timeline {
-        margin-left: 8px;
-        padding-left: 14px;
-      }
-
-      .exp-block {
-        padding: 16px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Janani | HR Professional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <nav>
-    <a href="#summary">Summary</a>
-    <a href="#impact">Impact</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-  </nav>
+<!-- HERO -->
+<section class="bg-white py-16 px-6 shadow-sm">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-  <header>
-    <div class="photo-frame">
-      <img src="janani_profile.jpg" alt="Janani Balasubramanian">
+    <!-- IMAGE -->
+    <div class="flex-shrink-0">
+      <img src="your-photo.jpg"
+           class="w-40 h-40 rounded-full shadow-lg object-cover">
+    </div>
+
+    <!-- TEXT -->
+    <div class="text-center md:text-left">
+      <h1 class="text-4xl font-bold mb-3">Janani Balasubramanian</h1>
+
+      <p class="text-xl text-gray-600 mb-4">
+        HR Professional who builds people-first workplaces & drives meaningful talent outcomes
+      </p>
+
+      <p class="text-gray-500 mb-4 max-w-xl">
+        Passionate about hiring the right talent, creating engaging employee experiences, 
+        and supporting organizations in building strong, people-centric cultures.
+      </p>
+
+      <!-- IMPACT POINTS -->
+      <div class="space-y-2 text-gray-700">
+        <p>✔ Skilled in Talent Acquisition & Candidate Experience</p>
+        <p>✔ Strong focus on Employee Engagement & HR Operations</p>
+        <p>✔ Committed to building positive and inclusive workplaces</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-12 px-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+  <p class="text-gray-600 leading-relaxed">
+    I am an HR professional with a strong interest in talent acquisition, employee engagement, 
+    and HR operations. I believe HR is not just about processes — it’s about people, culture, 
+    and creating an environment where individuals can thrive and contribute meaningfully.
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="bg-white py-12 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-6">Experience</h2>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-medium">HR Role – [Company Name]</h3>
+      <p class="text-gray-500 text-sm mb-2">Duration</p>
+      <ul class="list-disc ml-6 text-gray-600">
+        <li>Managed end-to-end recruitment process across multiple roles</li>
+        <li>Improved hiring efficiency by streamlining candidate screening</li>
+        <li>Coordinated onboarding to ensure smooth employee experience</li>
+        <li>Collaborated with stakeholders to understand hiring needs</li>
+      </ul>
     </div>
 
     <div>
-      <h1>Janani Balasubramanian</h1>
-
-      <div class="signature">
-        Strategic HRBP leader enabling workforce scale, leadership hiring, and people excellence in high-growth manufacturing businesses
-      </div>
-
-      <div class="subhook">
-        15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
-      </div>
-
-      <div class="impact-box">
-        <p>✔ Leads strategic HR partnering aligned to business growth and operational priorities</p>
-        <p>✔ Drives talent acquisition, workforce planning, and organization scale in fast-paced manufacturing environments</p>
-        <p>✔ Enables employee engagement, retention, and people processes that support leadership and execution</p>
-      </div>
-
-      <div class="contact-line">
-        Chennai | beingjanani@gmail.com
-      </div>
-    </div>
-  </header>
-
-  <div class="cta-block">
-    <div class="cta-buttons">
-      <a class="resume-btn" href="mailto:beingjanani@gmail.com?subject=Request%20for%20Full%20Resume%20-%20Janani%20Balasubramanian">
-        Request Full Resume
-      </a>
-
-      <a class="resume-btn secondary" href="mailto:beingjanani@gmail.com">
-        Email
-      </a>
+      <h3 class="text-xl font-medium">HR Intern – [Company Name]</h3>
+      <p class="text-gray-500 text-sm mb-2">Duration</p>
+      <ul class="list-disc ml-6 text-gray-600">
+        <li>Supported recruitment and HR operations</li>
+        <li>Maintained employee records and documentation</li>
+        <li>Assisted in engagement initiatives and internal communication</li>
+      </ul>
     </div>
 
-    <div class="cta-note">
-      For leadership hiring discussions, HR partnerships, or full profile access — connect directly via email.
-    </div>
   </div>
+</section>
 
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>
-      HRBP leader with 15+ years of experience driving workforce strategy, talent acquisition, employee engagement, and business-aligned people decisions across high-growth manufacturing environments. Proven in partnering with leadership teams to support scale, strengthen people processes, and align HR priorities with business performance and operational goals.
-    </p>
-  </section>
+<!-- SKILLS -->
+<section class="py-12 px-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="bg-gray-200 px-3 py-1 rounded-full">Talent Acquisition</span>
+    <span class="bg-gray-200 px-3 py-1 rounded-full">Employee Engagement</span>
+    <span class="bg-gray-200 px-3 py-1 rounded-full">HR Operations</span>
+    <span class="bg-gray-200 px-3 py-1 rounded-full">Communication</span>
+    <span class="bg-gray-200 px-3 py-1 rounded-full">Stakeholder Management</span>
+  </div>
+</section>
 
-  <section id="impact">
-    <h2>Impact</h2>
+<!-- SIGNATURE SECTION -->
+<section class="bg-gray-900 text-white py-12 px-6 text-center">
+  <h2 class="text-2xl font-semibold mb-4">What Makes Me Different</h2>
+  <p class="max-w-2xl mx-auto text-gray-300">
+    I don’t just fill positions — I focus on finding the right people who align with 
+    the organization’s culture and long-term vision. I believe HR plays a critical role 
+    in shaping not just teams, but the overall success of a company.
+  </p>
+</section>
 
-    <div class="impact-strip">
-      <div class="impact-card">Strategic HR Business Partnering</div>
-      <div class="impact-card">High-Volume & Leadership Hiring</div>
-      <div class="impact-card">Workforce Scale for Manufacturing Growth</div>
-      <div class="impact-card">Employee Engagement & Retention</div>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section class="py-12 px-6 text-center">
+  <h2 class="text-2xl font-semibold mb-4">Let’s Connect</h2>
+  <p class="text-gray-600 mb-4">Open to HR opportunities and meaningful collaborations</p>
+  <p class="text-gray-800 font-medium">janani@email.com</p>
+</section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="timeline">
-
-      <div class="exp-block">
-        <div class="exp-year">Jan 2026 – Present</div>
-        <h3>Ola Electric</h3>
-        <div class="exp-role">Manager HR (HRBP)</div>
-        <ul>
-          <li>Partnering with business leaders to align HR priorities with organizational growth, workforce capability, and operational goals</li>
-          <li>Driving strategic hiring and workforce planning for key business and manufacturing roles</li>
-          <li>Leading employee engagement and retention initiatives to strengthen people outcomes in a high-growth environment</li>
-        </ul>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-year">Mar 2020 – Dec 2025</div>
-        <h3>Salcomp</h3>
-        <div class="exp-role">Deputy Manager (HRBP)</div>
-        <ul>
-          <li>Partnered with leadership on workforce planning, organization readiness, and HR support for business expansion</li>
-          <li>Led end-to-end hiring execution across multiple functions to meet scale and capability requirements</li>
-          <li>Strengthened HR alignment with business needs through responsive people support and operational execution</li>
-        </ul>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-year">Aug 2012 – Feb 2020</div>
-        <h3>Nokia</h3>
-        <div class="exp-role">HR Senior Executive</div>
-        <ul>
-          <li>Supported employee engagement and core HR operations within structured, high-performance business environments</li>
-          <li>Contributed to performance management processes and employee lifecycle support aligned with organizational standards</li>
-          <li>Worked within global HR frameworks to ensure process consistency, employee support, and business coordination</li>
-        </ul>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-year">Jul 2008 – Mar 2011</div>
-        <h3>Arrant HR</h3>
-        <div class="exp-role">HR Senior Executive</div>
-        <ul>
-          <li>Managed recruitment lifecycle activities and day-to-day HR operations for client and internal requirements</li>
-          <li>Handled payroll coordination, employee documentation, and process support across HR activities</li>
-          <li>Supported HR process implementation and service delivery to ensure operational continuity</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>
-      HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Performance Management • Retention Initiatives • People Process Excellence
-    </p>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
-    <p><b>MSW</b> – 2008 | Cauvery College</p>
-    <p><b>BSW</b> – 2006 | Cauvery College</p>
-  </section>
-
-  <script>
-    /* Prevent browser from restoring previous scroll position */
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-
-    /* Smooth scroll ONLY for nav clicks */
-    navLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }
-      });
-    });
-
-    function revealVisibleSections() {
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          sec.classList.add("visible");
-        }
-      });
-
-      const firstSection = document.getElementById("summary");
-      if (firstSection) {
-        firstSection.classList.add("visible");
-      }
-    }
-
-    function updateActiveNav() {
-      let current = "summary";
-
-      sections.forEach(sec => {
-        const top = sec.offsetTop - 120;
-        if (window.scrollY >= top) {
-          current = sec.id;
-        }
-      });
-
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-        current = "education";
-      }
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    }
-
-    function updatePageState() {
-      revealVisibleSections();
-      updateActiveNav();
-    }
-
-    /* Top-load fix */
-    window.addEventListener("load", function () {
-      window.scrollTo(0, 0);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        updatePageState();
-      }, 50);
-    });
-
-    window.addEventListener("pageshow", function () {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        updatePageState();
-      }, 50);
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      updatePageState();
-    });
-
-    window.addEventListener("scroll", updatePageState);
-    window.addEventListener("resize", updatePageState);
-  </script>
+<!-- FOOTER -->
+<footer class="text-center text-gray-400 py-6 text-sm">
+  © 2026 Janani Balasubramanian
+</footer>
 
 </body>
 </html>
