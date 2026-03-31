@@ -10,7 +10,11 @@
 <style>
 *{box-sizing:border-box;}
 
-html,body{
+html{
+scroll-behavior:smooth;
+}
+
+body{
 margin:0;
 font-family:'Open Sans',sans-serif;
 background:linear-gradient(to bottom,#f5f7fa,#eef6d5);
@@ -34,9 +38,8 @@ text-decoration:none;
 font-weight:600;
 color:#333;
 }
-nav a.active{
+nav a:hover{
 color:#94c11f;
-border-bottom:2px solid #94c11f;
 }
 
 /* HEADER */
@@ -168,36 +171,6 @@ text-align:center;
 
 <body>
 
-<script>
-window.onload = function() {
-  window.scrollTo(0,0);
-};
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const id = entry.target.getAttribute("id");
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if(link.getAttribute("href") === "#" + id){
-          link.classList.add("active");
-        }
-      });
-    }
-  });
-}, {
-  threshold: 0.6
-});
-
-sections.forEach(section => {
-  observer.observe(section);
-});
-</script>
-
 <nav>
 <a href="#summary">Summary</a>
 <a href="#impact">Impact</a>
@@ -231,8 +204,8 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 </header>
 
 <div class="cta">
-<a href="mailto:beingjanani@gmail.com?subject=Connecting%20with%20Janani">Contact</a>
-<a href="mailto:beingjanani@gmail.com?subject=Requesting%20Resume%20-%20Janani%20HR">Request Resume</a>
+<a href="mailto:beingjanani@gmail.com">Contact</a>
+<a href="mailto:beingjanani@gmail.com?subject=Request%20for%20Resume">Request Resume</a>
 </div>
 
 <section id="summary">
