@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Janani Balasubramanian | HR Manager</title>
+<title>Janani Balasubramanian | HR Leader</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-html { scroll-behavior: smooth; }
-
 body{
 margin:0;
 font-family:'Open Sans',sans-serif;
-background:linear-gradient(180deg,#f8fafc,#eef5e8);
+background:#f4f7f2;
 color:#1a1a1a;
 }
 
@@ -21,12 +19,12 @@ color:#1a1a1a;
 nav{
 position:sticky;
 top:0;
-background:#ffffffd9;
-backdrop-filter:blur(8px);
+background:#ffffffcc;
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
 gap:30px;
-padding:16px;
+padding:18px;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
@@ -37,21 +35,25 @@ color:#444;
 }
 
 /* HERO */
-header{
-display:flex;
-gap:40px;
-padding:70px 40px 30px;
-align-items:center;
+.hero{
+background:linear-gradient(120deg,#ffffff,#eef5e8);
+padding:80px 40px;
+}
+
+.hero-inner{
 max-width:1100px;
 margin:auto;
+display:flex;
+align-items:center;
+gap:50px;
 }
 
 .photo-frame{
-width:180px;
-height:180px;
-border-radius:20px;
+width:200px;
+height:200px;
+border-radius:24px;
 overflow:hidden;
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 .photo-frame img{
 width:100%;
@@ -60,36 +62,34 @@ object-fit:cover;
 object-position:50% 20%;
 }
 
-h1{
+.hero-text h1{
 margin:0;
 font-family:'Montserrat';
-font-size:36px;
+font-size:42px;
 }
 
 .signature{
+margin-top:12px;
 font-size:20px;
-margin-top:10px;
 color:#333;
 }
 
 .subhook{
 margin-top:8px;
-color:#777;
+color:#666;
 }
 
 .impact-box{
 margin-top:20px;
-padding:18px;
-border-radius:12px;
 background:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
+padding:20px;
+border-radius:14px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 /* CTA */
 .cta{
-max-width:1100px;
-margin:auto;
-padding:0 40px 30px;
+margin-top:25px;
 }
 .cta a{
 padding:12px 20px;
@@ -98,39 +98,52 @@ color:#fff;
 border-radius:8px;
 text-decoration:none;
 margin-right:12px;
-display:inline-block;
 }
 
 /* SECTIONS */
-section{
-margin:40px auto;
-padding:40px;
-border-radius:16px;
+.section{
+padding:60px 40px;
+}
+
+.section.alt{
+background:#ffffff;
+}
+
+.container{
 max-width:1100px;
-background:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+margin:auto;
 }
 
 h2{
 font-family:'Montserrat';
 margin-bottom:20px;
+font-size:26px;
+}
+
+/* CARD */
+.card{
+background:#fff;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 /* TIMELINE */
 .timeline{
-border-left:2px solid #ddd;
-padding-left:20px;
+border-left:2px solid #dcdcdc;
+padding-left:25px;
+margin-top:20px;
 }
 
 .block{
-margin-bottom:30px;
+margin-bottom:35px;
 position:relative;
 }
 .block::before{
 content:"";
 position:absolute;
-left:-31px;
-top:5px;
+left:-33px;
+top:6px;
 width:12px;
 height:12px;
 background:#94c11f;
@@ -144,12 +157,15 @@ color:#888;
 
 .role{
 font-weight:700;
-margin:6px 0;
+margin-top:5px;
 }
 
 /* MOBILE */
 @media(max-width:700px){
-header{flex-direction:column;text-align:center;}
+.hero-inner{
+flex-direction:column;
+text-align:center;
+}
 }
 </style>
 </head>
@@ -164,40 +180,63 @@ header{flex-direction:column;text-align:center;}
 <a href="#education">Education</a>
 </nav>
 
-<header>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+
 <div class="photo-frame">
-<img src="janani_profile.jpg" alt="Janani">
+<img src="janani_profile.jpg">
 </div>
 
-<div>
+<div class="hero-text">
 <h1>Janani Balasubramanian</h1>
-<div class="signature">HRBP Leader driving hiring strategy & workforce scale</div>
-<div class="subhook">15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia</div>
+
+<div class="signature">
+HRBP Leader driving hiring strategy, workforce scale & business alignment
+</div>
+
+<div class="subhook">
+15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+</div>
 
 <div class="impact-box">
 ✔ Hiring Strategy & Workforce Scaling<br>
 ✔ HRBP Leadership Alignment<br>
 ✔ Engagement & Retention
 </div>
-</div>
-</header>
 
 <div class="cta">
 <a href="mailto:beingjanani@gmail.com">Contact</a>
 <a href="mailto:beingjanani@gmail.com?subject=Request Resume">Request Resume</a>
 </div>
 
-<section id="summary">
+</div>
+</div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary" class="section">
+<div class="container">
 <h2>Summary</h2>
-<p>HR leader with 15+ years driving hiring, workforce planning, and business-aligned HR strategy.</p>
+<div class="card">
+HR leader with 15+ years of experience driving hiring strategy, workforce planning, and business-aligned HR execution.
+</div>
+</div>
 </section>
 
-<section id="impact">
+<!-- IMPACT -->
+<section id="impact" class="section alt">
+<div class="container">
 <h2>Core Impact</h2>
-<p>HRBP • Hiring Strategy • Workforce Planning • Engagement • HR Ops</p>
+<div class="card">
+HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations
+</div>
+</div>
 </section>
 
-<section id="experience">
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+<div class="container">
 <h2>Professional Journey</h2>
 
 <div class="timeline">
@@ -223,14 +262,22 @@ header{flex-direction:column;text-align:center;}
 </div>
 
 </div>
+</div>
 </section>
 
-<section id="skills">
+<!-- SKILLS -->
+<section id="skills" class="section alt">
+<div class="container">
 <h2>Skills</h2>
-<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Ops</p>
+<div class="card">
+HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operations • Compliance
+</div>
+</div>
 </section>
 
-<section id="education">
+<!-- EDUCATION -->
+<section id="education" class="section">
+<div class="container">
 <h2>Education</h2>
 
 <div class="timeline">
@@ -250,6 +297,7 @@ header{flex-direction:column;text-align:center;}
 <div class="role">BSW – Cauvery College</div>
 </div>
 
+</div>
 </div>
 </section>
 
