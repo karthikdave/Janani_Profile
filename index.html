@@ -26,7 +26,7 @@ backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
 gap:30px;
-padding:10px; /* tighter */
+padding:10px;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
@@ -44,7 +44,8 @@ border-bottom:2px solid #94c11f;
 /* HERO */
 .hero{
 background:linear-gradient(120deg,#ffffff,#eef5e8);
-padding:35px 40px 60px; /* 🔥 key fix */
+padding:30px 40px 60px; /* FIXED spacing */
+margin-top:0;
 }
 
 .hero-inner{
@@ -77,13 +78,13 @@ font-size:42px;
 }
 
 .signature{
-margin-top:10px; /* tightened */
+margin-top:10px;
 font-size:20px;
 color:#333;
 }
 
 .subhook{
-margin-top:6px; /* tightened */
+margin-top:6px;
 color:#666;
 }
 
@@ -204,6 +205,7 @@ text-align:center;
 <a href="#education">Education</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-inner">
 
@@ -237,7 +239,92 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 </div>
 </section>
 
-<!-- rest unchanged (same as previous FC) -->
+<!-- SUMMARY -->
+<section id="summary" class="section">
+<div class="container">
+<h2>Summary</h2>
+<div class="card">
+HR leader with 15+ years of experience driving hiring strategy, workforce planning, and business-aligned HR execution.
+</div>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact" class="section alt">
+<div class="container">
+<h2>Core Impact</h2>
+<div class="card">
+HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+<div class="container">
+<h2>Professional Journey</h2>
+
+<div class="timeline">
+
+<div class="block">
+<div class="year">2026 – Present</div>
+<div class="role">Manager HR – Ola Electric</div>
+</div>
+
+<div class="block">
+<div class="year">2020 – 2025</div>
+<div class="role">Deputy Manager – Salcomp</div>
+</div>
+
+<div class="block">
+<div class="year">2012 – 2020</div>
+<div class="role">HR Senior Executive – Nokia</div>
+</div>
+
+<div class="block">
+<div class="year">2008 – 2012</div>
+<div class="role">HR Executive – Arrant Solutions</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section alt">
+<div class="container">
+<h2>Skills</h2>
+<div class="card">
+HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operations • Compliance
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+<div class="container">
+<h2>Education</h2>
+
+<div class="timeline">
+
+<div class="block">
+<div class="year">2010 – 2012</div>
+<div class="role">PGDHRM – Alagappa University</div>
+</div>
+
+<div class="block">
+<div class="year">2008 – 2010</div>
+<div class="role">MSW – Cauvery College</div>
+</div>
+
+<div class="block">
+<div class="year">2005 – 2008</div>
+<div class="role">BSW – Cauvery College</div>
+</div>
+
+</div>
+</div>
+</section>
 
 <script>
 if ('scrollRestoration' in history) {
@@ -246,6 +333,27 @@ if ('scrollRestoration' in history) {
 window.onload = function() {
   window.scrollTo(0,0);
 };
+
+/* NAV ACTIVE */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+let current = "";
+sections.forEach(sec => {
+const top = sec.offsetTop - 120;
+if (pageYOffset >= top) {
+current = sec.id;
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove("active");
+if (link.getAttribute("href") === "#" + current) {
+link.classList.add("active");
+}
+});
+});
 </script>
 
 </body>
