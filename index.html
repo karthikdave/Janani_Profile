@@ -8,12 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
+html { scroll-behavior: smooth; }
 
 body{
 margin:0;
 font-family:'Open Sans',sans-serif;
-background:#f7f9fb;
+background:linear-gradient(180deg,#f8fafc,#eef5e8);
 color:#1a1a1a;
 }
 
@@ -21,22 +21,14 @@ color:#1a1a1a;
 nav{
 position:sticky;
 top:0;
-background:#ffffffcc;
-backdrop-filter:blur(10px);
+background:#ffffffd9;
+backdrop-filter:blur(8px);
 display:flex;
 justify-content:center;
 gap:30px;
 padding:16px;
 border-bottom:1px solid #eee;
 z-index:1000;
-}
-nav a{
-text-decoration:none;
-font-weight:600;
-color:#444;
-}
-nav a:hover{
-color:#94c11f;
 }
 
 /* HERO */
@@ -54,7 +46,7 @@ width:180px;
 height:180px;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 .photo-frame img{
 width:100%;
@@ -71,7 +63,6 @@ font-size:36px;
 
 .signature{
 font-size:20px;
-font-weight:600;
 margin-top:10px;
 color:#333;
 }
@@ -85,12 +76,8 @@ color:#777;
 margin-top:20px;
 padding:18px;
 border-radius:12px;
-background:#ffffff;
+background:#fff;
 box-shadow:0 10px 25px rgba(0,0,0,0.06);
-}
-.impact-box p{
-margin:6px 0;
-font-weight:600;
 }
 
 /* CTA */
@@ -107,7 +94,6 @@ border-radius:8px;
 text-decoration:none;
 margin-right:12px;
 display:inline-block;
-font-weight:600;
 }
 
 /* SECTIONS */
@@ -117,26 +103,25 @@ padding:40px;
 border-radius:16px;
 max-width:1100px;
 background:#fff;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 h2{
-margin-bottom:20px;
 font-family:'Montserrat';
+margin-bottom:20px;
 }
 
-/* EXPERIENCE */
+/* TIMELINE */
 .timeline{
-border-left:2px solid #e0e0e0;
+border-left:2px solid #ddd;
 padding-left:20px;
 }
 
-.exp-block{
+.block{
 margin-bottom:30px;
 position:relative;
 }
-
-.exp-block::before{
+.block::before{
 content:"";
 position:absolute;
 left:-31px;
@@ -147,33 +132,19 @@ background:#94c11f;
 border-radius:50%;
 }
 
-.exp-year{
+.year{
 font-size:12px;
 color:#888;
-margin-bottom:5px;
 }
 
-.exp-role{
+.role{
 font-weight:700;
-margin-bottom:8px;
-}
-
-.exp-block ul{
-padding-left:18px;
-line-height:1.6;
-}
-
-/* SKILLS */
-#skills p{
-line-height:2;
+margin:6px 0;
 }
 
 /* MOBILE */
 @media(max-width:700px){
-header{
-flex-direction:column;
-text-align:center;
-}
+header{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
@@ -190,45 +161,35 @@ text-align:center;
 
 <header>
 <div class="photo-frame">
-<img src="janani_profile.jpg" alt="Janani">
+<img src="janani_profile.jpg">
 </div>
 
 <div>
 <h1>Janani Balasubramanian</h1>
-
-<div class="signature">
-HRBP Leader driving hiring strategy, workforce scale & business alignment
-</div>
-
-<div class="subhook">
-15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
-</div>
+<div class="signature">HRBP Leader driving hiring strategy & workforce scale</div>
+<div class="subhook">15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia</div>
 
 <div class="impact-box">
-<p>✔ Hiring strategy & workforce scaling</p>
-<p>✔ HRBP partnership with leadership</p>
-<p>✔ Engagement & retention focus</p>
+✔ Hiring Strategy & Workforce Scaling<br>
+✔ HRBP Leadership Alignment<br>
+✔ Engagement & Retention
 </div>
 </div>
 </header>
 
 <div class="cta">
 <a href="mailto:beingjanani@gmail.com">Contact</a>
-<a href="mailto:beingjanani@gmail.com?subject=Request%20for%20Resume">Request Resume</a>
+<a href="mailto:beingjanani@gmail.com?subject=Request Resume">Request Resume</a>
 </div>
 
 <section id="summary">
 <h2>Summary</h2>
-<p>
-HR leader with 15+ years of experience driving hiring strategy, workforce planning, and employee engagement across manufacturing and high-growth environments.
-</p>
+<p>HR leader with 15+ years driving hiring, workforce planning, and business-aligned HR strategy.</p>
 </section>
 
 <section id="impact">
-<h2>Core Impact Areas</h2>
-<p>
-HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations Excellence
-</p>
+<h2>Core Impact</h2>
+<p>HRBP • Hiring Strategy • Workforce Planning • Engagement • HR Ops</p>
 </section>
 
 <section id="experience">
@@ -236,44 +197,24 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 
 <div class="timeline">
 
-<div class="exp-block">
-<div class="exp-year">2026 – Present</div>
-<div class="exp-role">Manager HR (HRBP) – Ola Electric</div>
-<ul>
-<li>Align HR strategy with business growth objectives</li>
-<li>Drive hiring and workforce planning</li>
-<li>Lead engagement and retention initiatives</li>
-</ul>
+<div class="block">
+<div class="year">2026 – Present</div>
+<div class="role">Manager HR – Ola Electric</div>
 </div>
 
-<div class="exp-block">
-<div class="exp-year">2020 – 2025</div>
-<div class="exp-role">Deputy Manager (HRBP) – Salcomp</div>
-<ul>
-<li>Partnered with leadership for workforce expansion</li>
-<li>Led hiring delivery across functions</li>
-<li>Improved HR-business alignment</li>
-</ul>
+<div class="block">
+<div class="year">2020 – 2025</div>
+<div class="role">Deputy Manager – Salcomp</div>
 </div>
 
-<div class="exp-block">
-<div class="exp-year">2012 – 2020</div>
-<div class="exp-role">HR Senior Executive – Nokia</div>
-<ul>
-<li>Handled employee engagement & HR operations</li>
-<li>Supported performance management</li>
-<li>Worked in global HR frameworks</li>
-</ul>
+<div class="block">
+<div class="year">2012 – 2020</div>
+<div class="role">HR Senior Executive – Nokia</div>
 </div>
 
-<div class="exp-block">
-<div class="exp-year">2008 – 2012</div>
-<div class="exp-role">HR Executive – Arrant Solutions</div>
-<ul>
-<li>Managed recruitment coordination & onboarding</li>
-<li>Maintained HR documentation</li>
-<li>Supported engagement initiatives</li>
-</ul>
+<div class="block">
+<div class="year">2008 – 2012</div>
+<div class="role">HR Executive – Arrant</div>
 </div>
 
 </div>
@@ -281,17 +222,37 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 
 <section id="skills">
 <h2>Skills</h2>
-<p>
-HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
-</p>
+<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Ops</p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<p><b>PGDHRM</b> – Alagappa University</p>
-<p><b>MSW</b> – Cauvery College</p>
-<p><b>BSW</b> – Cauvery College</p>
+
+<div class="timeline">
+
+<div class="block">
+<div class="year">PGDHRM</div>
+<div class="role">Alagappa University</div>
+</div>
+
+<div class="block">
+<div class="year">MSW</div>
+<div class="role">Cauvery College</div>
+</div>
+
+<div class="block">
+<div class="year">BSW</div>
+<div class="role">Cauvery College</div>
+</div>
+
+</div>
 </section>
+
+<script>
+window.onload = function() {
+window.scrollTo(0,0);
+};
+</script>
 
 </body>
 </html>
