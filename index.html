@@ -170,8 +170,32 @@ text-align:center;
 
 <script>
 window.onload = function() {
-window.scrollTo(0,0);
+  window.scrollTo(0,0);
 };
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.getAttribute("id");
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("href") === "#" + id){
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, {
+  threshold: 0.6
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
 </script>
 
 <nav>
@@ -208,7 +232,6 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 
 <div class="cta">
 <a href="mailto:beingjanani@gmail.com?subject=Connecting%20with%20Janani">Contact</a>
-
 <a href="mailto:beingjanani@gmail.com?subject=Requesting%20Resume%20-%20Janani%20HR">Request Resume</a>
 </div>
 
