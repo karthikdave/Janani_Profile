@@ -10,8 +10,9 @@
 <style>
 *{box-sizing:border-box;}
 
-body{
+html,body{
 margin:0;
+scroll-behavior:smooth;
 font-family:'Open Sans',sans-serif;
 background:linear-gradient(to bottom,#f5f7fa,#eef6d5);
 color:#222;
@@ -116,17 +117,7 @@ margin:30px auto;
 padding:40px 45px;
 border-radius:14px;
 max-width:1100px;
-
-opacity:0;
-transform:translateY(30px);
-transition:all 0.6s ease;
-
 box-shadow:0 8px 20px rgba(0,0,0,0.06);
-}
-
-section.visible{
-opacity:1;
-transform:translateY(0);
 }
 
 h2{
@@ -178,6 +169,12 @@ text-align:center;
 
 <body>
 
+<script>
+window.onload = function() {
+window.scrollTo(0,0);
+};
+</script>
+
 <nav>
 <a href="#summary">Summary</a>
 <a href="#impact">Impact</a>
@@ -211,8 +208,8 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 </header>
 
 <div class="cta">
-<a href="mailto:beingjanani@gmail.com">Contact</a>
-<a href="mailto:beingjanani@gmail.com">Request Resume</a>
+<a href="mailto:beingjanani@gmail.com?subject=Contacting%20Janani">Contact</a>
+<a href="Janani_Resume.pdf" target="_blank">View Resume</a>
 </div>
 
 <section id="summary">
@@ -264,6 +261,16 @@ Business HR Partnering • Hiring Strategy & Execution • Workforce Planning �
 </ul>
 </div>
 
+<div class="exp-block">
+<div class="exp-year">Jun 2008 – Jul 2012</div>
+<div class="exp-role">HR Executive – Arrant Solutions</div>
+<ul>
+<li>Handled recruitment coordination and onboarding processes</li>
+<li>Maintained employee records and HR documentation</li>
+<li>Supported HR operations and engagement initiatives</li>
+</ul>
+</div>
+
 </div>
 </section>
 
@@ -280,47 +287,6 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 <p><b>MSW</b> – 2008 | Cauvery College</p>
 <p><b>BSW</b> – 2006 | Cauvery College</p>
 </section>
-
-<script>
-const sections=document.querySelectorAll("section");
-const navLinks=document.querySelectorAll("nav a");
-
-function reveal(){
-sections.forEach(sec=>{
-const rect=sec.getBoundingClientRect();
-if(rect.top<window.innerHeight-50){
-sec.classList.add("visible");
-}
-});
-}
-
-function activeNav(){
-let current="";
-sections.forEach(sec=>{
-const rect=sec.getBoundingClientRect();
-if(rect.top<=120 && rect.bottom>=120){
-current=sec.id;
-}
-});
-
-navLinks.forEach(link=>{
-link.classList.remove("active");
-if(link.getAttribute("href")==="#"+current){
-link.classList.add("active");
-}
-});
-}
-
-window.addEventListener("scroll",()=>{
-reveal();
-activeNav();
-});
-
-window.addEventListener("load",()=>{
-reveal();
-activeNav();
-});
-</script>
 
 </body>
 </html>
