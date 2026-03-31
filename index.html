@@ -89,18 +89,31 @@ border-radius:14px;
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
-/* CTA */
+/* CTA - PREMIUM BUTTONS */
 .cta{
 margin-top:25px;
 }
 .cta a{
-padding:12px 20px;
-background:#94c11f;
+padding:12px 22px;
+background:linear-gradient(135deg,#94c11f,#7da816);
 color:#fff;
-border-radius:8px;
+border-radius:10px;
 text-decoration:none;
 margin-right:12px;
 display:inline-block;
+font-weight:600;
+box-shadow:0 8px 18px rgba(148,193,31,0.35);
+transition:all 0.25s ease;
+}
+
+.cta a:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 26px rgba(148,193,31,0.45);
+}
+
+.cta a:active{
+transform:translateY(0px);
+box-shadow:0 6px 12px rgba(148,193,31,0.3);
 }
 
 /* SECTIONS */
@@ -129,6 +142,11 @@ background:#fff;
 padding:30px;
 border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.06);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-3px);
 }
 
 /* TIMELINE */
@@ -308,11 +326,9 @@ HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operati
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 0);
-});
+window.onload = function() {
+  window.scrollTo(0,0);
+};
 </script>
 
 </body>
