@@ -5,59 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Janani Balasubramanian | HR Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
 font-family:'Open Sans',sans-serif;
-background:linear-gradient(to bottom,#f5f7fa,#eef6d5);
-color:#222;
+background:#f7f9fb;
+color:#1a1a1a;
 }
 
 /* NAV */
 nav{
 position:sticky;
 top:0;
-background:#fff;
+background:#ffffffcc;
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
-gap:25px;
-padding:15px;
+gap:30px;
+padding:16px;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 nav a{
 text-decoration:none;
 font-weight:600;
-color:#333;
+color:#444;
 }
 nav a:hover{
 color:#94c11f;
 }
 
-/* HEADER */
+/* HERO */
 header{
 display:flex;
-gap:30px;
-padding:50px 40px 20px;
-align-items:flex-start;
+gap:40px;
+padding:70px 40px 30px;
+align-items:center;
 max-width:1100px;
 margin:auto;
 }
 
 .photo-frame{
-width:160px;
-height:160px;
-border-radius:16px;
+width:180px;
+height:180px;
+border-radius:20px;
 overflow:hidden;
-border:4px solid #94c11f;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 .photo-frame img{
 width:100%;
@@ -69,26 +66,27 @@ object-position:50% 20%;
 h1{
 margin:0;
 font-family:'Montserrat';
-font-size:34px;
+font-size:36px;
 }
 
 .signature{
 font-size:20px;
-font-weight:700;
+font-weight:600;
 margin-top:10px;
+color:#333;
 }
 
 .subhook{
 margin-top:8px;
-color:#666;
+color:#777;
 }
 
 .impact-box{
-margin-top:18px;
-padding:15px;
-border-left:4px solid #94c11f;
-background:#fff;
-box-shadow:0 6px 14px rgba(0,0,0,0.06);
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+background:#ffffff;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 .impact-box p{
 margin:6px 0;
@@ -99,64 +97,75 @@ font-weight:600;
 .cta{
 max-width:1100px;
 margin:auto;
-padding:0 40px 20px;
+padding:0 40px 30px;
 }
 .cta a{
-padding:12px 18px;
+padding:12px 20px;
 background:#94c11f;
 color:#fff;
 border-radius:8px;
 text-decoration:none;
-margin-right:10px;
+margin-right:12px;
 display:inline-block;
+font-weight:600;
 }
 
 /* SECTIONS */
 section{
-scroll-margin-top:90px;
-background:#fff;
-margin:30px auto;
-padding:40px 45px;
-border-radius:14px;
+margin:40px auto;
+padding:40px;
+border-radius:16px;
 max-width:1100px;
-box-shadow:0 8px 20px rgba(0,0,0,0.06);
+background:#fff;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 h2{
-border-left:4px solid #94c11f;
-padding-left:10px;
+margin-bottom:20px;
+font-family:'Montserrat';
 }
 
-/* TIMELINE */
+/* EXPERIENCE */
 .timeline{
-margin-left:20px;
-padding-left:25px;
-border-left:3px solid #94c11f;
+border-left:2px solid #e0e0e0;
+padding-left:20px;
 }
 
 .exp-block{
-margin-bottom:25px;
-padding:18px;
-background:#fff;
-border-radius:10px;
-box-shadow:0 6px 14px rgba(0,0,0,0.05);
+margin-bottom:30px;
+position:relative;
+}
+
+.exp-block::before{
+content:"";
+position:absolute;
+left:-31px;
+top:5px;
+width:12px;
+height:12px;
+background:#94c11f;
+border-radius:50%;
 }
 
 .exp-year{
 font-size:12px;
-color:#777;
-font-weight:700;
+color:#888;
+margin-bottom:5px;
 }
 
 .exp-role{
 font-weight:700;
-margin:5px 0;
+margin-bottom:8px;
 }
 
 .exp-block ul{
-margin-top:10px;
 padding-left:18px;
-line-height:1.7;
+line-height:1.6;
+}
+
+/* SKILLS */
+#skills p{
+line-height:2;
 }
 
 /* MOBILE */
@@ -196,9 +205,9 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 </div>
 
 <div class="impact-box">
-<p>✔ Leads hiring strategy & execution across business units</p>
-<p>✔ Drives HRBP delivery supporting leadership & operations</p>
-<p>✔ Enables workforce scale in high-growth environments</p>
+<p>✔ Hiring strategy & workforce scaling</p>
+<p>✔ HRBP partnership with leadership</p>
+<p>✔ Engagement & retention focus</p>
 </div>
 </div>
 </header>
@@ -211,59 +220,59 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 <section id="summary">
 <h2>Summary</h2>
 <p>
-HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
+HR leader with 15+ years of experience driving hiring strategy, workforce planning, and employee engagement across manufacturing and high-growth environments.
 </p>
 </section>
 
 <section id="impact">
-<h2>Impact</h2>
+<h2>Core Impact Areas</h2>
 <p>
-Business HR Partnering • Hiring Strategy & Execution • Workforce Planning • Employee Engagement • HR Operations Excellence
+HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations Excellence
 </p>
 </section>
 
 <section id="experience">
-<h2>Experience</h2>
+<h2>Professional Journey</h2>
 
 <div class="timeline">
 
 <div class="exp-block">
-<div class="exp-year">Jan 2026 – Present</div>
+<div class="exp-year">2026 – Present</div>
 <div class="exp-role">Manager HR (HRBP) – Ola Electric</div>
 <ul>
-<li>Partnering with leadership to align HR strategy with business growth</li>
-<li>Driving hiring and workforce planning for key roles</li>
-<li>Leading engagement and retention initiatives</li>
+<li>Align HR strategy with business growth objectives</li>
+<li>Drive hiring and workforce planning</li>
+<li>Lead engagement and retention initiatives</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Mar 2020 – Dec 2025</div>
+<div class="exp-year">2020 – 2025</div>
 <div class="exp-role">Deputy Manager (HRBP) – Salcomp</div>
 <ul>
-<li>Collaborated with leadership on workforce and expansion planning</li>
-<li>Led hiring delivery across multiple functions</li>
-<li>Improved HR alignment with business needs</li>
+<li>Partnered with leadership for workforce expansion</li>
+<li>Led hiring delivery across functions</li>
+<li>Improved HR-business alignment</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Aug 2012 – Feb 2020</div>
+<div class="exp-year">2012 – 2020</div>
 <div class="exp-role">HR Senior Executive – Nokia</div>
 <ul>
-<li>Handled employee engagement and HR operations</li>
-<li>Supported performance management processes</li>
-<li>Worked within global HR frameworks</li>
+<li>Handled employee engagement & HR operations</li>
+<li>Supported performance management</li>
+<li>Worked in global HR frameworks</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Jun 2008 – Jul 2012</div>
+<div class="exp-year">2008 – 2012</div>
 <div class="exp-role">HR Executive – Arrant Solutions</div>
 <ul>
-<li>Handled recruitment coordination and onboarding processes</li>
-<li>Maintained employee records and HR documentation</li>
-<li>Supported HR operations and engagement initiatives</li>
+<li>Managed recruitment coordination & onboarding</li>
+<li>Maintained HR documentation</li>
+<li>Supported engagement initiatives</li>
 </ul>
 </div>
 
@@ -279,9 +288,9 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 
 <section id="education">
 <h2>Education</h2>
-<p><b>PGDHRM</b> – 2011 | Alagappa University</p>
-<p><b>MSW</b> – 2008 | Cauvery College</p>
-<p><b>BSW</b> – 2006 | Cauvery College</p>
+<p><b>PGDHRM</b> – Alagappa University</p>
+<p><b>MSW</b> – Cauvery College</p>
+<p><b>BSW</b> – Cauvery College</p>
 </section>
 
 </body>
