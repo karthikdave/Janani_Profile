@@ -10,11 +10,17 @@
 <style>
 html { scroll-behavior: smooth; }
 
+*{
+box-sizing:border-box;
+max-width:100%;
+}
+
 body{
 margin:0;
 font-family:'Open Sans',sans-serif;
 background:#f4f7f2;
 color:#1a1a1a;
+overflow-x:hidden; /* ✅ FIX MOBILE OVERFLOW */
 }
 
 /* NAV */
@@ -29,6 +35,7 @@ gap:30px;
 padding:10px;
 border-bottom:1px solid #eee;
 z-index:1000;
+flex-wrap:wrap; /* ✅ PREVENT CUT */
 }
 nav a{
 text-decoration:none;
@@ -63,6 +70,7 @@ border-radius:24px;
 overflow:hidden;
 border:4px solid #94c11f;
 box-shadow:0 20px 40px rgba(0,0,0,0.12);
+flex-shrink:0; /* ✅ PREVENT STRETCH */
 }
 .photo-frame img{
 width:100%;
@@ -187,9 +195,24 @@ margin-top:5px;
 
 /* MOBILE */
 @media(max-width:700px){
+
+.hero{
+padding:20px 15px 40px; /* ✅ FIX SIDE CUT */
+}
+
+.section{
+padding:40px 15px; /* ✅ FIX SIDE CUT */
+}
+
 .hero-inner{
 flex-direction:column;
 text-align:center;
+gap:20px;
+}
+
+nav{
+gap:15px;
+font-size:14px;
 }
 }
 </style>
@@ -341,7 +364,7 @@ const navLinks = document.querySelectorAll("nav a");
 window.addEventListener("scroll", () => {
 let current = "";
 sections.forEach(sec => {
-const top = sec.offsetTop - 120;
+const top = sec.offsetTop - 80; /* ✅ FIXED OFFSET */
 if (pageYOffset >= top) {
 current = sec.id;
 }
