@@ -9,183 +9,134 @@
 
 <style>
 html { scroll-behavior: smooth; }
-* { box-sizing:border-box; }
+* { box-sizing: border-box; }
 body {
-  margin:0;
-  font-family:'Open Sans',sans-serif;
-  background:#f4f7f2;
-  color:#1a1a1a;
-  overflow-x:hidden;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #f4f7f2;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 /* NAV */
 nav {
-  position:sticky;
-  top:0;
-  background:#ffffffcc;
-  backdrop-filter:blur(10px);
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  padding:10px;
-  border-bottom:1px solid #eee;
-  z-index:1000;
-  flex-wrap:wrap;
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 nav a {
-  text-decoration:none;
-  font-weight:600;
-  color:#444;
-  padding-bottom:4px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #444;
+  padding-bottom: 4px;
 }
 nav a.active {
-  color:#94c11f;
-  border-bottom:2px solid #94c11f;
+  color: #94c11f;
+  border-bottom: 2px solid #94c11f;
 }
 
 /* HERO */
 .hero {
-  background:linear-gradient(120deg,#ffffff,#eef5e8);
-  padding:50px 40px 80px;
+  background: linear-gradient(120deg, #ffffff, #eef5e8);
+  padding: 30px 40px 60px;
 }
-
 .hero-inner {
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:60px;
-  flex-wrap:wrap;
-  position:relative;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
 }
-
-/* PHOTO FRAME PREMIUM ENHANCEMENT */
 .photo-frame {
-  width:220px;
-  height:220px;
-  border-radius:24px;
-  overflow:hidden;
-  border:4px solid #94c11f;
-  box-shadow:0 25px 50px rgba(0,0,0,0.15);
-  background:linear-gradient(135deg, #f0f5eb, #e5f0d9);
-  transition: all 0.3s ease;
+  width: 200px;
+  height: 200px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid #94c11f;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 .photo-frame img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:50% 20%;
-  display:block;
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
-.photo-frame:hover img {
-  transform: scale(1.03);
-}
-
 .hero-text h1 {
-  margin:0;
-  font-family:'Montserrat';
-  font-size:48px;
-  line-height:1.2;
+  margin: 0;
+  font-family: 'Montserrat';
+  font-size: 42px;
 }
-
-.signature { margin-top:12px; font-size:22px; color:#333; }
-.subhook { margin-top:8px; color:#666; }
-
+.signature { margin-top: 10px; font-size: 20px; color: #333; }
+.subhook { margin-top: 6px; color: #666; }
 .impact-box {
-  margin-top:20px;
-  background:#fff;
-  padding:20px;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+  margin-top: 16px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   word-break: break-word;
 }
-
 /* CTA */
-.cta { margin-top:20px; }
+.cta { margin-top: 18px; }
 .cta a {
-  padding:14px 26px;
-  background:linear-gradient(135deg,#94c11f,#7da816);
-  color:#fff;
-  border-radius:12px;
-  text-decoration:none;
-  margin-right:14px;
-  display:inline-block;
-  font-weight:600;
-  box-shadow:0 10px 22px rgba(148,193,31,0.35);
-  transition:all 0.3s ease;
-  text-align:center;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #94c11f, #7da816);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-right: 12px;
+  display: inline-block;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(148,193,31,0.35);
+  transition: all 0.25s ease;
+  text-align: center;
 }
 .cta a:hover {
-  transform:translateY(-3px) scale(1.02);
-  box-shadow:0 14px 28px rgba(148,193,31,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(148,193,31,0.45);
 }
-
 /* SECTIONS */
-.section {
-  padding:55px 40px;
-  scroll-margin-top:80px;
-}
-.section.alt { background:#ffffff; }
-.container { max-width:1100px; margin:auto; }
-h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
-
+.section { padding: 55px 40px; scroll-margin-top: 80px; }
+.section.alt { background: #ffffff; }
+.container { max-width: 1100px; margin: auto; }
+h2 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 26px; }
 /* CARD */
-.card {
-  background:#fff;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  transition:0.3s;
-  max-width:100%;
-  overflow-wrap:break-word;
-}
-.card:hover { transform:translateY(-3px); }
-
+.card { background: #fff; padding: 30px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); transition: 0.3s; max-width: 100%; overflow-wrap: break-word; }
+.card:hover { transform: translateY(-3px); }
 /* TIMELINE */
-.timeline {
-  border-left:2px solid #dcdcdc;
-  padding-left:25px;
-  margin-top:20px;
-  max-width:100%;
-}
-.block {
-  margin-bottom:35px;
-  position:relative;
-}
-.block::before {
-  content:"";
-  position:absolute;
-  left:-33px;
-  top:6px;
-  width:12px;
-  height:12px;
-  background:#94c11f;
-  border-radius:50%;
-}
-.year { font-size:12px; color:#888; }
-.role { font-weight:700; margin-top:5px; }
-
+.timeline { border-left: 2px solid #dcdcdc; padding-left: 25px; margin-top: 20px; max-width: 100%; }
+.block { margin-bottom: 35px; position: relative; }
+.block::before { content: ""; position: absolute; left: -33px; top: 6px; width: 12px; height: 12px; background: #94c11f; border-radius: 50%; }
+.year { font-size: 12px; color: #888; }
+.role { font-weight: 700; margin-top: 5px; }
 /* MOBILE */
-@media(max-width:700px){
-  nav { gap:15px; font-size:13px; }
-  .hero { padding:20px; }
-  .hero-inner { flex-direction:column; text-align:center; gap:20px; }
-  .hero-text h1 { font-size:28px; }
-  .signature { font-size:16px; }
-  .section { padding:40px 20px; }
-  .photo-frame { width:150px; height:150px; }
-  .cta a { display:block; margin-bottom:10px; margin-right:0; width:100%; }
+@media(max-width:700px) {
+  nav { gap: 15px; font-size: 13px; }
+  .hero { padding: 20px; }
+  .hero-inner { flex-direction: column; text-align: center; gap: 20px; }
+  .hero-text h1 { font-size: 28px; }
+  .signature { font-size: 16px; }
+  .section { padding: 40px 20px; }
+  .photo-frame { width: 150px; height: 150px; }
+  .cta a { display: block; margin-bottom: 10px; margin-right: 0; width: 100%; }
 }
 @media(max-width:400px){
-  .hero-inner { gap:15px; padding:10px; }
-  .photo-frame { width:120px; height:120px; }
-  .section { padding:30px 15px; }
-  .cta a { font-size:14px; }
+  .hero-inner { gap: 15px; padding: 10px; }
+  .photo-frame { width: 120px; height: 120px; }
+  .section { padding: 30px 15px; }
+  .cta a { font-size: 14px; }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -198,46 +149,37 @@ h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
 
 <section class="hero">
 <div class="hero-inner">
-  <div class="photo-frame">
-    <img src="janani_profile.jpg" alt="Janani">
-  </div>
-  <div class="hero-text">
-    <h1>Janani Balasubramanian</h1>
-    <div class="signature">
-      HRBP Leader driving hiring strategy, workforce scale & business alignment
-    </div>
-    <div class="subhook">
-      15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia • Ex-Arrant
-    </div>
-    <div class="impact-box">
-      ✔ Hiring Strategy & Workforce Scaling<br>
-      ✔ HRBP Leadership Alignment<br>
-      ✔ Engagement & Retention
-    </div>
-    <div class="cta">
-      <a href="mailto:beingjanani@gmail.com">Contact</a>
-      <a href="mailto:beingjanani@gmail.com?subject=Request Resume">Request Resume</a>
-    </div>
-  </div>
+<div class="photo-frame">
+<img src="janani_profile.jpg" alt="Janani">
+</div>
+<div class="hero-text">
+<h1>Janani Balasubramanian</h1>
+<div class="signature">HRBP Leader driving hiring strategy, workforce scale & business alignment</div>
+<div class="subhook">15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia • Ex-Arrant</div>
+<div class="impact-box">
+✔ Hiring Strategy & Workforce Scaling<br>
+✔ HRBP Leadership Alignment<br>
+✔ Engagement & Retention
+</div>
+<div class="cta">
+<a href="mailto:beingjanani@gmail.com">Contact</a>
+<a href="mailto:beingjanani@gmail.com?subject=Request Resume">Request Resume</a>
+</div>
+</div>
 </div>
 </section>
 
-<!-- Other sections remain same as before -->
 <section id="summary" class="section">
 <div class="container">
 <h2>Summary</h2>
-<div class="card">
-HR leader with 15+ years of experience driving hiring strategy, workforce planning, and business-aligned HR execution.
-</div>
+<div class="card">HR leader with 15+ years of experience driving hiring strategy, workforce planning, and business-aligned HR execution.</div>
 </div>
 </section>
 
 <section id="impact" class="section alt">
 <div class="container">
 <h2>Core Impact</h2>
-<div class="card">
-HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations
-</div>
+<div class="card">HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations</div>
 </div>
 </section>
 
@@ -246,24 +188,24 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 <h2>Professional Journey</h2>
 <div class="timeline">
 <div class="block">
-  <div class="year">Jan 2026 – Present</div>
-  <div class="role">Manager – HR | Ola Electric</div>
-  <p>Driving workforce strategy, HRBP alignment, and talent acquisition initiatives across multiple business units.</p>
+<div class="year">Jan 2026 – Present</div>
+<div class="role">Manager – HR | Ola Electric</div>
+<p>Driving workforce strategy, HRBP alignment, and talent acquisition initiatives across multiple business units.</p>
 </div>
 <div class="block">
-  <div class="year">Mar 2020 – Dec 2025</div>
-  <div class="role">Deputy Manager – HRBP | Salcomp</div>
-  <p>Led HRBP activities, workforce planning, employee engagement programs, and compliance for global operations.</p>
+<div class="year">Mar 2020 – Dec 2025</div>
+<div class="role">Deputy Manager – HRBP | Salcomp</div>
+<p>Led HRBP activities, workforce planning, employee engagement programs, and compliance for global operations.</p>
 </div>
 <div class="block">
-  <div class="year">Aug 2012 – Feb 2020</div>
-  <div class="role">Senior Executive – HR | Nokia</div>
-  <p>Managed recruitment, talent retention strategies, and HR operations across multiple regions.</p>
+<div class="year">Aug 2012 – Feb 2020</div>
+<div class="role">Senior Executive – HR | Nokia</div>
+<p>Managed recruitment, talent retention strategies, and HR operations across multiple regions.</p>
 </div>
 <div class="block">
-  <div class="year">2010 – 2012</div>
-  <div class="role">HR Executive | Arrant</div>
-  <p>Implemented HR policies, recruitment processes, and performance management systems.</p>
+<div class="year">Jan 2010 – Dec 2012</div>
+<div class="role">HR Executive | Arrant</div>
+<p>Implemented HR policies, recruitment processes, and performance management systems.</p>
 </div>
 </div>
 </div>
@@ -272,9 +214,7 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 <section id="skills" class="section alt">
 <div class="container">
 <h2>Skills</h2>
-<div class="card">
-HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operations • Compliance
-</div>
+<div class="card">HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operations • Compliance</div>
 </div>
 </section>
 
@@ -282,18 +222,9 @@ HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operati
 <div class="container">
 <h2>Education</h2>
 <div class="timeline">
-<div class="block">
-  <div class="year">2011</div>
-  <div class="role">PGDHRM – Alagappa University, Karaikudi</div>
-</div>
-<div class="block">
-  <div class="year">2008</div>
-  <div class="role">MSW – Cauvery College, Trichy</div>
-</div>
-<div class="block">
-  <div class="year">2006</div>
-  <div class="role">BSW – Cauvery College, Trichy</div>
-</div>
+<div class="block"><div class="year">2011</div><div class="role">PGDHRM – Alagappa University, Karaikudi</div></div>
+<div class="block"><div class="year">2008</div><div class="role">MSW – Cauvery College, Trichy</div></div>
+<div class="block"><div class="year">2006</div><div class="role">BSW – Cauvery College, Trichy</div></div>
 </div>
 </div>
 </section>
@@ -303,26 +234,22 @@ window.onload = () => {
   history.replaceState(null, null, ' ');
   window.scrollTo(0,0);
 };
-
-/* NAV ACTIVE ON SCROLL */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       navLinks.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + entry.target.id) {
+        if(link.getAttribute("href") === "#" + entry.target.id){
           link.classList.add("active");
         }
       });
     }
   });
-}, { threshold: 0.6 });
-
+},{threshold:0.6});
 sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
-</html>
+</
