@@ -10,9 +10,7 @@
 <style>
 html { scroll-behavior: smooth; }
 
-*{
-box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
 margin:0;
@@ -82,16 +80,8 @@ font-family:'Montserrat';
 font-size:42px;
 }
 
-.signature{
-margin-top:10px;
-font-size:20px;
-color:#333;
-}
-
-.subhook{
-margin-top:6px;
-color:#666;
-}
+.signature{ margin-top:10px; font-size:20px; color:#333; }
+.subhook{ margin-top:6px; color:#666; }
 
 .impact-box{
 margin-top:16px;
@@ -102,9 +92,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 /* CTA */
-.cta{
-margin-top:18px;
-}
+.cta{ margin-top:18px; }
 .cta a{
 padding:12px 22px;
 background:linear-gradient(135deg,#94c11f,#7da816);
@@ -125,12 +113,10 @@ box-shadow:0 12px 26px rgba(148,193,31,0.45);
 /* SECTIONS */
 .section{
 padding:55px 40px;
-scroll-margin-top:80px; /* 🔥 key for correct alignment */
+scroll-margin-top:80px;
 }
 
-.section.alt{
-background:#ffffff;
-}
+.section.alt{ background:#ffffff; }
 
 .container{
 max-width:1100px;
@@ -151,9 +137,7 @@ border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.06);
 transition:0.3s;
 }
-.card:hover{
-transform:translateY(-3px);
-}
+.card:hover{ transform:translateY(-3px); }
 
 /* TIMELINE */
 .timeline{
@@ -177,57 +161,19 @@ background:#94c11f;
 border-radius:50%;
 }
 
-.year{
-font-size:12px;
-color:#888;
-}
-
-.role{
-font-weight:700;
-margin-top:5px;
-}
+.year{ font-size:12px; color:#888; }
+.role{ font-weight:700; margin-top:5px; }
 
 /* MOBILE */
 @media(max-width:700px){
-
-nav{
-gap:15px;
-font-size:13px;
-}
-
-.hero{
-padding:20px;
-}
-
-.hero-inner{
-flex-direction:column;
-text-align:center;
-gap:20px;
-}
-
-.hero-text h1{
-font-size:28px;
-}
-
-.signature{
-font-size:16px;
-}
-
-.section{
-padding:40px 20px;
-}
-
-.photo-frame{
-width:150px;
-height:150px;
-}
-
-.cta a{
-display:block;
-margin-bottom:10px;
-margin-right:0;
-}
-
+nav{ gap:15px; font-size:13px; }
+.hero{ padding:20px; }
+.hero-inner{ flex-direction:column; text-align:center; gap:20px; }
+.hero-text h1{ font-size:28px; }
+.signature{ font-size:16px; }
+.section{ padding:40px 20px; }
+.photo-frame{ width:150px; height:150px; }
+.cta a{ display:block; margin-bottom:10px; margin-right:0; }
 }
 </style>
 </head>
@@ -242,7 +188,6 @@ margin-right:0;
 <a href="#education">Education</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-inner">
 
@@ -276,7 +221,6 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 </div>
 </section>
 
-<!-- SUMMARY -->
 <section id="summary" class="section">
 <div class="container">
 <h2>Summary</h2>
@@ -286,7 +230,6 @@ HR leader with 15+ years of experience driving hiring strategy, workforce planni
 </div>
 </section>
 
-<!-- IMPACT -->
 <section id="impact" class="section alt">
 <div class="container">
 <h2>Core Impact</h2>
@@ -296,39 +239,17 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience" class="section">
 <div class="container">
 <h2>Professional Journey</h2>
-
 <div class="timeline">
-
-<div class="block">
-<div class="year">Jan 2026 – Present</div>
-<div class="role">Manager – HR | Ola Electric Technologies Pvt Ltd</div>
-</div>
-
-<div class="block">
-<div class="year">Mar 2020 – Dec 2025</div>
-<div class="role">Deputy Manager – HRBP (Jun 2024 – Dec 2025) | Salcomp Technologies India Pvt Ltd</div>
-<div class="role">Assistant Manager (Mar 2020 – May 2024)</div>
-</div>
-
-<div class="block">
-<div class="year">Aug 2012 – Feb 2020</div>
-<div class="role">Senior Executive – HR | Nokia India Pvt Ltd</div>
-</div>
-
-<div class="block">
-<div class="year">Jul 2008 – Mar 2011</div>
-<div class="role">HR Admin | Arrant HR Solutions</div>
-</div>
-
+<div class="block"><div class="year">Jan 2026 – Present</div><div class="role">Manager – HR | Ola Electric</div></div>
+<div class="block"><div class="year">Mar 2020 – Dec 2025</div><div class="role">Deputy Manager – HRBP | Salcomp</div></div>
+<div class="block"><div class="year">Aug 2012 – Feb 2020</div><div class="role">Senior Executive – HR | Nokia</div></div>
 </div>
 </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="section alt">
 <div class="container">
 <h2>Skills</h2>
@@ -338,37 +259,27 @@ HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operati
 </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education" class="section">
 <div class="container">
 <h2>Education</h2>
-
 <div class="timeline">
-
-<div class="block">
-<div class="year">2011</div>
-<div class="role">PGDHRM – Alagappa University</div>
-</div>
-
-<div class="block">
-<div class="year">2008</div>
-<div class="role">MSW – Cauvery College</div>
-</div>
-
-<div class="block">
-<div class="year">2006</div>
-<div class="role">BSW – Cauvery College</div>
-</div>
-
+<div class="block"><div class="year">2011</div><div class="role">PGDHRM – Alagappa University</div></div>
 </div>
 </div>
 </section>
 
 <script>
+
+/* ✅ FORCE ALWAYS START FROM TOP */
+window.onload = () => {
+history.replaceState(null, null, ' ');
+window.scrollTo(0,0);
+};
+
+/* PREMIUM NAV SYSTEM */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-/* 🔥 PREMIUM: Intersection Observer (no scroll hacks) */
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
@@ -380,13 +291,10 @@ link.classList.add("active");
 });
 }
 });
-}, {
-threshold: 0.6
-});
+}, { threshold: 0.6 });
 
-sections.forEach(section => {
-observer.observe(section);
-});
+sections.forEach(section => observer.observe(section));
+
 </script>
 
 </body>
