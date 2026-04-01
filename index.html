@@ -9,7 +9,6 @@
 
 <style>
 html { scroll-behavior: smooth; }
-
 * { box-sizing:border-box; }
 
 body {
@@ -20,7 +19,7 @@ body {
   overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav {
   position:sticky;
   top:0;
@@ -28,18 +27,19 @@ nav {
   backdrop-filter:blur(10px);
   display:flex;
   justify-content:center;
-  gap:30px;
-  padding:10px;
+  gap:25px;
+  padding:12px 10px;
   border-bottom:1px solid #eee;
   z-index:1000;
   flex-wrap:wrap;
+  font-size:15px;
 }
 nav a {
   text-decoration:none;
   font-weight:600;
   color:#444;
   padding-bottom:4px;
-  transition:color 0.3s, border-bottom 0.3s;
+  transition:all 0.25s ease;
 }
 nav a.active {
   color:#94c11f;
@@ -49,16 +49,20 @@ nav a.active {
 /* HERO */
 .hero {
   background:linear-gradient(120deg,#ffffff,#eef5e8);
-  padding:40px 60px 80px;
-  overflow:hidden;
+  padding:40px 50px 70px;
   position:relative;
+  overflow:hidden;
 }
 .hero::after {
-  content:'';
+  content:"";
   position:absolute;
-  top:0; left:0; width:100%; height:100%;
-  background:radial-gradient(circle at 80% 20%, rgba(148,193,31,0.05), transparent 70%);
-  pointer-events:none;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(148,193,31,0.1);
+  top:-50px;
+  right:-50px;
+  z-index:0;
 }
 
 .hero-inner {
@@ -66,18 +70,20 @@ nav a.active {
   margin:auto;
   display:flex;
   align-items:center;
-  gap:60px;
+  gap:50px;
   flex-wrap:wrap;
+  position:relative;
+  z-index:1;
 }
 
 .photo-frame {
-  width:220px;
-  height:220px;
+  width:200px;
+  height:200px;
   border-radius:24px;
   overflow:hidden;
   border:4px solid #94c11f;
-  box-shadow:0 25px 45px rgba(0,0,0,0.15);
-  transition:transform 0.4s, box-shadow 0.4s;
+  box-shadow:0 25px 45px rgba(0,0,0,0.12);
+  transition:all 0.3s ease;
 }
 .photo-frame img {
   width:100%;
@@ -85,134 +91,103 @@ nav a.active {
   object-fit:cover;
   object-position:50% 20%;
 }
-.photo-frame:hover {
-  transform:scale(1.05);
-  box-shadow:0 35px 55px rgba(0,0,0,0.2);
-}
+.photo-frame:hover { transform:scale(1.03); }
 
 .hero-text h1 {
   margin:0;
   font-family:'Montserrat';
-  font-size:48px;
-  line-height:1.1;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeInUp 0.8s forwards 0.3s;
+  font-size:44px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
-.signature { 
-  margin-top:12px; 
-  font-size:22px; 
-  color:#333; 
-  opacity:0;
-  transform:translateY(10px);
-  animation:fadeInUp 0.8s forwards 0.5s;
-}
+.signature { margin-top:12px; font-size:21px; color:#333; }
+.subhook { margin-top:6px; color:#666; }
 
-.subhook { 
-  margin-top:6px; 
-  color:#666; 
-  opacity:0;
-  transform:translateY(10px);
-  animation:fadeInUp 0.8s forwards 0.7s;
-}
-
+/* IMPACT BOX */
 .impact-box {
-  margin-top:20px;
+  margin-top:18px;
   background:#fff;
-  padding:22px;
+  padding:20px;
   border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
   word-break: break-word;
-  opacity:0;
-  transform:translateY(10px);
-  animation:fadeInUp 0.8s forwards 0.9s;
+  transition:all 0.25s ease;
 }
+.impact-box:hover { transform:translateY(-2px); box-shadow:0 22px 45px rgba(0,0,0,0.1); }
 
 /* CTA */
-.cta { margin-top:22px; display:flex; flex-wrap:wrap; gap:12px; }
+.cta { margin-top:20px; }
 .cta a {
   padding:14px 26px;
   background:linear-gradient(135deg,#94c11f,#7da816);
   color:#fff;
   border-radius:12px;
   text-decoration:none;
+  margin-right:12px;
+  display:inline-block;
   font-weight:600;
-  box-shadow:0 10px 22px rgba(148,193,31,0.35);
-  transition:all 0.3s ease;
+  box-shadow:0 8px 20px rgba(148,193,31,0.35);
+  transition:all 0.25s ease;
   text-align:center;
 }
 .cta a:hover {
-  transform:scale(1.05) translateY(-2px);
-  box-shadow:0 15px 28px rgba(148,193,31,0.45);
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 12px 28px rgba(148,193,31,0.45);
 }
 
 /* SECTIONS */
 .section {
-  padding:70px 60px;
+  padding:65px 50px;
   scroll-margin-top:90px;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeInUp 0.8s forwards 0.2s;
 }
 .section.alt { background:#ffffff; }
-
 .container { max-width:1100px; margin:auto; }
-
-h2 {
-  font-family:'Montserrat';
-  margin-bottom:25px;
-  font-size:28px;
-}
+h2 { font-family:'Montserrat'; margin-bottom:25px; font-size:28px; }
 
 /* CARD */
 .card {
   background:#fff;
-  padding:32px;
+  padding:35px;
   border-radius:16px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.08);
-  transition:transform 0.3s;
+  box-shadow:0 12px 35px rgba(0,0,0,0.07);
+  transition:0.3s;
   max-width:100%;
   overflow-wrap:break-word;
 }
-.card:hover { transform:translateY(-4px); }
+.card:hover { transform:translateY(-3px); }
 
 /* TIMELINE */
 .timeline {
-  border-left:3px solid #dcdcdc;
-  padding-left:30px;
+  border-left:2px solid #dcdcdc;
+  padding-left:25px;
   margin-top:25px;
   max-width:100%;
 }
 .block {
   margin-bottom:40px;
   position:relative;
-  transition:all 0.3s ease;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.5s ease;
 }
+.block.visible { opacity:1; transform:translateY(0); }
 .block::before {
   content:"";
   position:absolute;
-  left:-38px;
+  left:-33px;
   top:6px;
   width:14px;
   height:14px;
-  background:linear-gradient(135deg,#94c11f,#7da816);
+  background:#94c11f;
   border-radius:50%;
-  box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 .year { font-size:13px; color:#888; }
 .role { font-weight:700; margin-top:5px; }
 
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  0% { opacity:0; transform:translateY(20px); }
-  100% { opacity:1; transform:translateY(0); }
-}
-
 /* MOBILE */
 @media(max-width:700px){
   nav { gap:15px; font-size:13px; }
-  .hero { padding:20px; }
+  .hero { padding:25px; }
   .hero-inner { flex-direction:column; text-align:center; gap:20px; }
   .hero-text h1 { font-size:28px; }
   .signature { font-size:16px; }
@@ -221,7 +196,7 @@ h2 {
   .cta a { display:block; margin-bottom:10px; margin-right:0; width:100%; }
 }
 
-/* EXTRA SAFETY FOR VERY SMALL DEVICES */
+/* VERY SMALL DEVICES */
 @media(max-width:400px){
   .hero-inner { gap:15px; padding:10px; }
   .photo-frame { width:120px; height:120px; }
@@ -366,6 +341,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 
 sections.forEach(section => observer.observe(section));
+
+/* TIMELINE ANIMATION */
+const timelineBlocks = document.querySelectorAll('.timeline .block');
+const animateTimeline = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  timelineBlocks.forEach(block => {
+    const top = block.getBoundingClientRect().top;
+    if(top < triggerBottom) block.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', animateTimeline);
+window.addEventListener('load', animateTimeline);
 </script>
 
 </body>
