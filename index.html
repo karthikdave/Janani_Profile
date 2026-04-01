@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -26,16 +25,11 @@ nav {
   background:#ffffffcc;
   backdrop-filter:blur(10px);
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 20px;
+  justify-content:center;
+  gap:30px;
+  padding:10px;
   border-bottom:1px solid #eee;
   z-index:1000;
-  flex-wrap:wrap;
-}
-nav .nav-links {
-  display:flex;
-  gap:30px;
   flex-wrap:wrap;
 }
 nav a {
@@ -48,17 +42,13 @@ nav a.active {
   color:#94c11f;
   border-bottom:2px solid #94c11f;
 }
-.nav-toggle {
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-}
 
 /* HERO */
 .hero {
   background:linear-gradient(120deg,#ffffff,#eef5e8);
   padding:30px 40px 60px;
 }
+
 .hero-inner {
   max-width:1100px;
   margin:auto;
@@ -67,6 +57,7 @@ nav a.active {
   gap:50px;
   flex-wrap:wrap;
 }
+
 .photo-frame {
   width:200px;
   height:200px;
@@ -81,13 +72,16 @@ nav a.active {
   object-fit:cover;
   object-position:50% 20%;
 }
+
 .hero-text h1 {
   margin:0;
   font-family:'Montserrat';
   font-size:42px;
 }
+
 .signature { margin-top:10px; font-size:20px; color:#333; }
 .subhook { margin-top:6px; color:#666; }
+
 .impact-box {
   margin-top:16px;
   background:#fff;
@@ -96,6 +90,8 @@ nav a.active {
   box-shadow:0 15px 35px rgba(0,0,0,0.08);
   word-break: break-word;
 }
+
+/* CTA */
 .cta { margin-top:18px; }
 .cta a {
   padding:12px 22px;
@@ -114,6 +110,8 @@ nav a.active {
   transform:translateY(-2px);
   box-shadow:0 12px 26px rgba(148,193,31,0.45);
 }
+
+/* SECTIONS */
 .section {
   padding:55px 40px;
   scroll-margin-top:80px;
@@ -121,6 +119,8 @@ nav a.active {
 .section.alt { background:#ffffff; }
 .container { max-width:1100px; margin:auto; }
 h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
+
+/* CARD */
 .card {
   background:#fff;
   padding:30px;
@@ -131,6 +131,8 @@ h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
   overflow-wrap:break-word;
 }
 .card:hover { transform:translateY(-3px); }
+
+/* TIMELINE */
 .timeline {
   border-left:2px solid #dcdcdc;
   padding-left:25px;
@@ -156,9 +158,7 @@ h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
 
 /* MOBILE */
 @media(max-width:700px){
-  .nav-links { display:none; flex-direction:column; gap:15px; }
-  .nav-toggle { display:block; }
-  nav a { font-size:13px; }
+  nav { gap:12px; font-size:12px; }
   .hero { padding:20px; }
   .hero-inner { flex-direction:column; text-align:center; gap:20px; }
   .hero-text h1 { font-size:28px; }
@@ -167,6 +167,8 @@ h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
   .photo-frame { width:150px; height:150px; }
   .cta a { display:block; margin-bottom:10px; margin-right:0; width:100%; }
 }
+
+/* EXTRA SAFETY FOR VERY SMALL DEVICES */
 @media(max-width:400px){
   .hero-inner { gap:15px; padding:10px; }
   .photo-frame { width:120px; height:120px; }
@@ -174,21 +176,16 @@ h2 { font-family:'Montserrat'; margin-bottom:20px; font-size:26px; }
   .cta a { font-size:14px; }
 }
 </style>
-
 </head>
 
 <body>
 
 <nav>
-<div class="nav-logo">Janani</div>
-<div class="nav-links">
 <a href="#summary">Summary</a>
 <a href="#impact">Impact</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#education">Education</a>
-</div>
-<div class="nav-toggle">☰</div>
 </nav>
 
 <section class="hero">
@@ -205,7 +202,9 @@ HRBP Leader driving hiring strategy, workforce scale & business alignment
 15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia • Ex-Arrant
 </div>
 <div class="impact-box">
-✔ Hiring Strategy & Workforce Scaling<br>✔ HRBP Leadership Alignment<br>✔ Engagement & Retention
+✔ Hiring Strategy & Workforce Scaling<br>
+✔ HRBP Leadership Alignment<br>
+✔ Engagement & Retention
 </div>
 <div class="cta">
 <a href="mailto:beingjanani@gmail.com">Contact</a>
@@ -238,24 +237,24 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 <h2>Professional Journey</h2>
 <div class="timeline">
 <div class="block">
-<div class="year">Jan 2026 – Present</div>
-<div class="role">Manager – HR | Ola Electric</div>
-<p>Driving workforce strategy, HRBP alignment, and talent acquisition initiatives across multiple business units.</p>
+  <div class="year">Jan 2026 – Present</div>
+  <div class="role">Manager – HR | Ola Electric</div>
+  <p>Driving workforce strategy, HRBP alignment, and talent acquisition initiatives across multiple business units.</p>
 </div>
 <div class="block">
-<div class="year">Mar 2020 – Dec 2025</div>
-<div class="role">Deputy Manager – HRBP | Salcomp</div>
-<p>Led HRBP activities, workforce planning, employee engagement programs, and compliance for global operations.</p>
+  <div class="year">Mar 2020 – Dec 2025</div>
+  <div class="role">Deputy Manager – HRBP | Salcomp</div>
+  <p>Led HRBP activities, workforce planning, employee engagement programs, and compliance for global operations.</p>
 </div>
 <div class="block">
-<div class="year">Aug 2012 – Feb 2020</div>
-<div class="role">Senior Executive – HR | Nokia</div>
-<p>Managed recruitment, talent retention strategies, and HR operations across multiple regions.</p>
+  <div class="year">Aug 2012 – Feb 2020</div>
+  <div class="role">Senior Executive – HR | Nokia</div>
+  <p>Managed recruitment, talent retention strategies, and HR operations across multiple regions.</p>
 </div>
 <div class="block">
-<div class="year">2010 – 2012</div>
-<div class="role">HR Executive | Arrant</div>
-<p>Implemented HR policies, recruitment processes, and performance management systems.</p>
+  <div class="year">2010 – 2012</div>
+  <div class="role">HR Executive | Arrant</div>
+  <p>Implemented HR policies, recruitment processes, and performance management systems.</p>
 </div>
 </div>
 </div>
@@ -275,16 +274,16 @@ HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operati
 <h2>Education</h2>
 <div class="timeline">
 <div class="block">
-<div class="year">2011</div>
-<div class="role">PGDHRM – Alagappa University, Karaikudi</div>
+  <div class="year">2011</div>
+  <div class="role">PGDHRM – Alagappa University, Karaikudi</div>
 </div>
 <div class="block">
-<div class="year">2008</div>
-<div class="role">MSW – Cauvery College, Trichy</div>
+  <div class="year">2008</div>
+  <div class="role">MSW – Cauvery College, Trichy</div>
 </div>
 <div class="block">
-<div class="year">2006</div>
-<div class="role">BSW – Cauvery College, Trichy</div>
+  <div class="year">2006</div>
+  <div class="role">BSW – Cauvery College, Trichy</div>
 </div>
 </div>
 </div>
@@ -299,12 +298,6 @@ window.onload = () => {
 /* NAV ACTIVE ON SCROLL */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
-const navToggle = document.querySelector('.nav-toggle');
-const navLinksContainer = document.querySelector('.nav-links');
-
-navToggle.addEventListener('click', () => {
-  navLinksContainer.style.display = navLinksContainer.style.display === 'flex' ? 'none' : 'flex';
-});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
