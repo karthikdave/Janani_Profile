@@ -51,7 +51,6 @@ border-bottom:2px solid #94c11f;
 .hero{
 background:linear-gradient(120deg,#ffffff,#eef5e8);
 padding:30px 40px 60px;
-margin-top:0;
 }
 
 .hero-inner{
@@ -122,14 +121,11 @@ transition:all 0.25s ease;
 transform:translateY(-2px);
 box-shadow:0 12px 26px rgba(148,193,31,0.45);
 }
-.cta a:active{
-transform:translateY(0px);
-box-shadow:0 6px 12px rgba(148,193,31,0.3);
-}
 
 /* SECTIONS */
 .section{
 padding:55px 40px;
+scroll-margin-top:80px; /* 🔥 key for correct alignment */
 }
 
 .section.alt{
@@ -369,42 +365,27 @@ HRBP • Talent Acquisition • Workforce Planning • Engagement • HR Operati
 </section>
 
 <script>
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-window.onload = function() {
-  window.scrollTo(0,0);
-};
-
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () => {
-
-let current = "";
-
-// ✅ Proper detection including last section
-sections.forEach((sec, index) => {
-const top = sec.offsetTop - 120;
-const next = sections[index + 1];
-
-if (window.scrollY >= top && (!next || window.scrollY < next.offsetTop - 120)) {
-current = sec.id;
-}
-});
-
-// ✅ Extra safety for bottom (Education)
-if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
-current = "education";
-}
-
+/* 🔥 PREMIUM: Intersection Observer (no scroll hacks) */
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
 navLinks.forEach(link => {
 link.classList.remove("active");
-if (link.getAttribute("href") === "#" + current) {
+if (link.getAttribute("href") === "#" + entry.target.id) {
 link.classList.add("active");
 }
 });
+}
+});
+}, {
+threshold: 0.6
+});
 
+sections.forEach(section => {
+observer.observe(section);
 });
 </script>
 
