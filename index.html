@@ -380,8 +380,10 @@ const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
+
 let current = "";
 
+// ✅ Proper detection including last section
 sections.forEach((sec, index) => {
 const top = sec.offsetTop - 120;
 const next = sections[index + 1];
@@ -391,12 +393,18 @@ current = sec.id;
 }
 });
 
+// ✅ Extra safety for bottom (Education)
+if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+current = "education";
+}
+
 navLinks.forEach(link => {
 link.classList.remove("active");
 if (link.getAttribute("href") === "#" + current) {
 link.classList.add("active");
 }
 });
+
 });
 </script>
 
